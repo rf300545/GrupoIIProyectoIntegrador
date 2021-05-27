@@ -1,7 +1,7 @@
 {
   "name": "integrador",
   "version": "1.0.0",
-  "description": "",
+  "description": "El sitio a diseñar esta enfocado a la venta de suplementos deportivos y \r productos afines a lo deportivo.\r Se tiene pensado una página de inicio minimalista, con los productos mas vendidos o de oferta.\r Categorias según el tipo de producto (proteínas, quemadores, accesorios, etc) y \r con un sistema de registro de usuarios para realizar compras.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,13 @@
   "dependencies": {
     "bootstrap": "^5.0.1",
     "express": "^4.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rf300545/GrupoIIProyectoIntegrador.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rf300545/GrupoIIProyectoIntegrador/issues"
+  },
+  "homepage": "https://github.com/rf300545/GrupoIIProyectoIntegrador#readme"
 }
