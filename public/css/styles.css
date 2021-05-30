@@ -2,35 +2,63 @@ body{
     background-color:#e0e8da;
     font-family: 'Montserrat', sans-serif;
     }
-
+/*HEADER*/
 header{
     display:flex;
     flex-direction: row;
-    justify-content: space-around;  
+    justify-content: space-around;
+    background-color: #bcd1ab;
+}
+header img{
+max-width: 60px ;
+max-height: 40px;
+}
+header p:hover{text-decoration: underline}
+
+#Banner{
+    width: 100vw;
+
 }
 
-#Destacados{
-    display: flex;
-    flex-direction:row ; 
+/*DESTACADOS*/
+section{
+    display:flex;
+    flex-direction: row;
     justify-content: space-around;
+    text-align: center;
+}
+#img-destacado{
+    max-width: 320px;
+    max-height:240px;
 }
 
 #Titulo{
     text-align: center
 }
 
+/*FOOTER*/
 footer{
-    background-color: #bcd1ab;
-}
-
-#footerLinks{
     display: flex;
+    flex-direction: row;
+    background-color: #bcd1ab;
+    justify-content: space-around;
+}
+footer img{
+    max-height: 120px;
+    max-width: 160px;
+    box-sizing: content-box;
+}
+#footerLinks{  
+    text-align:center;
+    box-sizing:content-box;
+    display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;   
 }
-
 #footerEmail{
-    display: flex;
+    text-align:center;   
+    box-sizing:content-box;
+    display: inline-flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     }
