@@ -1,0 +1,107 @@
+
+  
+  .table {
+    /* width: 50%;  */
+    border: rgb(227, 235, 115);
+    background-color: rgb(90, 223, 223);
+    font-family: 'Montserrat';
+    font-size: 270%;
+
+    
+    
+ }
+ th, td {
+    text-align: center;
+    vertical-align: center;
+    border: 1px rgb(172, 160, 160);
+    border-collapse:unset;
+    padding: 0.3em;
+    background-color: rgb(172, 160, 160);
+    font-family: 'Montserrat';
+    font-size: 270%;
+ }
+ table td:first-child {
+  background-color: white;
+  text-align: center;
+  width: 1%;
+  white-space:fill;
+  line-height:0
+}
+
+table td:nth-child(2) {
+  width: 10px;
+  background-color: #e040c1;
+  text-align: left;
+  width:1%;
+  white-space:nowrap;
+}
+
+table td:nth-child(3) {
+  width: 10px;
+  background-color: #7b62a8;
+  text-align: center;
+  width:1%;
+  white-space:nowrap;
+}
+
+table td:nth-child(4) {
+    width: 10px;
+    background-color: #360d83;
+    text-align: center;
+    width:1%;
+    white-space:nowrap;
+}
+ caption {
+    padding: 0.5em;
+    font-family: 'Montserrat';
+    background-color: #eb1010;
+    border-bottom: tomato;
+    font-size: 290%;
+    text-align: left;
+ }
+ .envios {
+  border: 15px solid blue;
+  background-color: rgb(172, 160, 160);
+  font-family: 'Montserrat';
+  font-size: 180%;
+  text-align: left;
+}
+.envio {
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+     
+}
+#medioenvio {
+  border: 15px solid blue;
+  background-color: rgb(172, 160, 160);
+  font-family: 'Montserrat';
+  text-align: left;
+  font-size: 200%;
+
+}
+
+.section {
+  display: flex;
+  justify-content: left;
+  border: 1px solid gold;
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  .section {
+    display: flex;
+    justify-content: right;
+    border: 1px solid rgb(255, 38, 0);
+    flex-direction: column;
+    }
+    table {
+      /* width: 50%; */
+      border: rgb(172, 160, 160);
+      background-color: rgb(11, 161, 141);
+      font-family: 'Montserrat';
+      margin-left: 50%;
+    }
+  }
+

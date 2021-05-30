@@ -8,6 +8,6 @@ app.listen(3030,() =>
 console.log("ok"))
 
 app.get("/",(req,res)=> {
-    res.sendFile(path.join(__dirname, "/views/formregistro.html"))
+    res.sendFile(path.join(__dirname, "/views/carro_compras.html"))
 });
 

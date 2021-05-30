@@ -2,61 +2,77 @@
 
 <html>
 
-  <head>
     <head>
       <meta charset="utf-8">
       <title>Nombre Sitio</title>
       <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="/css/carro_compras.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-
-  </head>
+    </head>
 
   <body>
-    
-    <header> <!--poner header hecho por Elio -->
-   
-      <section >
-
-          
-      </section>
-     
+    <header class="barra">
+      <img src="img/logo.png"> 
+      <a href="https://example.com">Inicio</a>
+      <a href="https://example.com">Tienda</a>
+      <a href="https://example.com">Carrito</a>
+      <a href="https://example.com">Envíos</a>
+      <a href="https://example.com">Mi cuenta</a>
+      <a href="https://example.com">Contacto</a>
+      <a href="https://example.com">Conocé nuestros PRODUCTOS</a>
+      <a href="https://example.com">Alcanzá tus objetivos</a>
+      <a href="https://example.com">Tokio 2020</a>
     </header>
    
-   
-    <main>     
-       <section>
-           <div>
-               <h3>Carrito de Compra</h3>
-               <i class="fas fa-shopping-cart"></i>
-               <h5>Producto</h5>
-               <h6>Subtotal</h6>
+   <br>
+   <br>
+   <br>
+    <section class="section">
+      <table class="tabla">
+        <caption> CARRITO DE COMPRAS <i class="fas fa-shopping-cart"></i> </caption>
+         <tr>
+          <th>Presentación</th>
+          <th>Producto</th>
+          <th>Subtotal</th>
+          <th></th>
+         </tr>
+         <tr>
+         <td> <img src = "./img/creatine_monohydrate.JPG" width="100" height="100"></img> </td>
+         <td>Creatina monohidrato <br> Costo unitario $123</td>
+         <td> $123</td>
+         <td> <i class="far fa-minus-square"></i> <i class="far fa-plus-square"></i> <i class="far fa-trash-alt"> </td>
+        </tr>
 
-           </div>
-           <article> <!--info del producto elegido-->
-            <img src = "./img/pump.JPG" > </img>
-            <h5>Produccto estrella</h5>
-            <h6>Frutilla</h6>
-            <h6>500 gr</h6>
-            <div> <!--agregar mas items del producto-->
-                <i class="far fa-plus-square"></i>
-                <p>1</p>
-                <i class="far fa-minus-square"></i>
-            </div>
-            <h5>$$$</h5>
-           </article>
-           <div>
-            <label> direccion </label>
-            <button id="envio">Calcular Envio</button>
-           </div>
-           <div>
-               <h3>total</h3>
-           </div>
-       </section>
-         
+        <tr>
+         <td> <img src = "./img/nitro_whey.JPG" width="100" height="100"></img> </td>
+         <td>Nitro whey <br> Costo unitario $123 </td>
+         <td> $123</td>
+         <td> <i class="far fa-minus-square"></i> <i class="far fa-plus-square"></i> <i class="far fa-trash-alt"> </td>
+        </tr>
+ 
+        <tfoot>
+          <tr>
+            <td></td>
+            <td>TOTAL</td>
+            <td> $246</td>
+          </tr>
+        </tfoot>
+      </table>
+
+    
+     
+     <a id="medioenvio"> Medio de envio </a>
+     <a class="envios">
+       <label for="Provincia de envío"> </label>
+       <input type="text" class= "envio" placeholder="*Provincia de envio" value= "" maxlength="30" name="pcia" id="text" >
+       <label for="Calculo envio"> </label>
+      <input type="submit" class="envio" value="CALCULAR ENVIO" >
+      </a>
+
+    </section>
 
 
 
@@ -65,8 +81,7 @@
 
 
 
-
-          <article>
+          <!-- <article>
             <img src = "./img/pump.JPG" > </img>
             <h3>Nombre producto</h3>
             <p>Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?</p>
@@ -83,22 +98,22 @@
             
           </div>
 
-           <div> <!--carrusel de fotos -->
-            <img src = "./img/Multifruta.JPG" > </img>
+           <div> carrusel de fotos -->
+            <!-- <img src = "./img/Multifruta.JPG" > </img>
             <img src = "./img/info nutri.JPG" > </img>
             <img src = "./img/pump.JPG" > </img>
-           </div>
+           </div> -->
 
-          <div> <!--carro compras-->
-            <h3>Nompre de producto</h3>
+          <!-- <div> Carro compras-->
+            <!-- <h3>Nompre de producto</h3>
             <h3>$$$$</h3>
             <button id="carro de compras">Añadir a mis compras</button>
             <p>12 cuotas sin Interes</p>
             <i class="fab fa-cc-visa"></i>
             <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-amex"></i>  --> 
 
-          </div>
+          
 
 
     </main>
