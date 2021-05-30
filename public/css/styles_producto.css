@@ -1,0 +1,165 @@
+body{
+    background-color:hsl(0, 0%, 100%);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    }
+
+header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;  
+}
+
+#Destacados{
+    display: flex;
+    flex-direction:row ; 
+    justify-content: space-around;
+}
+
+#Titulo{
+    text-align: center
+}
+
+footer{
+    background-color: #bcd1ab;
+}
+
+#footerLinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;   
+}
+
+#footerEmail{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    }
+.imagenProducto{
+    
+    margin:2%;
+    object-fit: contain;
+    margin:5%
+}
+#productoYTexto{
+    display:flex;
+    flex-direction: row;
+
+}
+.conteiner{
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 90%;
+    background-color: white;
+}
+.carrusel{
+    width:25%;
+    border: 2px dotted red;
+    margin: 5px;
+    object-fit:contain ;
+    
+
+}
+.conteiner1{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    margin-top:auto;
+    width:80%;
+    height:10vh;
+    position:relative;
+    box-sizing: border-box;
+}
+#conteinerTextoProducto{/*para pc*/
+    display:flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    margin: 5%;
+    color:grey;
+    width:90%
+}
+.conteiner2{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    margin:5%;
+    width:90%;}
+
+.sabores{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+    margin-left:5%
+
+}
+#cajaSabores{
+   height: 20px;
+   margin-left:5%;
+   position: absolute;
+   right: 15%;
+   width: 50%;
+   padding: 10px;
+}
+.linea{
+    border-bottom: 2px solid ;
+}
+#precio{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    border:2px solid black;
+    margin-top:5%;
+    margin-right: 5%;
+    width:40%
+
+}
+.contenedorMaxProd{
+    display:flex;
+    flex-direction: row;
+    border:2px solid blue;
+
+}
+ @media (min-width: 1000px){
+
+        .conteiner2{
+            display:flex;
+            flex-direction: row;
+            justify-content:center;
+            border: 2px dotted red;
+            margin-top:5%;
+            margin-left:0px;
+            margin-right:0px;
+            width:80%;
+            block-size:50% content-box;
+            box-sizing: border-box;
+        }
+
+         #conteinerTextoProducto{/*para pc*/
+             display:flex;
+             flex-direction: column;
+             border: 2px dotted yellow; 
+             text-align: justify;
+             justify-content: center;
+             margin: 5%;
+             color:grey;
+             width:30%
+            }
+        .imagenProducto{
+             margin:2%;
+             object-fit: contain;
+             margin:5%;
+             height: auto;
+             width:200px
+    }
+        #contenedorPadreProd{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            border:2px solid black;
+            margin-top:5%
+ }

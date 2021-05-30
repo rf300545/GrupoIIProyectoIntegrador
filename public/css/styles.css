@@ -1,6 +1,7 @@
 body{
-    background-color:#e0e8da;
+    background-color:hsl(0, 0%, 100%);
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
     }
 
 header{
@@ -34,3 +35,13 @@ footer{
     flex-direction: column;
     align-items: flex-end;
     }
+.imagenProducto{
+    
+    margin:2%;
+    object-fit: contain;
+    margin:5%
+}
+#productoYTexto{
+    display:flex;
+    flex-direction: row;
+
