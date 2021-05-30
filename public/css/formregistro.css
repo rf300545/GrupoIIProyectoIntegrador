@@ -1,0 +1,62 @@
+html {
+	overflow-y: scroll; 
+} 
+
+body {
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.barra {
+    background-color: rgb(240, 238, 238);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titleform{
+    float: right;
+    line-height: 12px; 
+    font-family: 'Montserrat', sans-serif;
+}
+#margen1 {
+    line-height: 2px;
+    margin-left: 7%;
+}
+#margen2 {
+    line-height: 2px;
+    margin-left: 7%;
+}
+
+.formreg {
+    float: left;
+    color: rgb(130, 130, 145);
+    background: white;
+    font-size: 13px;
+    line-height: 15px; 
+    justify-content: space-around; 
+    font-style: italic;
+    margin-left: 7%;
+    }
+
+    .sinborde {
+        border-top: red;
+        border-left: red;
+        border-right: red;
+        font-family: 'Montserrat', sans-serif;
+        font-style: italic;
+    }
+
+    .Accept{
+        text-align: right;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;   
+    }
+
+    .Cuenta{
+        font-family: 'Montserrat', sans-serif, bold;
+        font-weight: bold;
+        border-radius: 17px;
+        background-color: whitesmoke; 
+    }
+
