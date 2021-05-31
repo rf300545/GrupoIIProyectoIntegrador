@@ -6,6 +6,7 @@
     <head>
       <meta charset="utf-8">
       <title>Nombre Sitio</title>
+      <link rel="stylesheet" href="/css/styles" >
       <link rel="stylesheet" href="/css/styles_producto.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
@@ -17,14 +18,15 @@
 
   <body>
     
-    <header> <!--poner header hecho por Elio -->
-   
-      <section >
-
-          
-      </section>
-     
-    </header>
+    <header id = Barra>
+      <img src="img/logo.png"> 
+      <p>Inicio</p> 
+      <p>Tienda</p>
+      <p>Carrito</p>
+      <p>Envíos</p>
+      <p>Mi Cuenta</p>
+      <p>Contacto</p>
+   </header>
    
    
     <main>     
@@ -40,26 +42,57 @@
                 </div>
 
                 <div id="precio"> <!--carro compras-->
-                  <h3>Nompre de producto</h3>
+                  <div id="nomYPrecio">
+                    <a>Nompre de producto<a>
+                    <a >$$$$</a>
                   
-                  <h3>$$$$</h3>
-                  <button id="carro de compras">Añadir a mis compras</button>
+                  </div>
+                  
+                  <span class="lineaSeparadora"></span>
+                  <br>
                   <div>
-                    <p>12 cuotas sin Interes</p>
+                    <a>12 cuotas sin Interes</a>
                     <i class="fab fa-cc-visa"></i>
                     <i class="fab fa-cc-mastercard"></i>
                     <i class="fab fa-cc-amex"></i>
 
                   </div>
-      
+                  <br>
+                  <br>
+                  <div>
+                    <div>
+                      <p>+ Modo de uso</p>
+                    </div>
+                    <span class="lineaSeparadora"></span>
+                    
+                    <div>
+                      <p>+ Ingredientes</p>
+                    </div>
+                    <span class="lineaSeparadora"></span>
+                  </div>
+                  <span class="lineaSeparadora"></span>
+                  
+
+                  <button class="botonCarrito">AGREGAR AL CARRITO</button>
+
                 </div>
             </div>
-
-
-
-
+      <div class="sabores"> 
+          
+            <h4>Sabores disponibles</h4>
+            <select name="Sabores" id="cajaSabores" placeholder="elegi tu sabor"> <!--como hago para poner placeholder en caja de selecion? -->
+              <option value="Frutilla">Frutilla</option>
+              <option value="Chocolate">Chocolate</option>
+              <option value= "Vainilla">Vainilla</option>
+            </select>
             </div>
+          
+
+  
+            
+            
             <div >
+             <hr class="lineaSeparadora2">
               <ul class="conteiner1" > <!--carrusel de fotos -->
              <img src = "./img/Multifruta.JPG" class= "carrusel"> </img>
              <img src = "./img/info nutri.JPG" class= "carrusel"> </img>
@@ -69,44 +102,35 @@
             
             
             
-            <div class="sabores"> 
-          
-            <h4>Sabores disponibles</h4>
-            <select name="Sabores" id="cajaSabores" placeholder="elegi tu sabor"> <!--como hago para poner placeholder en caja de selecion? -->
-              <option value="Frutilla">Frutilla</option>
-              <option value="Chocolate">Chocolate</option>
-              <option value= "Vainilla">Vainilla</option>
-            </select>
+      
           </article>
-          <div>
-            <p>+ Modo de uso</p>
-            <p>+ Ingredientes</p>
-            
-          </div>
-
+    
           
 
-          <div class="contenedorPadreProd"> <!--carro compras-->
-            <h3>Nompre de producto</h3>
-            
-            <h3>$$$$</h3>
-            <button id="carro de compras">Añadir a mis compras</button>
-            <p>12 cuotas sin Interes</p>
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-amex"></i>
-
-          </div>
-
+        
 
     </main>
 
 
-    <footer > <!--insertar footer de elio-->
-     
+    <footer>
+      <span id= footerLinks>
+          <p>Inicio</p>
+          <p>Nosotros</p>
+          <p>Contacto</p> 
+      </span>
+  
+      <img src="img/logo.png">
+  
+      <span id = footerEmail>
+          <p>Registrese para recibir las ultimas ofertas y promociones</p>
+          <input type="emailBox">
+          <br />
+          <input type="submit">
+      </span>
+  </footer> 
 
       
-    </footer>
+    
    
   </body>
 

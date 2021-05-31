@@ -1,7 +1,7 @@
 body{
     background-color:hsl(0, 0%, 100%);
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
+    /* font-family: 'Montserrat', sans-serif; */
+    /* text-align: center; */
     }
 /*HEADER*/
 header{
@@ -61,7 +61,6 @@ footer img{
     box-sizing:content-box;
     display: inline-flex;
     flex-direction: column;
-<<<<<<< HEAD
     align-items: flex-end;
     }
 .imagenProducto{
@@ -74,7 +73,3 @@ footer img{
     display:flex;
     flex-direction: row;
 
-=======
-    align-items: flex-start;
-    }
->>>>>>> 41cfd7036d465a1a4281d2bd255e967728fc8834
