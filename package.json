@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/rf300545/GrupoIIProyectoIntegrador/issues"
   },
-  "homepage": "https://github.com/rf300545/GrupoIIProyectoIntegrador#readme"
+  "homepage": "https://github.com/rf300545/GrupoIIProyectoIntegrador#readme",
+  "devDependencies": {}
 }
