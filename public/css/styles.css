@@ -9,6 +9,7 @@ header{
     flex-direction: row;
     justify-content: space-around;
     background-color: #bcd1ab;
+    
 }
 header img{
 max-width: 60px ;
@@ -61,8 +62,8 @@ footer img{
     box-sizing:content-box;
     display: inline-flex;
     flex-direction: column;
-    align-items: flex-end;
     }
+
 .imagenProducto{
     
     margin:2%;
@@ -189,6 +190,329 @@ table td:nth-child(4) {
   width: 50%;
   height: auto;
 }
+
+/*CSS de login*/
+.barra {
+  background-color: rgb(240, 238, 238);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.titleform{
+  float: right;
+  line-height: 12px; 
+  font-family: 'Montserrat', sans-serif;
+}
+#margen1 {
+  line-height: 2px;
+  margin-left: 7%;
+}
+#margen2 {
+  line-height: 2px;
+  margin-left: 7%;
+}
+
+/*.formreg {
+  float: left;
+  color: rgb(130, 130, 145);
+  background: white;
+  font-size: 13px;
+  line-height: 15px; 
+  justify-content: space-around; 
+  font-style: italic;
+  margin-left: 7%;
+  }*/
+  .sinborde {
+      border-top: red;
+      border-left: red;
+      border-right: red;
+      font-family: 'Montserrat', sans-serif;
+      font-style: italic;
+      width: 100%;
+  }
+
+  .Accept{
+      text-align: right;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      font-family: 'Montserrat', sans-serif;   
+  }
+
+  .Cuenta{
+      font-family: 'Montserrat', sans-serif, bold;
+      font-weight: bold;
+      border-radius: 17px;
+      background-color: whitesmoke; 
+  }
+
+  .contenedorForm{
+  display:flex;
+  flex-direction: column;
+  height: auto;
+  margin-left: 2%;
+  flex-grow: 0.7;
+  }
+  .contenedorLogin{
+      display:flex;
+      flex-direction: row;
+      border: 2px dotte red;
+      align-items: center;
+  }
+  #img{
+      width:60%;
+      height:auto;
+      
+  }
+  
+/*CSS de forregistro*/
+html {
+	overflow-y: scroll; 
+} 
+
+body {
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.barra {
+    background-color: rgb(240, 238, 238);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titleform{
+    float: right;
+    line-height: 12px; 
+    font-family: 'Montserrat', sans-serif;
+}
+#margen1 {
+    line-height: 2px;
+    margin-left: 7%;
+}
+#margen2 {
+    line-height: 2px;
+    margin-left: 7%;
+}
+
+.formreg {
+    float: left;
+    color: rgb(130, 130, 145);
+     background: white;
+    font-size: 13px;
+    line-height: 15px;
+     justify-content: space-around;
+    font-style: italic;
+     margin-left: 7%;
+    }
+
+    .sinborde {
+        border-top: red;
+        border-left: red;
+        border-right: red;
+        font-family: 'Montserrat', sans-serif;
+        font-style: italic;
+    }
+
+    .Accept{
+        text-align: right;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        font-family: 'Montserrat', sans-serif;   
+    }
+
+    .Cuenta{
+        font-family: 'Montserrat', sans-serif, bold;
+        font-weight: bold;
+        border-radius: 17px;
+        background-color: whitesmoke; 
+    }
+
+
+/*css de productos*/
+
+
+.imagenProducto{
+  margin:2%;
+  object-fit: contain;
+  margin-left: ;
+}
+#productoYTexto{
+  display:flex;
+  flex-direction: row;
+
+}
+.conteiner{
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 90%;
+  background-color: white;
+}
+.carrusel{
+  width:25%;
+  /* border: 2px dotted red; */
+  margin: 5px;
+  object-fit:contain;
+}
+.conteiner1{
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  margin-top:auto;
+  width:80%;
+  height:10vh;
+  position:relative;
+  box-sizing: border-box;
+}
+#conteinerTextoProducto{/*para pc*/
+  display:flex;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  margin: 5%;
+  color:grey;
+  width:90%;
+  flex-grow:2;
+}
+.conteiner2{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  margin:5%;
+  width:90%;}
+
+.sabores{
+  display:flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 90%;
+  margin-left:5%;
+}
+#cajaSabores{
+ 
+ margin-left:5%;
+ 
+ flex-grow: 4;
+}
+.linea{
+  border-bottom: 2px solid ;
+}
+#precio{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* border:2px solid black; */
+  margin-top: 10%;
+  margin-right: auto;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  width:70%;
+  flex-grow:1;
+  text-align: left;
+  height: auto;
+}
+.contenedorMaxProd{
+  display:flex;
+  flex-direction: row;
+  /* border:2px solid blue; */
+}
+
+.botonCarrito{
+  background-color: grey;
+  color:white
+}
+#nomYPrecio{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: justify;
+  font-size: 24px;
+  font-weight: bold;
+  color:grey;
+  
+}
+.lineaSeparadora{
+  border-bottom: 2px solid grey;
+
+}
+.lineaSeparadora2{
+  border-bottom: px solid grey      <div class="sabores">    <h4>Sabores disponibles</h4>   <select name="Sabores" id="cajaSabores" placeholder="elegi tu sabor"> <!--como hago para poner placeholder en caja de selecion? -->              <option value="Frutilla">Frutilla</option>              <option value="Chocolate">Chocolate</option>              <option value= "Vainilla">Vainilla</option>            </select>            </div>;
+  margin-right: 48%;
+  margin-left: 5%;
+}
+
+
+@media (min-width: 1000px){
+
+      .conteiner2{
+          display:flex;
+          flex-direction: row;
+          justify-content:center;
+          /* border: 2px dotted red; */
+          margin-top:5%;
+          margin-left:0px;
+          margin-right:0px;
+          margin-bottom: 0px;
+          width:80%;
+          block-size:50% content-box;
+          box-sizing: border-box;
+      }
+
+       #conteinerTextoProducto{/*para pc*/
+           display:flex;
+           flex-direction: column;
+           /* border: 2px dotted yellow; */
+           text-align: justify;
+           justify-content: center;
+           margin: 5%;
+           color:grey;
+           width:30%;
+           flex-grow: 2;
+          }
+      .imagenProducto{
+           margin:auto;
+           object-fit: contain;
+           height: auto;
+           width:200px;
+           box-sizing: border-box;
+           }
+      #contenedorPadreProd{
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          border:2px solid black;
+          margin-top:5%
+          }
+      
+       .contenedorMaxProd{
+           display:flex;
+           flex-direction: row;
+           /* border:2px solid blue; */
+           margin:5%;
+           margin-top: auto;
+           margin-bottom: 1%;
+          }
+       .conteiner1{
+          display:flex;
+          flex-direction: row;
+          justify-content:center;
+          margin-top:auto;
+          width:50%;
+          height:10vh;
+          position:relative;
+          box-sizing: border-box;
+          }
+      .sabores{
+          display:flex;
+          flex-direction: row;
+          justify-content: left;
+          align-items: center;
+          width: 43%;
+          margin-left:5%;
+          margin-top: auto;
+}
+
 
 
 

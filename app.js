@@ -11,9 +11,18 @@ app.get("/",(req,res)=> {
     res.sendFile(path.join(__dirname, "/views/index.html"))
 });
 
-app.get("/crearproducto",(req,res)=> {
-    res.sendFile(path.join(__dirname, "/views/createProduct.html"))
+app.get("/carro_compras",(req,res)=> {
+    res.sendFile(path.join(__dirname, "/views/carro_compras.html"))
 });
-app.get("/registrarse",(req,res)=> {
+
+app.get("/formregistro",(req,res)=> {
     res.sendFile(path.join(__dirname, "/views/formregistro.html"))
+});
+
+app.get("/login",(req,res)=> {
+    res.sendFile(path.join(__dirname, "/views/login.html"))
+});
+
+app.get("/producto",(req,res)=> {
+    res.sendFile(path.join(__dirname, "/views/producto.html"))
 });
