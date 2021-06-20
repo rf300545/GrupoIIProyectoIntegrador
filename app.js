@@ -11,3 +11,9 @@ app.get("/",(req,res)=> {
     res.sendFile(path.join(__dirname, "/views/index.html"))
 });
 
+app.get("/crearproducto",(req,res)=> {
+    res.sendFile(path.join(__dirname, "/views/createProduct.html"))
+});
+app.get("/registrarse",(req,res)=> {
+    res.sendFile(path.join(__dirname, "/views/formregistro.html"))
+});

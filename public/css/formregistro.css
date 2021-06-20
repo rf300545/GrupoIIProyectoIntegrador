@@ -55,7 +55,38 @@ body {
     .Cuenta{
         font-family: 'Montserrat', sans-serif, bold;
         font-weight: bold;
-        border-radius: 17px;
-        background-color: whitesmoke; 
+        border-radius: 12px;
+        background-color: whitesmoke;
+        padding: 7px 5px;
     }
 
+.mp-cont-formulario{
+    display:grid;
+    grid-template-columns: 30% auto;
+    margin-top: 3%;
+}
+.mp-input-formulario{
+  
+    margin-top: 3%;
+    align-items: center;
+    text-align: center;
+}
+.mp-cont-formulario-botton{
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 24px;
+}
+
+.mp-img-formulario{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 15px;
+}
+#mp-img-createProduct{
+    width: auto;
+    height: 100px;
+}
+.mp-main-createProduct{
+
+   margin: 0% 10%
+}

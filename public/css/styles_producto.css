@@ -23,9 +23,12 @@ header p:hover{text-decoration: underline}
     
 
 .imagenProducto{
-    margin:2%;
-    object-fit: contain;
-    margin-left: ;
+    
+margin:2%;
+    
+object-fit: contain;
+    
+margin-left: ;
 }
 #productoYTexto{
     display:flex;
@@ -129,7 +132,7 @@ header p:hover{text-decoration: underline}
 
 }
 .lineaSeparadora2{
-    border-bottom: px solid grey      <div class="sabores">                       <h4>Sabores disponibles</h4>            <select name="Sabores" id="cajaSabores" placeholder="elegi tu sabor"> <!--como hago para poner placeholder en caja de selecion? -->              <option value="Frutilla">Frutilla</option>              <option value="Chocolate">Chocolate</option>              <option value= "Vainilla">Vainilla</option>            </select>            </div>;
+    border-bottom: 1px solid grey;  
     margin-right: 48%;
     margin-left: 5%;
 }
