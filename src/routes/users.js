@@ -4,9 +4,9 @@ const userController = require ("../controllers/usersController")
 
 router.get("/."); 
 
-router.get("/formregistro", userController.registrarse);
+router.get("/formregistro",userController.registrarse);
 
-router.get("/login", userController.iniciarSesion);
+router.get("/login",userController.iniciarSesion);
 
 
 

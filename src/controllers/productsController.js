@@ -1,14 +1,14 @@
 const productsController = {
 
-        carro: (req, res) => {
+        ncarro: (req, res) => {
             res.render("carro_compras");
     },
 
-        createProducts: (req, res) => {
+        ncreateProducts: (req, res) => {
             res.render("createProduct");
     },
 
-        producto: (req, res) => {
+        nproducto: (req, res) => {
             res.render("producto");
     }
 }
