@@ -15,5 +15,5 @@ app.listen(3030,() => console.log("Servidor corriendo"))
 // MVC  -------------------------------------------------------------------------------------
 app.use("/products", rutasProductos);  // Si hay /producto responder con rutas de productos "se ponen el nombre de la variable"
 app.use("/users", rutasUsuario);
-//app.use("/.", rutasMain);
+app.use("/main", rutasMain);
 //-------------------------------------------------------------------------------------------
