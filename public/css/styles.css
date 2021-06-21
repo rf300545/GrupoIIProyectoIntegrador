@@ -3,23 +3,83 @@ body{
      font-family: 'Montserrat', sans-serif; 
      
     }
+  li{
+    list-style-type: none;
+  }
 /*HEADER*/
-header{
+.mp-contGral-header{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #bcd1ab;
-    
+    background-color: #ffffff;
+    border-bottom: 1px solid grey;
+    margin: -8px;
+    position:fixed;
+    width: 100%;
+}
+#mp-listItems-header{
+  border-right: 2px solid #b3b3b3;
+  padding-right: 7%;
+  font-weight: bold;
+  color: black;
+  height:10%;
+}
+#mp-listItems-header-faq{
+  padding-right: 5%;
+  font-weight: bold;
+  color: black;
+}
+.mp-contList-header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 0;
+  /* border:1px solid red; */
+  width: 41%;
+  text-align: center;
+  align-self: center;
+}
+.mp-contList-header-icons{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 0;
+  /* border:1px solid red; */
+  width: 30%;
+  text-align: center;
+  align-self: center;
+
+}
+.mp-serchbar-header{
+  align-self:center;
+  border:none;
+  background-color: #ffffff;
+}
+.mp-searchbar-header-icon{
+  color: black;
+  border:none;
+  background-color: #ffffff;
 }
 header img{
 max-width: 60px ;
 max-height: 40px;
 }
-header p:hover{text-decoration: underline}
+
 
 #Banner{
-    width: 100vw;
-
+    width: 100%;
+    margin-left: -8px;
+}
+.mp-header-icon{
+  z-index: 2;
+  size: 2x;
+}
+.mp-header-searchBar-icon{
+    color: rgb(12, 12, 12);
+    background-color: #FFF;
+    margin-right: -3px;
+    margin-left: -32px;
+    border: none;
 }
 
 /*DESTACADOS*/
@@ -266,7 +326,8 @@ table td:nth-child(4) {
   
 /*CSS de forregistro*/
 html {
-	overflow-y: scroll; 
+	overflow-y: scroll;
+	/* box-sizing: border-box; */
 } 
 
 body {
