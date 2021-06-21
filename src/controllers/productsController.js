@@ -1,5 +1,5 @@
 const productsControllers = {
-        carro_compras: (req, res) => {
+        carro: (req, res) => {
             res.render("carro_compras");
     },
 
@@ -12,5 +12,4 @@ const productsControllers = {
     }
 }
 
-
-module.exports = productosController;
+        module.exports = productsController
