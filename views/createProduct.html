@@ -8,25 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pattaya&display=swap" rel="stylesheet">
-        <link rel ="stylesheet" href= "../css/formregistro.css">
+        <link rel ="stylesheet" href= "../css/styles.css">
         <title>Document</title>
     </head>
 
     <body>
     
 
-    <header class="barra">
-      <!-- <img src="img/logo.jpg" > --> LOGO
-      <p><a href="https://example.com">Inicio</a></p> 
-      <p><a href="https://example.com">Tienda</a></p>
-      <p><a href="https://example.com">Carrito</a></p>
-      <p><a href="https://example.com">Envíos</a></p>
-      <p><a href="https://example.com">Mi cuenta</a></p>
-      <p><a href="https://example.com">Contacto</a></p>
-      <a href="https://example.com">Conocé nuestros PRODUCTOS</a>
-      <a href="https://example.com">Alcanzá tus objetivos</a>
-      <a href="https://example.com">Tokio 2020</a>
-    </header>
+
 
   <!-- CARGAR PRODUCTO -->
 
@@ -36,78 +25,84 @@
     <br>
     <br>
       <div >
-        <form action="/register" method="POST" class="mp-main-createProduct" >
-          <div class="mp-cont-formulario" >
-            <label for="Producto" >Producto</label>
-            <input type= "text" name="Producto" id="Producto" placeholder="Nombre de producto" class="mp-input-textbox-formulario" >
-          </div>
 
-          <div class="mp-cont-formulario" >
-            <label for="Marca" >Marca</label>
-            <input type= "text" name="Marca" id="Marca" placeholder="Marca del producto" class="mp-input-textbox-formulario" >
-          </div>  
-      
-          <div class="mp-cont-formulario"> 
-            <label for="Categoria" >Categoría</label>
-            <input list="Categorias" name="Categorias" id="Categoria"  class="formulario-campos" >
-            <datalist id="Categorias">
-              <option value="Quemadores de grasa">
-              <option value= "Proteinas">
-              <option value="Post entrenamiento">
-            </datalist>
-          </div>    
-          <div class="mp-cont-formulario">
-            <label for="pesoNeto">Peso Neto</label>
-            <input type="text" name="pesoNeto" id="pesoNeto" class="formulario-campos">
-          </div>
-          <div class="mp-cont-formulario">
-            <label for="Sabores">Sabores</label>
-              <div>
-                <input type="text" name="Sabores" id="sabores" class="formulario-campos">
-                <input type="button" value="Agregar Sabor" class="Cuenta">
-              </div>
-          </div>
-          <div class="mp-cont-formulario">
-              <p></p>
-              <ul> <!-- se deberian agregar en una lista los sabores que se van     agregando-->
-                <li>banana</li>
-                <li>chocolate</li>
-              </ul>
-          </div> 
+        <form action="/register" method="POST" class="mp-main-createProduct mp-cont-formulario-padre " >
+          <div>
+            <div class="mp-cont-formulario" >
+              <label  for="Producto" class="mp-label-createProduct" >Producto</label>
+              <input type= "text" name="Producto" id="Producto"  class="mp-input-createProduct" >
+            </div>
+
+            <div class="mp-cont-formulario" >
+              <label for="Marca" class="mp-label-createProduct">Marca</label>
+              <input type= "text" name="Marca" id="Marca" placeholder="Marca del producto" class="mp-input-createProduct" >
+            </div>  
+        
+            <div class="mp-cont-formulario"> 
+              <label for="Categoria" class="mp-label-createProduct" >Categoría</label>
+              <input list="Categorias" name="Categorias" id="Categoria"  class="mp-input-createProduct" >
+              <datalist id="Categorias">
+                <option value="Quemadores de grasa">
+                <option value= "Proteinas">
+                <option value="Post entrenamiento">
+              </datalist>
+            </div>    
+            <div class="mp-cont-formulario">
+              <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
+              <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
+            </div>
+            <div class="mp-cont-formulario">
+              <label for="Sabores" class="mp-label-createProduct">Sabores</label>
+                <div>
+                  <input type="text" name="Sabores" id="sabores" class="mp-input-createProduct">
+                  <input type="button" value="Agregar Sabor" class="mp-button-createProduct">
+                </div>
+            </div>
+            <div class="mp-cont-formulario">
+                <p></p>
+                <ul> <!-- se deberian agregar en una lista los sabores que se van     agregando-->
+                  <li>banana</li>
+                  <li>chocolate</li>
+                </ul>
+            </div> 
+              
             
           
-        
-          <div class="mp-cont-formulario">
-              <label for="pesoNeto">Peso Neto</label>
-              <input type="text" name="pesoNeto" id="pesoNeto" class="formulario-campos">
-          </div>
-          <div class="mp-cont-formulario">
-              <label for="tipoDeEnvase">Tipo de Envase</label>
-              <input type="text" name="tipoDeEnvase" id="tipoDeEnvase" class="formulario-campos">
-          </div>
-          <div class="mp-cont-formulario">
-            <label for="modoDeUso">Modo de uso</label>
-            <textarea id="modoDeUso" rows="10" cols="10"></textarea>
-          </div>
             <div class="mp-cont-formulario">
-              <label for="ingredientes">Ingredientes</label>
-              <textarea id="ingredientes" rows="10" cols="10"></textarea>
-          </div>
-          <div class="mp-cont-formulario" >
-            <label id="formulario-texto">Imagenes</label>
-            <input type="file" name="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta">
-          </div>
-          <div class="mp-cont-formulario">
-            <p></p>
-            <div class="mp-img-formulario">
-              <img src="img/Multifruta.JPG" id="mp-img-createProduct"></img>
-              <img src="img/nitro_whey.jpg" id="mp-img-createProduct">
-              <img src="img/pump.jpg" id="mp-img-createProduct">
+                <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
+                <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
+            </div>
+          
+            <div class="mp-cont-formulario">
+                <label for="tipoDeEnvase" class="mp-label-createProduct">Tipo de Envase</label>
+                <input type="text" name="tipoDeEnvase" id="tipoDeEnvase" class="mp-input-createProduct">
+            </div>
+            <div class="mp-cont-formulario">
+              <label for="modoDeUso" class="mp-label-createProduct">Modo de uso</label>
+              <textarea id="modoDeUso" rows="10" cols="10" class="mp-textarea-createProduct"></textarea>
             </div>
           </div>
-          <div class="mp-cont-formulario-botton">
-            <input type="submit" value= "AGREGAR PRODUCTO" class="Cuenta">
-            <input type="reset" value= "BORRAR" class="Cuenta"> 
+          <div>
+              <div class="mp-cont-formulario">
+                <label for="ingredientes" class="mp-label-createProduct">Ingredientes</label>
+                <textarea id="ingredientes" rows="10" cols="10" class="mp-textarea-createProduct" ></textarea>
+            </div>
+            <div class="mp-cont-formulario" >
+              <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
+              <input type="file" name="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta">
+            </div>
+            <div class="mp-cont-formulario">
+              <p></p>
+              <div class="mp-img-formulario">
+                <img src="img/Multifruta.JPG" id="mp-img-createProduct"></img>
+                <img src="img/nitro_whey.jpg" id="mp-img-createProduct">
+                <img src="img/pump.jpg" id="mp-img-createProduct">
+              </div>
+            </div>
+            <div class="mp-cont-formulario-botton">
+              <input type="submit" value= "AGREGAR PRODUCTO" class="Cuenta">
+              <input type="reset" value= "BORRAR" class="Cuenta"> 
+            </div>
           </div>
         </form>
      </div>
