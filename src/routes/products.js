@@ -6,9 +6,9 @@ router.get("/.");
 
 router.get("/carro_compras", productsController.carro);
 
-// router.get("/producto", productsController.
+router.get("/producto", productsController.producto);
 
-// router.get("/createProducts", productsController.
+router.get("/createProducts", productsController.createProducts);
 
 
 module.exports = router;
