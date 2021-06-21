@@ -5,27 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pattaya&display=swap" rel="stylesheet">
     <link rel ="stylesheet" href= "../css/styles.css">
     <title>MFE SUPLEMENTOS</title>
 </head>
 
 <body>
-    <header id = Barra>
+    <header class="mp-contGral-header">
        <img src="img/logo.png"> 
-       <p> <a href="/">Inicio</a></p> 
-       <p>Tienda</p>
-       <p>Envíos</p>
-       <p><a href="/carro_compras">Carrito</a></p>
-       <p><a href="/login">Mi Cuenta</a></p>
-       <p>Contacto</p>
+    <div class="mp-contList-header" >
+       
+       
+            <p id="mp-listItems-header"><a href="/">INICIO</a></p>
+            <p id="mp-listItems-header">PRODUCTOS</p>
+            <p id="mp-listItems-header">TEAM</p>
+            <p id="mp-listItems-header-faq">FAQ</p>
+        
+    </div>
+    <div class="mp-contList-header-icons">
+        
+            <p id="mp-listItems-header"><a href="/carro_compras"></li><i class="fas fa-shopping-cart"></i></p>
+            <p id="mp-listItems-header"><a href="/login" ></a><i class="far fa-user"></i></p>
+            
+                <form action="/busqueda" method="POST" class="mp-serchbar-header">
+                    <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
+                    <input placeholder="Buscar" class="mp-serchbar-header" ></input>
+                 
+                </form>
+
+        
+    </div>  
+      
+    
+
     </header>
-    <br />
-    <br /> 
-    <br />
-    <br />
+  
     <main>
-        <img id= Banner src="img/banner.jpg">
+        <img id= Banner src="img/abf_banner.jpg">
         <br />
         <br />
         <h2 id = Titulo>SUPLEMENTOS MAS VENDIDOS</h2>
