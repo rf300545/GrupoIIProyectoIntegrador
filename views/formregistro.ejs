@@ -2,32 +2,10 @@
 
 <html>
 
-     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pattaya&display=swap" rel="stylesheet">
-        <link rel ="stylesheet" href= "../css/styles.css">
-        <link rel ="stylesheet" href= "../css/styles.css">
-        <title>Document</title>
-    </head>
+  <%-include("partials/head.ejs") %>
+  <body>
+    <%-include("partials/header.ejs") %>
 
-    <body>
-    </body>
-
-    <header class="barra">
-      <!-- <img src="img/logo.jpg" > --> LOGO
-      <p><a href="https://example.com">Inicio</a></p> 
-      <p><a href="https://example.com">Tienda</a></p>
-      <p><a href="https://example.com">Carrito</a></p>
-      <p><a href="https://example.com">Envíos</a></p>
-      <p><a href="https://example.com">Mi cuenta</a></p>
-      <p><a href="https://example.com">Contacto</a></p>
-      <a href="https://example.com">Conocé nuestros PRODUCTOS</a>
-      <a href="https://example.com">Alcanzá tus objetivos</a>
-      <a href="https://example.com">Tokio 2020</a>
-    </header>
 
   <!-- FORMULARIO DE REGISTRO -->
 <br>
@@ -36,7 +14,7 @@
 <br>
 
 
-
+<main>
   <form action="" class="formcenter" method="POST">
 
   <p class="titleform">
@@ -80,8 +58,11 @@
       <!-- <input type="reset" value="REINICAR"> -->
   </p>
     </form>
+  </main>
 
- 
+  <%-include("partials/footer.ejs") %>
+
+    
 
   </body>
 

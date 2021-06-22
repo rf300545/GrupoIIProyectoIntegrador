@@ -1,32 +1,14 @@
 <!DOCTYPE html>
 <!--Las propiedades del CSS de carro compras figuran como "CCnombre"  Ej CCtable-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <title>Nombre Sitio</title>
-      <link rel ="stylesheet" href= "../css/styles.css">
-      <!--<link rel="stylesheet" href="/css/carro_compras.css">-->
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    </head>
+  <%-include("partials/head.ejs") %>
 
   <body>
-    <header class="barra">
-      <img src="/img/logo.png"> 
-      <a href="https://example.com">Inicio</a>
-      <a href="https://example.com">Tienda</a>
-      <a href="https://example.com">Carrito</a>
-      <a href="https://example.com">Envíos</a>
-      <a href="https://example.com">Mi cuenta</a>
-      <a href="https://example.com">Contacto</a>
-      <a href="https://example.com">Conocé nuestros PRODUCTOS</a>
-      <a href="https://example.com">Alcanzá tus objetivos</a>
-      <a href="https://example.com">Tokio 2020</a>
-    </header>
+      <%-include("partials/header.ejs") %>
+    
    
+
+ 
    <br>
    <br>
    <br>
@@ -112,11 +94,11 @@
     </main>
 
 
-    <footer > <!--insertar footer de elio-->
-     
+     <!--insertar footer de elio-->
+      <%-include("partials/footer.ejs") %>
 
       
-    </footer>
+    
    
   </body>
 
