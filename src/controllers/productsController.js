@@ -1,3 +1,14 @@
+const fs = require('fs');
+//const { reset } = require('nodemon');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+
+
+
 const productsController = {
 
         ncarro: (req, res) => {
@@ -16,9 +27,9 @@ const productsController = {
         idUnProducto: (req, res) => {
             //res.render("producto")
             let idProducto = req.params.id;
-            for(let i=0;i<productsController.length;i++){
-                if (producto[i].id==producto){
-                    var productoEncontrado = producto[i]
+            for(let i=0;i<products.length;i++){
+                if (products[i].id==idProducto){
+                    var productoEncontrado = products[i]
                 }
             }
             res.render("producto", {detalleProducto: productoEncontrado});
