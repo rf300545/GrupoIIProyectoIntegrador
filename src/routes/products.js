@@ -10,5 +10,8 @@ router.get("/producto", productsController.nproducto);
 
 router.get("/createProducts", productsController.ncreateProducts);
 
+/*** VER DETALLE DE UN PRODUCTO ***/ 
+router.get("/producto/:id", productsController.idUnProducto); 
+
 
 module.exports = router;
