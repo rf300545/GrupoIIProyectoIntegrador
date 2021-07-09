@@ -5,10 +5,6 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-
-
-
-
 const productsController = {
 
         ncarro: (req, res) => {
@@ -42,7 +38,7 @@ const productsController = {
                     var productoEncontrado = products[i];
                 }
             }     
-            res.render('editProduct',{products: productoEncontrado});
+            res.render('editProduct',{productoEdit: products});
         },
         // MACHETEE
         // detail: (req, res) => {
