@@ -46,7 +46,7 @@ const productsController = {
         },
         // MACHETEE
         // detail: (req, res) => {
-        //     let idProducto = req.params.id;
+        //     let idProducto = req.params.id;g
         //     for(let i=0;i<products.length;i++){
         //         if (products[i].id==idProducto){
         //             var productoEncontrado = products[i];
