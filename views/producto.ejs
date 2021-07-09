@@ -12,17 +12,17 @@
          
           <article >
             <div class="contenedorMaxProd">
-              <div class="conteiner2 " ><img src = "/img/pump.JPG" class= "imagenProducto" > </img>
+              <div class="conteiner2 " ><img src = "/img/products/<%=detalleProducto.imagen%>" class= "imagenProducto" > </img>
                 <div id="conteinerTextoProducto">
-                  <h3>Nombre producto</h3>
-                  <p>Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?</p>
+                  <h3><%=detalleProducto.nombre %> </h3>
+                  <p><%=detalleProducto.descripcion %> </p>
                 </div>
                 </div>
 
                 <div id="precio"> <!--carro compras-->
                   <div id="nomYPrecio">
-                    <a>Nompre de producto<a>
-                    <a >$$$$</a>
+                    <a><%=detalleProducto.nombre %><a>
+                    <a ><%=detalleProducto.precio %>  </a>
                   
                   </div>
                   
@@ -39,12 +39,12 @@
                   <br>
                   <div>
                     <div>
-                      <p>+ Modo de uso</p>
+                      <p>+ Modo de uso</p> <!--falta agregar textarea para modo de uso--> 
                     </div>
                     <span class="lineaSeparadora"></span>
                     
                     <div>
-                      <p>+ Ingredientes</p>
+                      <p>+ Ingredientes</p> <!--falta agregar textarea para ingredientesg--> 
                     </div>
                     <span class="lineaSeparadora"></span>
                   </div>
