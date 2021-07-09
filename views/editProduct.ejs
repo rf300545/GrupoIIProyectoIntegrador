@@ -11,21 +11,21 @@
   <!-- CARGAR PRODUCTO -->
 
   <main>
-  
+    
     <br>
     <br>
     <br>
       <div >
-
+        <h3>Editando el producto <%=productoEdit[1].nombre %></h3> <!--prueba, cambiar por i-->
         <form action="/register" method="POST" class="mp-main-createProduct mp-cont-formulario-padre " >
           <div>
             <div class="mp-cont-formulario" >
               <label  for="Producto" class="mp-label-createProduct" >Producto</label>
               <input type= "text" name="Producto" id="Producto"  class="mp-input-createProduct" >
             </div>
-
+            
             <div class="mp-cont-formulario" >
-              <label for="Marca" class="mp-label-createProduct">Marca</label>
+              <label for="Marca" class="mp-label-createProduct">Marca </label>
               <input type= "text" name="Marca" id="Marca" placeholder="Marca del producto" class="mp-input-createProduct" >
             </div>  
         
@@ -53,15 +53,15 @@
                 <p></p>
                 <ul> <!-- se deberian agregar en una lista los sabores que se van     agregando-->
                   <li>banana</li>
-                  <li>chocolate</li>
+                  <li>chocolate</li>     
                 </ul>
             </div> 
               
             
           
             <div class="mp-cont-formulario">
-                <label for="precio" class="mp-label-createProduct">Precio</label>
-                <input type="text" name="precio" id="pesoNeto" class="mp-input-createProduct">
+                <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
+                <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
             </div>
           
             <div class="mp-cont-formulario">
@@ -98,6 +98,11 @@
         </form>
      </div>
 
+ 
      <%-include("partials/footer.ejs") %>
+       
+
+
+
 </body>
  </html>
