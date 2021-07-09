@@ -1,6 +1,6 @@
 const mainController = {
 
-    nindex: (req, res) => {
+    index: (req, res) => {
         res.render("index");
 },
 }

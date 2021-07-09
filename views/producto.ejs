@@ -2,27 +2,30 @@
 
 <html>
 
-  <%-include("partials/head.ejs") %>
+  <%-include("partials/head") %>
     <body>
-      <%-include("partials/header.ejs") %>
+      <%-include("partials/header") %>
 
 
     <main>     
          <section> 
          
           <article >
+            <% for(let producto of productos) { %> 
             <div class="contenedorMaxProd">
-              <div class="conteiner2 " ><img src = "/img/products/<%=detalleProducto.imagen%>" class= "imagenProducto" > </img>
+              <div class="conteiner2 " >
+                <img src ="/public/img/products/<%=producto.imagen%>" class= "imagenProducto" > </img>
                 <div id="conteinerTextoProducto">
-                  <h3><%=detalleProducto.nombre %> </h3>
-                  <p><%=detalleProducto.descripcion %> </p>
+
+                  <h3><%=producto.nombre %> </h3>
+                  <p><%=producto.descripcion %> </p>
                 </div>
                 </div>
 
                 <div id="precio"> <!--carro compras-->
                   <div id="nomYPrecio">
-                    <a><%=detalleProducto.nombre %><a>
-                    <a ><%=detalleProducto.precio %>  </a>
+                    <a><%=producto.nombre %><a>
+                    <a ><%=producto.precio %>$</a>
                   
                   </div>
                   
@@ -55,6 +58,7 @@
 
                 </div>
             </div>
+            <% } %>
       <div class="sabores"> 
           
             <h4>Sabores disponibles</h4>
@@ -72,9 +76,9 @@
             <div >
              <hr class="lineaSeparadora2">
               <ul class="conteiner1" > <!--carrusel de fotos -->
-             <img src = "/img/Multifruta.JPG" class= "carrusel"> </img>
-             <img src = "/img/info nutri.JPG" class= "carrusel"> </img>
-             <img src = "/img/pump.JPG" class="carrusel"> </img>
+             <img src = "../public/img/products/nitro_whey.jpg" class= "carrusel"> </img>
+             <img src = "../public/img/products/creatine_monohydrate.jpg" class= "carrusel"> </img>
+             <img src = "../public/img/products/pump.JPG" class="carrusel"> </img>
               </ul>
             </div>         
             

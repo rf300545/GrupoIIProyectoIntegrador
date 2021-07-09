@@ -17,3 +17,9 @@ app.use("/products", rutasProductos);  // Si hay /producto responder con rutas d
 app.use("/users", rutasUsuario);
 app.use("/", rutasMain);
 //-------------------------------------------------------------------------------------------
+
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
