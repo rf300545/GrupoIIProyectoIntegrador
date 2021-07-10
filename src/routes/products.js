@@ -17,5 +17,7 @@ router.get("/createProduct", productsController.createProducts);
 //VER DETALLE DE UN PRODUCTO
 router.get("/producto/:id", productsController.idUnProducto); 
 
+//Editar Producto
+router.get("/editProduct", productsController.editProduct);
 
 module.exports = router;
