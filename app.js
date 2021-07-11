@@ -10,7 +10,11 @@ const path =require ("path")
 
 app.use(express.static((__dirname + '/public'))); //Para ver HTML desde aca
 app.set("view engine", "ejs")
-app.listen(3000,() => console.log("Servidor corriendo en port 3000"))
+
+//app.listen(3000,() => console.log("Servidor corriendo en port 3000"))
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("ok")})
 
 // MVC  -------------------------------------------------------------------------------------
 app.use("/products", rutasProductos);  // Si hay /producto responder con rutas de productos "se ponen el nombre de la variable"

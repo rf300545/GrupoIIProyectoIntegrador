@@ -16,7 +16,7 @@
       <h2>Estás editando el producto <%=productoEdit.nombre%></h2>
       <div >
         <br>
-        <form action="/products/createProduct" method="POST" class="mp-main-createProduct mp-cont-formulario-padre " >
+        <form action="/products/editProduct/<%=productoEdit.id%>?_method=PUT" method="POST" class="mp-main-createProduct mp-cont-formulario-padre " >
           <div>
             <div class="mp-cont-formulario" >
               <label  for="Producto" class="mp-label-createProduct">Producto</label>
@@ -88,9 +88,8 @@
               </div>
             </div>
             <div class="mp-cont-formulario-botton">
-              <input type="submit" value= "AGREGAR PRODUCTO" class="Cuenta">
-              <input type="reset" value= "BORRAR" class="Cuenta"> 
-            </div>
+              <button type="submit" class="Cuenta">GUARDAR CAMBIOS</button>
+              <button type="reset"  class="Cuenta">BORRAR</button>
           </div>
         </form>
      </div>

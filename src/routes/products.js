@@ -17,5 +17,9 @@ router.get("/:id", productsController.unProducto);
 
 //Editar Producto
 router.get("/editProduct/:id", productsController.editProduct);
+router.put("/editProduct/:id", productsController.actualizar); 
+
+//Borrar 
+router.delete('/:id', productsController.borrar); 
 
 module.exports = router;

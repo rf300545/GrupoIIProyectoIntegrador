@@ -46,7 +46,42 @@ const productsController = {
                 }
             }     
             res.render('editProduct',{productoEdit: productoEncontrado});
-        },
-       
+    },
+
+       actualizar: (req,res)=>{
+        let valoresNuevos = req.body;
+		let idProducto = req.params.id;	
+		for(let i=0;i<products.length;i++){
+			if (products[i].id==idProducto){
+				products[i].nombre = valoresNuevos.nombre;
+				products[i].marca = valoresNuevos.marca;
+				products[i].categoria = valoresNuevos.categoria;
+				products[i].pesoNeto = valoresNuevos.pesoNeto;
+				products[i].sabores = valoresNuevos.sabores;
+                products[i].tipoDeEnvase = valoresNuevos.tipoDeEnvase;
+                products[i].modoDeUso = valoresNuevos.modoDeUso;
+                products[i].ingredientes = valoresNuevos.ingredientes;
+                products[i].precio = valoresNuevos.precio;
+				var productoEncontrado = products[i];
+				break;
+			}
+		}
+		fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+		res.render("unProducto",{productoEdit: productoEncontrado})
+       },
+//No esta listo !!
+       borrar: (req,res)=>{
+        let idProducto = req.params.id;	
+		for(let i=0;i<products.length;i++){
+			if (products[i].id==idProducto){
+				var nombreImagen=products[i].image;
+				products.splice(i,1);
+				break;
+			}
+		}
+	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+		fs.unlinkSync(path.join(__dirname,'../../public/images/products/'+nombreImagen));
+		res.render('index',{productos: products});
+       }
 } 
 module.exports = productsController
