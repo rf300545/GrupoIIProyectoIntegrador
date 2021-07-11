@@ -13,21 +13,19 @@ const productsController = {
         createProducts: (req, res) => {
             res.render("createProduct");
     },
-
-        producto: (req, res) => {                                    //Ya esta ok!
+        //Main de productos - OK
+        producto: (req, res) => {                                    
             res.render ("producto", {productos: products});
     },
-
-    //VER DETALLE DE UN PRODUCTO
-        idUnProducto: (req, res) => {
-            let idProducto = req.params.id;
+        unProducto: (req,res) =>{
+            let idP = req.params.id;
             for(let i=0;i<products.length;i++){
-                if (products[i].id==idProducto){
-                    var productoEncontrado = products[i];
+                if (products[i].id == idP){
+                    var productoSeleccionado = products[i];
                 }
             }
-            res.render("producto", {detalleProducto: productoEncontrado});
-        },
+            res.render("unProducto",{productoUnico : productoSeleccionado});
+    },
 
         editProduct: (req, res) => {
             let idProducto = req.params.id;	
@@ -39,8 +37,5 @@ const productsController = {
             res.render('editProduct',{productoEdit: products});
         },
        
-}
-
-    
-
+} 
 module.exports = productsController

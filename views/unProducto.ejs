@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+  <%-include("partials/head.ejs") %>
+    <body>
+      <%-include("partials/header.ejs") %>
+      
+    <main>     
+      
+         <section>  
+          
+          <article >
+          
+            <div class="contenedorMaxProd">
+              <div class="conteiner2" >
+                <img src ="/img/products/<%=productoUnico.imagen %>" class= "imagenProducto"> </img>
+                <div id="conteinerTextoProducto">
+                  <h3><%=productoUnico.nombre%></h3>
+                  <p><%=productoUnico.descripcion %> </p>
+                </div>
+              </div>
+
+              <div id="precio"> <!--carro compras-->
+                <div id="nomYPrecio">
+                  <a><%=productoUnico.nombre %><a>
+                  <a ><%=productoUnico.precio %>$</a>
+                </div>
+                  
+                <span class="lineaSeparadora"></span>
+                <br>
+              <div>
+                <a>12 cuotas sin Interes</a>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+              </div>
+              <br>
+              <br>
+              <div>
+                  <div>
+                    <p>+ Modo de uso</p> <!--falta agregar textarea para modo de uso--> 
+                  </div>
+                  <span class="lineaSeparadora"></span>
+                  <div>
+                    <p>+ Ingredientes</p> <!--falta agregar textarea para ingredientesg--> 
+                  </div>
+                  <span class="lineaSeparadora"></span>
+              </div>
+                  <span class="lineaSeparadora"></span>
+                  <button class="botonCarrito">AGREGAR AL CARRITO</button>
+                  <a href="/products/editProduct" class="action-button edit">EDITAR PRODUCTO</a>
+              </div>
+            </div>
+            
+            <div class="sabores"> 
+           
+            </div>
+            
+                  
+          </article>    
+    </main>
+    <%-include("partials/footer.ejs") %>
+  </body>
+</html>
