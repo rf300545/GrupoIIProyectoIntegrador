@@ -9,14 +9,24 @@ const productsController = {
         carro: (req, res) => {
             res.render("carro_compras");
     },
-
-        createProducts: (req, res) => {
+        // Crear Producto -----
+        createProduct: (req, res) => {
             res.render("createProduct");
+    },
+    //todavia no captura los datos del form, pero si genera el ID en la DB
+        store: (req,res) =>{
+            let productoNuevo = req.body;
+            let idNuevo = products[products.length-1].id + 1;
+            let nuevoObjeto = Object.assign({id: idNuevo},req.body,);
+            products.push(nuevoObjeto);
+            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+            res.redirect("/");
     },
         //Main de productos - OK
         producto: (req, res) => {                                    
             res.render ("producto", {productos: products});
     },
+        //Ver un producto - OK
         unProducto: (req,res) =>{
             let idP = req.params.id;
             for(let i=0;i<products.length;i++){
