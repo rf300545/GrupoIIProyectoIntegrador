@@ -14,7 +14,7 @@ const productsController = {
             res.render("createProduct");
     },
 
-        producto: (req, res) => {
+        producto: (req, res) => {                                    //Ya esta ok!
             res.render ("producto", {productos: products});
     },
 
@@ -38,16 +38,7 @@ const productsController = {
             }     
             res.render('editProduct',{productoEdit: products});
         },
-        // MACHETEE
-        // detail: (req, res) => {
-        //     let idProducto = req.params.id;g
-        //     for(let i=0;i<products.length;i++){
-        //         if (products[i].id==idProducto){
-        //             var productoEncontrado = products[i];
-        //         }
-        //     }
-        //     res.render('detail',{productoEnDetalle: productoEncontrado});
-        // },
+       
 }
 
     
