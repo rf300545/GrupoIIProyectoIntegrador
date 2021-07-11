@@ -6,10 +6,11 @@ const productsFilePath = path.join(__dirname, '../database/productDataBase.json'
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
+    //se muestra, pero falta que sea dinamico
         carro: (req, res) => {
             res.render("carro_compras");
     },
-        // Crear Producto -----
+    // Crear Producto - Ok
         createProduct: (req, res) => {
             res.render("createProduct");
     },
@@ -22,11 +23,11 @@ const productsController = {
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
             res.redirect("/");
     },
-        //Main de productos - OK
+    //Main de productos - OK
         producto: (req, res) => {                                    
             res.render ("producto", {productos: products});
     },
-        //Ver un producto - OK
+    //Ver un producto - OK
         unProducto: (req,res) =>{
             let idP = req.params.id;
             for(let i=0;i<products.length;i++){
@@ -44,7 +45,7 @@ const productsController = {
                     var productoEncontrado = products[i];
                 }
             }     
-            res.render('editProduct',{productoEdit: products});
+            res.render('editProduct',{productoEdit: productoEncontrado});
         },
        
 } 

@@ -11,7 +11,6 @@
          <section>  
           
           <article >
-          
             <div class="contenedorMaxProd">
               <div class="conteiner2" >
                 <img src ="/img/products/<%=productoUnico.imagen %>" class= "imagenProducto"> </img>
@@ -49,15 +48,11 @@
               </div>
                   <span class="lineaSeparadora"></span>
                   <button class="botonCarrito">AGREGAR AL CARRITO</button>
-                  <a href="/products/editProduct" class="action-button edit">EDITAR PRODUCTO</a>
+                  <a href="/products/editProduct/<%=productoUnico.id%>" class="action-button edit">EDITAR PRODUCTO</a>
               </div>
             </div>
-            
-            <div class="sabores"> 
-           
-            </div>
-            
-                  
+            <div class="sabores">           
+            </div>    
           </article>    
     </main>
     <%-include("partials/footer.ejs") %>
