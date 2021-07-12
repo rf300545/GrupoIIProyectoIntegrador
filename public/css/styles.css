@@ -1,10 +1,17 @@
 body{
     background-color:hsl(0, 0%, 100%);
      font-family: 'Montserrat', sans-serif; 
-     
+   
     }
   li{
     list-style-type: none;
+  }
+  a{
+    text-decoration: none ;
+  }
+  a:visited{
+    text-decoration:none;
+    color:inherit
   }
 /*HEADER*/
 .mp-contGral-header{
@@ -60,15 +67,13 @@ body{
   border:none;
   background-color: #ffffff;
 }
-header img{
-max-width: 60px ;
-max-height: 40px;
-}
+header img{max-width: 60px;max-height: 40px;align-self: center;}
 
 
 #Banner{
-    width: 100%;
+    width: 102%;
     margin-left: -8px;
+    /* margin-right: -2px; */
 }
 .mp-header-icon{
   z-index: 2;
@@ -81,7 +86,9 @@ max-height: 40px;
     margin-left: -32px;
     border: none;
 }
-
+#mp-main-banner{
+  margin-right:1%
+}
 /*DESTACADOS*/
 section{
     display:flex;
@@ -99,17 +106,40 @@ section{
 }
 
 /*FOOTER*/
-footer{
-    display: flex;
-    flex-direction: row;
-    background-color: #bcd1ab;
-    justify-content: space-around;
+.footer{
+    display: grid;
+    grid-template-columns: 24% auto auto 36%;
+    /* display: flex; */
+    /* flex-direction: row; */
+    background-color: #2e2f31;
+    /* justify-content: space-around; */
+    color:white;
+    padding: 16px;
 }
-footer img{
-    max-height: 120px;
+.footer img{
+    max-height: 104px;
     max-width: 160px;
     box-sizing: content-box;
+    align-self: center;
+    justify-self: center;
 }
+.mp-cont-redes{
+  display: grid;
+  /* grid-template-columns:  auto auto auto; */
+  margin-top: 4%;
+  text-align:   center;
+  /* margin: auto; */
+  line-height: 0px;
+}
+#mp-icon-size{
+  font-size: 23px;
+  align-self: center;
+}
+.mp-footer-division{
+  border-left:1px solid white;
+  border-right: 1px solid white;
+}
+
 #footerLinks{  
     text-align:center;
     box-sizing:content-box;
@@ -118,10 +148,14 @@ footer img{
     justify-content: flex-start;   
 }
 #footerEmail{
-    text-align:center;   
+    text-align:center;
     box-sizing:content-box;
     display: inline-flex;
     flex-direction: column;
+    margin-right: 4%;
+    margin-bottom: 4%;
+    margin-left: 4%;
+    align-self: center;
     }
 
 .imagenProducto{
