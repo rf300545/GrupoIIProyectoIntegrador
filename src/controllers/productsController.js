@@ -16,12 +16,12 @@ const productsController = {
     },
     //todavia no captura los datos del form, pero si genera el ID en la DB
         store: (req,res) =>{
-            let productoNuevo = req.body;
+            //let productoNuevo = req.body;
             let idNuevo = products[products.length-1].id + 1;
-            let nuevoObjeto = Object.assign({id: idNuevo},req.body,);
+            let nuevoObjeto = Object.assign({id: idNuevo},req.body);;
             products.push(nuevoObjeto);
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-            res.redirect("/");
+            res.redirect("/products");
     },
     //Main de productos - OK
         producto: (req, res) => {                                    
