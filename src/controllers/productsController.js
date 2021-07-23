@@ -80,7 +80,7 @@ const productsController = {
 			}
 		}
 	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		fs.unlinkSync(path.join(__dirname,'../../public/images/products/'+nombreImagen));
+		fs.unlinkSync(path.join(__dirname,'../../public/img/products/'+nombreImagen));
 		res.render('index',{productos: products});
        }
 } 

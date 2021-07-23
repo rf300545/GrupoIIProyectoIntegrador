@@ -4,7 +4,7 @@ const usersController = {
     },
 
     registrarse: (req, res) => {
-        res.render("formregistro");
+        res.render("register");
     }
 }
     module.exports = usersController
