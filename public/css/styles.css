@@ -657,9 +657,9 @@ body {
            display:flex;
            flex-direction: row;
            /* border:2px solid blue; */
-           margin:5%;
-           margin-top: 10%;
-           margin-bottom: 8%;
+           /* margin: 7%; */
+           margin-top: 2%;
+           margin-bottom: -3%;
           }
        .conteiner1{
           display:flex;

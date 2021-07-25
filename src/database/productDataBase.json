@@ -40,5 +40,33 @@
   "imagen": "creatine_monohydrate.jpg",
   "precio": 2500,
   "descripcion": "Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
+ },
+ {
+  "id": 4,
+  "nombre": "Mutan Mass",
+  "marca": "Star Nutrition",
+  "categoria": "Pre Entreno",
+  "pesoNeto": "1530gr",
+  "sabores": "Chocolate",
+  "tipoDeEnvase": "Frasco",
+  "modoDeUso": " Mezclar 2 medidas colmadas en 400cm3 de agua o leche descremada.Consumir 1 o 2 porciones diarias según tus necesidades calóricas.",
+  "ingredientes": "Complejo de carbohidratos multi-stage (maltodextrina, dextrosa, almidón de maíz ceroso), complejo proteico (ultra concentrado, aislado e hidrolizado de proteínas de suero lácteo), Permeado de Suero, Polidextrosa, EMU: PREMEZCLA PARA BATIDOS, ARO: sabor *según corresponda, Goma Guar, Cloruro de Sodio, Colorante *según corresponda, EDU: Potasio Acesulfamo (11mg/100cm3), Vitamina C (Ácido Ascórbico), EDU: Sucralosa (4,5mg/100cm3), Niacina, Vitamina E (Tocoferol Acetato), Vitamina B6 (Piridoxina), Vitamina A, Vitamina D (Colecalsiferol), Vitamina B12 (Cianocobalamina) Y Biotina. *Los sabores chocolate suizo y cookies and cream tienen cacao. CONTIENE DERIVADOS DE LECHE Y SOJA",
+  "imagen": "mutant_mass.jpg",
+  "precio": 2500,
+  "descripcion": "Suplemento dietario en polvo dietético para preparar bebida a base de carbohidratos, proteínas de suero y vitaminas."
+ },
+ {
+  "id": 5,
+  "nombre": "TNT",
+  "marca": "Star Nutrition",
+  "categoria": "Pre-entrenamiento",
+  "pesoNeto": "240 gr",
+  "sabores": "Blue Razz",
+  "precio": "1500",
+  "tipoDeEnvase": "frasco",
+  "modoDeUso": "Diluir 1 medida colmada (8g) en 500cm3 de agua fría una vez al día.\r\nConsumir 15 a 30 minutos antes del entrenamiento o la competencia.\r\nNo consumir más de 2 porciones diarias.",
+  "ingredientes": "",
+  "imagen": "tnt.jpg",
+  "descripcion": "Polvo para preparar bebida analcohólica dietética con cafeína y taurina suplementada con vitaminas."
  }
 ]

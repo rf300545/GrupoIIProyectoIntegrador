@@ -21,18 +21,18 @@
   </p>
 
     <p class="formreg">
-      <label for="nombre"> </label>
-      <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="nombre" id:="nombre">
+      <label for="first_name"> </label>
+      <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="first_name" id:="first_name">
       <br/> <br/>
-      <label for="apellido"> </label>
-      <input type="text" class= "sinborde" placeholder="*Apellido" value= "" maxlength="30" name="apellido" id="apellido">
+      <label for="last_name"> </label>
+      <input type="text" class= "sinborde" placeholder="*Apellido" value= "" maxlength="30" name="last_name" id="last_name">
       <br/> <br/>
 
       <label for="text"> Sexo: </label>
       <label for="varon"> Masculino </label>
-      <input type="checkbox" name="sexo" id="varon" value="Varón">
+      <input type="checkbox" name="gender" id="varon" value="Varón">
       <label for="mujer"> Femenino </label>
-      <input type="checkbox" name="sexo" id="mujer" value="Mujer">
+      <input type="checkbox" name="gender" id="mujer" value="Mujer">
 
       <br/> <br/>
       <label for="email"> </label>
@@ -53,10 +53,16 @@
       <br> <br/>
       <br/> <br/>     
       </p>
+      <button type="submit" class="Cuenta"  style="width:250px; height:40px">Crear Cuenta</button>
+      
   </form>
-  <input href= "/users/register" type="button" class="Cuenta" value="CREAR CUENTA" style="width:250px; height:40px">
+  
 </main>
-  <%-include("partials/footer.ejs") %>
+<%-include("partials/footer.ejs") %>
+
+
+
+ 
   </body>
   </html>
 
