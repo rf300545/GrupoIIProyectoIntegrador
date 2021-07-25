@@ -1,12 +1,11 @@
 [
  {
   "id": 1,
-  "first_name": "",
-  "last_name": "",
-  "gender": "",
+  "nombre": "",
+  "apellido": "",
+  "sexo": "",
   "email": "",
-  "password": "",
-  "avatar": ""
+  "contraseña": ""
  },
  {
   "id": 2,
@@ -20,36 +19,6 @@
  },
  {
   "id": 3,
-  "first_name": "",
-  "last_name": "",
-  "email": "",
-  "contraseña": [
-   "",
-   ""
-  ]
- },
- {
-  "id": 4,
-  "first_name": "",
-  "last_name": "",
-  "email": "",
-  "contraseña": [
-   "",
-   ""
-  ]
- },
- {
-  "id": 5,
-  "first_name": "",
-  "last_name": "",
-  "email": "",
-  "contraseña": [
-   "",
-   ""
-  ]
- },
- {
-  "id": 6,
   "first_name": "",
   "last_name": "",
   "email": "",
