@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 // Constatante para validacion del user
-const { body } = require ("express-validator")
-const userController = require ("../controllers/usersController")
+const { body } = require ("express-validator");
+const userController = require ("../controllers/usersController");
 
 // Validaciones
 const validacionCreacionUsuario = [
