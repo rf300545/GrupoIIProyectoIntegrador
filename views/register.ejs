@@ -20,41 +20,62 @@
     <h3 id=margen2> de registro </h3>
   </p>
 
-    <p class="formreg">
-      <label for="first_name"> </label>
-      <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="first_name" id:="first_name">
-      <br/> <br/>
-      <label for="last_name"> </label>
-      <input type="text" class= "sinborde" placeholder="*Apellido" value= "" maxlength="30" name="last_name" id="last_name">
-      <br/> <br/>
-
-      <label for="text"> Sexo: </label>
-      <label for="varon"> Masculino </label>
-      <input type="checkbox" name="gender" id="varon" value="Varón">
-      <label for="mujer"> Femenino </label>
-      <input type="checkbox" name="gender" id="mujer" value="Mujer">
+    <div class="formreg">
+      <div>
+        <label for="first_name"> </label>
+        <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="first_name" id:="first_name">
+      </div>
 
       <br/> <br/>
-      <label for="email"> </label>
-      <input type="text" class= "sinborde" placeholder="*Dirección de e-mail" value="" maxlength="30" name="email" id="email">
+      <div>
+        <label for="last_name"> </label>
+        <input type="text" class= "sinborde" placeholder="*Apellido" value= "" maxlength="30" name="last_name" id="last_name">
+      </div>
       <br/> <br/>
-      <label for="password"> </label>
-      <input type="password" placeholder="Contraseña" class= "sinborde" name="contraseña">
+     <!-- <div>
+        <label for="text"> Sexo: </label>
+        <label for="varon"> Masculino </label>
+        <input type="checkbox" name="gender" id="varon" value="Varón">
+        <label for="mujer"> Femenino </label>
+        <input type="checkbox" name="gender" id="mujer" value="Mujer">
+      </div> -->
+      <br/> <br/>
+      <div>
+        <label for="email"> </label>
+        <input type="text" class= "sinborde" placeholder="*Dirección de e-mail" value="" maxlength="30" name="email" id="email">
+      </div>
+    
+      <br/> <br/>
+      <div>
+        <label for="password"> </label>
+        <input type="password" placeholder="Contraseña" class= "sinborde" name="contraseña">
+      </div>
+
       <br>
       <br>
-      <label for="password"> </label>
-      <input type="password" placeholder="Confirmar contraseña" class= "sinborde" name="contraseña">
+      <div>
+        <label for="password"> </label>
+        <input type="password" placeholder="Confirmar contraseña" class= "sinborde" name="contraseña">
+      </div>
+      <div class="mp-cont-formulario" >
+        <label id="formulario-texto" class="mp-label-createProduct">Imagen de Perfil</label>
+        <input type="file" name="userImg" value="Cargar imagenes" accept=".jpg" >
+      </div>
 
 
       <br/> <br/>
       <br/> <br/>
-      <input type="checkbox" name="combo" value="Primero">
-      <label for="text" class="Accept"> Acepto los terminos y condiciones </label>
+      <div>
+        <input type="checkbox" name="combo" value="Primero">
+        <label for="text" class="Accept"> Acepto los terminos y condiciones </label>
+      </div>
+   
       <br> <br/>
       <br/> <br/>     
-      </p>
-      <button type="submit" class="Cuenta"  style="width:250px; height:40px">Crear Cuenta</button>
-      
+      <div>
+        <button type="submit" class="Cuenta"  style="width:250px; height:40px">Crear Cuenta</button>
+      </div>
+    </div>
   </form>
   
 </main>

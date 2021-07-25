@@ -13,6 +13,10 @@ body{
     text-decoration:none;
     color:inherit
   }
+  ::placeholder{
+    font-size: 14px;
+    font-style: italic;
+  }
 /*HEADER*/
 .mp-contGral-header{
     display:flex;
@@ -314,6 +318,7 @@ table td:nth-child(4) {
       font-family: 'Montserrat', sans-serif;
       font-style: italic;
       width: 100%;
+      height: 23px;
   }
 
   .Accept{
@@ -380,14 +385,16 @@ body {
 }
 
 .formreg {
-    float: left;
+    display: flex;
+    flex-direction: column;
     color: rgb(130, 130, 145);
-     background: white;
+    background: white;
     font-size: 13px;
     line-height: 15px;
-     justify-content: space-around;
+    justify-content: space-around;
     font-style: italic;
-     margin-left: 7%;
+    margin-left: 7%;
+    margin-right: 50%;
     }
 
     .sinborde {
@@ -395,15 +402,16 @@ body {
         border-left: red;
         border-right: red;
         font-family: 'Montserrat', sans-serif;
-        font-style: italic;
+        font-style: normal;
+        font-size: 16px;
     }
 
     .Accept{
         text-align: right;
         font-style: normal;
         font-weight: bold;
-        font-size: 10px;
-        font-family: 'Montserrat', sans-serif;   
+        font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .Cuenta{
@@ -459,6 +467,7 @@ body {
     color:grey;
     font-size: 14px;
     text-align: start;
+    font-style: normal;
   }
   .mp-button-createProduct{
     font-family: 'Montserrat', sans-serif, bold;
