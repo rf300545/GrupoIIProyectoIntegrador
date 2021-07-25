@@ -56,5 +56,17 @@
    "eee",
    "eee"
   ]
+ },
+ {
+  "id": 7,
+  "first_name": "",
+  "last_name": "",
+  "email": "",
+  "contraseña": [
+   "",
+   ""
+  ],
+  "userImg": "",
+  "combo": "Primero"
  }
 ]
