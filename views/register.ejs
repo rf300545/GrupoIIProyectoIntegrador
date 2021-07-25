@@ -13,6 +13,11 @@
 <br>
 <br>
 <main>
+  <% if (locals.errors) {
+    errors.forEach(error => { %>
+    <p class="feedback is-danger"> <%= error.msg %> </p>
+  <% })
+  } %>
   <form action="/users/register" class="formcenter" method="POST">
 
   <p class="titleform">

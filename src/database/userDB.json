@@ -39,5 +39,38 @@
    ""
   ],
   "userImg": ""
+ },
+ {
+  "id": 5,
+  "first_name": "Ruben",
+  "last_name": "Dieu",
+  "email": "dieu_fer@hotmail.com",
+  "contraseña": [
+   "acavaunapass",
+   "acavaunapass"
+  ],
+  "userImg": ""
+ },
+ {
+  "id": 6,
+  "first_name": "Ruben",
+  "last_name": "Dieu",
+  "email": "dieu_fer@hotmail.com",
+  "contraseña": [
+   "acavaunapass",
+   "acavaunapass"
+  ],
+  "userImg": ""
+ },
+ {
+  "id": 7,
+  "first_name": "Carlos",
+  "last_name": "Carl",
+  "email": "carl@hotmail.com",
+  "contraseña": [
+   "lalala",
+   "lalala"
+  ],
+  "userImg": ""
  }
 ]
