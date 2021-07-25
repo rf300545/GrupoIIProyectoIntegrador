@@ -18,8 +18,8 @@ const usersController = {
 
     saveUser: (req, res) => {
         //validacion creacion usuario
-        let errors = validacionCracionUsuarios (req);
-        res.send (errors);
+        let errors = validacionCracionUsuarios(req);
+        res.send(errors);
         //
         // let idNuevo = user[user.length-1].id + 1;
         // let newUser = Object.assign({id: idNuevo},req.body);;
