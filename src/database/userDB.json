@@ -1,1 +1,43 @@
-
+[
+ {
+  "id": 1,
+  "nombre": "",
+  "apellido": "",
+  "sexo": "",
+  "email": "",
+  "contraseña": ""
+ },
+ {
+  "id": 2,
+  "first_name": "sdsd",
+  "last_name": "dsd",
+  "email": "sdsd",
+  "contraseña": [
+   "",
+   ""
+  ],
+  "userImg": ""
+ },
+ {
+  "id": 3,
+  "first_name": "sdsd",
+  "last_name": "sdsd",
+  "email": "",
+  "contraseña": [
+   "",
+   ""
+  ],
+  "userImg": ""
+ },
+ {
+  "id": 4,
+  "first_name": "Fernando ",
+  "last_name": "Dieu",
+  "email": "",
+  "contraseña": [
+   "",
+   ""
+  ],
+  "userImg": ""
+ }
+]
