@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const userFilePath = path.join(__dirname, '../database/userDB.json');
 const user = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
-const { validacionCracionUsuarios } = require ( "express-validator");
+// Validacion cracion form registro
+const { validacionCracionUsuarios } = require("express-validator");
 
 
 
