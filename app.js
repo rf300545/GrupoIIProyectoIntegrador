@@ -16,7 +16,6 @@ app.listen(3000,() => console.log("Servidor corriendo00000"))
 app.use("/products", rutasProductos);  // Si hay /producto responder con rutas de productos "se ponen el nombre de la variable"
 app.use("/users", rutasUsuario);
 app.use("/", rutasMain);
-<<<<<<< HEAD
 //-------------------------------------------------------------------------------------------
 
 const methodOverride = require('method-override');
@@ -24,6 +23,3 @@ app.use(methodOverride('_method'));
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-=======
-//-------------------------------------------------------------------------------------------
->>>>>>> 3e3469a13c6316aeeb018350ff05e3a03f3a4ff4
