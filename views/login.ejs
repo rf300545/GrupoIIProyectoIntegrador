@@ -1,6 +1,7 @@
-<html>
-
-  <%-include("partials/head.ejs") %>
+<!DOCTYPE html>
+<html lang="es">
+    <%-include("partials/head.ejs") %>
+<body>
     <body>
       <%-include("partials/header.ejs") %>
 
@@ -35,15 +36,18 @@
         <input type="checkbox" name="combo" value="Primero">
         <label for="text" class="Accept"> Recordar usuario </label>
         <a class="accept">Olvido su contraseña? </a>
-        <br> <br/>
-        <br/> <br/>
-        <br/> <br/>
+        <br>
+        <br>
+        <br>
         
 
         <input type="submit" class="Cuenta" value="INICIAR SESION" style="width:250px; height:40px">
-      </div>
-        <!-- <input type="reset" value="REINICAR"> -->
-      
+        <br>
+        <br>
+        <button class ="Cuenta" style="width:250px; height:40px">
+        <a href="/users/register">REGISTRARSE</a>
+      </button>
+      </div>     
       </form>
     </div>
   </main>
@@ -53,11 +57,6 @@
 
 
   </body>
-
-
-
-
-
   </html>
 
 

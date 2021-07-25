@@ -1,46 +1,44 @@
 [
-    {
-     "id": 1,
-     "nombre": "Nitro Way",
-     "marca":"Star Nutrition",
-     "categoria": "Post Entrenamiento",
-     "pesoNeto":"250gr",
-     "sabores":"Frutilla",
-     "tipoDeEnvase":"Frasco",
-     "modoDeUso":"Para tomarlo, debes mezclar en un batidor (shaker) 1 scoop colmado de 30 gramos  con 200 a 300 ml. de leche descremada fría, agitando el batido hasta que todo el polvo se haya disuelto totalmente.También puedes realizar tu batido con agua o cualquier líquido de preferencia.",  
-     "ingredientes":"L-Alanina: 5,4g ; L-Arginina: 2,8g ; Ácido L-Aspártico: 11,5g ; L-Cistina: 2,5 g ; Ácido L-Glutámico: 18,2g ; L-Glicina: 2g ; L-Histidina: 2g ; L-Isoleucina: 6,5g ; L-Leucina: 11,9g ; L-Lisina: 10,1g ; L-Metionina: 2,3 g ; L-Fenilalanina: 3,6 g ; L-Prolina: 6,2g ; L-Serina: 5,6g ; L-Treonina: 7,1g ; L-Triptófano: 2g ; ",
-     "imagen": "nitro_whey.jpg",
-     "precio": 1500,
-     "descripcion":"Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
-    },
-    {
-     "id": 2,
-     "nombre": "Pump V8",
-     "marca":"Star Nutrition",
-     "categoria": "Pre Entrenamiento",
-     "pesoNeto":"500 gr",
-     "sabores":"Chocolate",
-     "tipoDeEnvase":"Frasco",
-     "modoDeUso":"Pump V8 es el nuevo pre-entreno de Star Nutrition con una fórmula 100% renovada. Contiene los 8 ingredientes activos que necesitas para entrenar intensamente, por más tiempo, con mayor volumen de sangre en los músculos y super motivado. Además es muy bajo en calorías y tiene un sabor delicioso y refrescante.",
-     "ingredientes":"L-Alanina: 5,4g ; L-Arginina: 2,8g ; Ácido L-Aspártico: 11,5g ; L-Cistina: 2,5 g ; Ácido L-Glutámico: 18,2g ; L-Glicina: 2g ; L-Histidina: 2g ; L-Isoleucina: 6,5g ; L-Leucina: 11,9g ; L-Lisina: 10,1g ; L-Metionina: 2,3 g ; L-Fenilalanina: 3,6 g ; L-Prolina: 6,2g ; L-Serina: 5,6g ; L-Treonina: 7,1g ; L-Triptófano: 2g ; ",
-     "imagen": "pump.jpg",
-     "precio": 4000,
-     "descripcion":"Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
-
-    },
-    {
-     "id": 3,
-     "nombre": "Creatina Monohidrato",
-     "marca":"Star Nutrition",
-     "categoria": "Pre Entreno",
-     "pesoNeto":"650gr",
-     "sabores":"Multifruta",
-     "tipoDeEnvase":"Frasco",
-     "modoDeUso":" Para mayores beneficios se recomienda que sea tomada después del entrenamiento, en conjunto con un carbohidrato de alto índice glucémico, para que sea generado un pico de insulina y, así, poder ser cargado por el organismo con más facilidad ",
-     "ingredientes":"L-Alanina: 5,4g ; L-Arginina: 2,8g ; Ácido L-Aspártico: 11,5g ; L-Cistina: 2,5 g ; Ácido L-Glutámico: 18,2g ; L-Glicina: 2g ; L-Histidina: 2g ; L-Isoleucina: 6,5g ; L-Leucina: 11,9g ; L-Lisina: 10,1g ; L-Metionina: 2,3 g ; L-Fenilalanina: 3,6 g ; L-Prolina: 6,2g ; L-Serina: 5,6g ; L-Treonina: 7,1g ; L-Triptófano: 2g ; ",
-     "imagen": "creatine_monohydrate.jpg",
-     "precio": 2500,
-     "descripcion":"Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
-
-    }
+ {
+  "id": 1,
+  "nombre": "Nitro Way",
+  "marca": "Star Nutrition",
+  "categoria": "Post Entrenamiento",
+  "pesoNeto": "250gr",
+  "sabores": "Frutilla",
+  "tipoDeEnvase": "Frasco",
+  "modoDeUso": "Para tomarlo, debes mezclar en un batidor (shaker) 1 scoop colmado de 30 gramos  con 200 a 300 ml. de leche descremada fría, agitando el batido hasta que todo el polvo se haya disuelto totalmente.También puedes realizar tu batido con agua o cualquier líquido de preferencia.",
+  "ingredientes": "L-Alanina: 5,4g ; L-Arginina: 2,8g ; Ácido L-Aspártico: 11,5g ; L-Cistina: 2,5 g ; Ácido L-Glutámico: 18,2g ; L-Glicina: 2g ; L-Histidina: 2g ; L-Isoleucina: 6,5g ; L-Leucina: 11,9g ; L-Lisina: 10,1g ; L-Metionina: 2,3 g ; L-Fenilalanina: 3,6 g ; L-Prolina: 6,2g ; L-Serina: 5,6g ; L-Treonina: 7,1g ; L-Triptófano: 2g ; ",
+  "imagen": "nitro_whey.jpg",
+  "precio": 1500,
+  "descripcion": "Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
+ },
+ {
+  "id": 2,
+  "nombre": "Pump V8",
+  "marca": "Star Nutrition",
+  "categoria": "Pre Entrenamiento",
+  "pesoNeto": "500 gr",
+  "sabores": "Chocolate",
+  "tipoDeEnvase": "Frasco",
+  "modoDeUso": "Pump V8 es el nuevo pre-entreno de Star Nutrition con una fórmula 100% renovada. Contiene los 8 ingredientes activos que necesitas para entrenar intensamente, por más tiempo, con mayor volumen de sangre en los músculos y super motivado. Además es muy bajo en calorías y tiene un sabor delicioso y refrescante.",
+  "ingredientes": "L-Alanina: 5,4g ; L-Arginina: 2,8g ; Ácido L-Aspártico: 11,5g ; L-Cistina: 2,5 g ; Ácido L-Glutámico: 18,2g ; L-Glicina: 2g ; L-Histidina: 2g ; L-Isoleucina: 6,5g ; L-Leucina: 11,9g ; L-Lisina: 10,1g ; L-Metionina: 2,3 g ; L-Fenilalanina: 3,6 g ; L-Prolina: 6,2g ; L-Serina: 5,6g ; L-Treonina: 7,1g ; L-Triptófano: 2g ; ",
+  "imagen": "pump.jpg",
+  "precio": 4000,
+  "descripcion": "Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
+ },
+ {
+  "id": 3,
+  "nombre": "Creatina Monohidrato",
+  "marca": "Star Nutrition",
+  "categoria": "Pre Entreno",
+  "pesoNeto": "650gr",
+  "sabores": "Multifruta",
+  "tipoDeEnvase": "Frasco",
+  "modoDeUso": " Para mayores beneficios se recomienda que sea tomada después del entrenamiento, en conjunto con un carbohidrato de alto índice glucémico, para que sea generado un pico de insulina y, así, poder ser cargado por el organismo con más facilidad ",
+  "ingredientes": "L-Alanina: 5,4g ; L-Arginina: 2,8g ; Ácido L-Aspártico: 11,5g ; L-Cistina: 2,5 g ; Ácido L-Glutámico: 18,2g ; L-Glicina: 2g ; L-Histidina: 2g ; L-Isoleucina: 6,5g ; L-Leucina: 11,9g ; L-Lisina: 10,1g ; L-Metionina: 2,3 g ; L-Fenilalanina: 3,6 g ; L-Prolina: 6,2g ; L-Serina: 5,6g ; L-Treonina: 7,1g ; L-Triptófano: 2g ; ",
+  "imagen": "creatine_monohydrate.jpg",
+  "precio": 2500,
+  "descripcion": "Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?"
+ }
 ]

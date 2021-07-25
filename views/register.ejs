@@ -12,10 +12,8 @@
 <br>
 <br>
 <br>
-
-
 <main>
-  <form action="" class="formcenter" method="POST">
+  <form action="/users/register" class="formcenter" method="POST">
 
   <p class="titleform">
     <h3 id=margen1> Formulario </h3>
@@ -24,7 +22,7 @@
 
     <p class="formreg">
       <label for="nombre"> </label>
-      <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="usuario" id:="nombre">
+      <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="nombre" id:="nombre">
       <br/> <br/>
       <label for="apellido"> </label>
       <input type="text" class= "sinborde" placeholder="*Apellido" value= "" maxlength="30" name="apellido" id="apellido">
@@ -53,23 +51,13 @@
       <input type="checkbox" name="combo" value="Primero">
       <label for="text" class="Accept"> Acepto los terminos y condiciones </label>
       <br> <br/>
-      <br/> <br/>
-      <input type="submit" class="Cuenta" value="CREAR CUENTA" style="width:250px; height:40px">
-      <!-- <input type="reset" value="REINICAR"> -->
-  </p>
-    </form>
-  </main>
-
+      <br/> <br/>     
+      </p>
+  </form>
+  <input href= "/users/register" type="button" class="Cuenta" value="CREAR CUENTA" style="width:250px; height:40px">
+</main>
   <%-include("partials/footer.ejs") %>
-
-    
-
   </body>
-
-
-
-
-
   </html>
 
 

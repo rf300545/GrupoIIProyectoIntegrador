@@ -2,20 +2,24 @@ const express = require("express");
 const router = express.Router();
 const productsController = require("../controllers/productsController")
 
-//router.get("/."); 
-
-//CARRO DE COMPRAS
+//CARRO DE COMPRAS -ok
 router.get("/carro_compras", productsController.carro);
 
-//TODOS LOS PRODUCTOS
-router.get("/producto", productsController.producto);
+//TODOS LOS PRODUCTOS - ok
+router.get("/", productsController.producto);
 
-//CREAR PRODUCTO
-router.get("/createProduct", productsController.createProducts);
-//router.post("/createProducts", productsController.ncreateProducts);
+//CREAR PRODUCTO - falta que agregue epl producto nuevo a la DB
+router.get("/createProduct", productsController.createProduct);
+router.post("/createProduct", productsController.store);
 
-//VER DETALLE DE UN PRODUCTO
-router.get("/producto/:id", productsController.idUnProducto); 
+//VER DETALLE DE UN PRODUCTO - ok
+router.get("/:id", productsController.unProducto); 
 
+//Editar Producto
+router.get("/editProduct/:id", productsController.editProduct);
+router.put("/editProduct/:id", productsController.actualizar); 
+
+//Borrar 
+router.delete('/:id', productsController.borrar); 
 
 module.exports = router;

@@ -9,21 +9,21 @@
     <main>     
       
          <section>  
+          
           <article >
-          <% for(let i=0; i<productos.length;i++){ %> 
             <div class="contenedorMaxProd">
               <div class="conteiner2" >
-                <img src ="/img/products/<%=productos[i].imagen %>" class= "imagenProducto"> </img>
+                <img src ="/img/products/<%=productoUnico.imagen %>" class= "imagenProducto"> </img>
                 <div id="conteinerTextoProducto">
-                  <h3><%=productos[i].nombre%> </h3>
-                  <p><%=productos[i].descripcion %> </p>
+                  <h3><%=productoUnico.nombre%></h3>
+                  <p><%=productoUnico.descripcion %> </p>
                 </div>
               </div>
 
               <div id="precio"> <!--carro compras-->
                 <div id="nomYPrecio">
-                  <a><%=productos[i].nombre %><a>
-                  <a >$ <%=productos[i].precio %></a>
+                  <a><%=productoUnico.nombre %><a>
+                  <a >$ <%=productoUnico.precio %></a>
                 </div>
                   
                 <span class="lineaSeparadora"></span>
@@ -48,29 +48,13 @@
               </div>
                   <span class="lineaSeparadora"></span>
                   <button class="botonCarrito">AGREGAR AL CARRITO</button>
-                  
+                  <button class="botonCarrito">
+                    <a href="/products/editProduct/<%=productoUnico.id%>" class="action-button edit">EDITAR PRODUCTO</a>
+                  </button>
               </div>
             </div>
-            <% } %>
-            <div class="sabores"> 
-            <!--<h4>Sabores disponibles</h4>
-            <select name="Sabores" id="cajaSabores" placeholder="elegi tu sabor"> 
-              <option value="Frutilla">Frutilla</option>
-              <option value="Chocolate">Chocolate</option>
-              <option value= "Vainilla">Vainilla</option>
-            </select>   ****    Deberia estar esta seleccion por cada articulo  ****   -->  
-
-            </div>
-            
-           <!-- <div>
-             <hr class="lineaSeparadora2">
-              <ul class="conteiner1" >  **Carrusel de fotos?**
-             <img src = "../public/img/products/nitro_whey.jpg" class= "carrusel"> </img>
-             <img src = "../public/img/products/creatine_monohydrate.jpg" class= "carrusel"> </img>
-             <img src = "../public/img/products/pump.JPG" class="carrusel"> </img>
-              </ul>
-            </div> desactivado por el momento-->  
-            
+            <div class="sabores">           
+            </div>    
           </article>    
     </main>
     <%-include("partials/footer.ejs") %>
