@@ -20,9 +20,9 @@ const usersController = {
     saveUser: (req, res) => {
         //validacion creacion usuario
         let errors = validationResult(req);
-        let avatarName=req.file.filename //causa error al no ingrear datos de registro
-        var password = bcrypt.hash(req.body.contraseña,10) 
+        let avatarName=req.file.filename //causa error al no ingrear datos de registro 
         if (errors.isEmpty()) {
+        var password = bcrypt.hash(req.body.contraseña,10)    
         let idNuevo = user[user.length-1].id + 1;
         let newUser = Object.assign({id: idNuevo},req.body,{image:avatarName},{contraseña:password});;
         user.push(newUser);
