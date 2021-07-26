@@ -6,5 +6,14 @@
   "sexo": "",
   "email": "",
   "contraseña": ""
+ },
+ {
+  "id": 2,
+  "first_name": " Fernando",
+  "last_name": "Dieu",
+  "email": "dieu_fer@hotmail.com",
+  "contraseña": "$2a$10$gp9oZihZkbBYq2korRqhR.8UEMubB8kZmd.B.YQN2n/0rJlaDpFjG",
+  "combo": "Primero",
+  "image": "1627342984439_img.jpg"
  }
 ]
