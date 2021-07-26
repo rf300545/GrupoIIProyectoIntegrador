@@ -27,7 +27,10 @@ const usersController = {
         fs.writeFileSync(userFilePath, JSON.stringify(user,null, ' '));
         res.redirect("/");
         } else {
-            res.render("register", { errors: errors.array() });
+            res.render("register", { 
+                errors: errors.array(),
+                old: req.body
+               });
         }
         }
 }

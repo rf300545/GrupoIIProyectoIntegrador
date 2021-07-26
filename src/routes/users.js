@@ -8,7 +8,8 @@ const userController = require ("../controllers/usersController");
 const validacionCreacionUsuario = [
     body ("first_name").notEmpty().withMessage("Pone un nombre"),
     body ("last_name").notEmpty().withMessage("Pone un apellido"),
-    body ("email").isEmail().notEmpty().withMessage("Pone un email"),
+    body ("email").isEmail().withMessage("Ingresa un email valido"),
+    body ("email").notEmpty().withMessage("Ingese un email"),
 
 ];
 
