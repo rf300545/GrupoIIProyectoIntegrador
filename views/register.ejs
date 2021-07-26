@@ -32,7 +32,7 @@
           }
           %>
   
-    </div> // CONSULTAR POR QUE NO cierra el DIV 
+    </div> <!--// CONSULTAR POR QUE NO cierra el DIV -->
       <div>
         <label for="first_name"> Nombre</label>
         <input type="text" class= "sinborde" value="<%= locals.old && old.first_name ? old.first_name : " "%>" placeholder="*Nombre"  name="first_name" id="first_name">
@@ -64,8 +64,8 @@
         <input type="password" placeholder="Confirmar contraseña" class= "sinborde" name="contraseña">
       </div>
       <div class="mp-cont-formulario" >
-        <label id="formulario-texto" class="mp-label-createProduct">Imagen de Perfil</label>
-        <input type="file" name="userImg" value="Cargar imagenes" accept=".jpg" >
+        <label for="avatar" class="mp-label-createProduct">Imagen de Perfil</label>
+        <input type="file" name="avatar" value="avatar"  >
       </div>
 
 
