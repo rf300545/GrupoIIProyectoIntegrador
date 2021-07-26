@@ -4,7 +4,7 @@
 
   <%-include("partials/head.ejs") %>
   <body>
-    <%-include("partials/header.ejs") %>
+  <%-include("partials/header.ejs") %>
 
 
   <!-- FORMULARIO DE REGISTRO -->
@@ -13,8 +13,7 @@
 <br>
 <br>
 <main>
-
-
+  <form action="/users/register" class="formcenter" method="POST" enctype="multipart/form-data">
 
   <p class="titleform">
     <h3 id=margen1> Formulario de registro</h3>
@@ -27,12 +26,11 @@
     <div class="danger">
       <% if (locals.errors) {
         errors.forEach(error => { %>
-           <p ><%= error.msg %> </p>
+           <p><%= error.msg %> </p>
           <% })
           }
           %>
-  
-    </div> <!--// CONSULTAR POR QUE NO cierra el DIV -->
+    </div>
       <div>
         <label for="first_name"> Nombre</label>
         <input type="text" class= "sinborde" value="<%= locals.old && old.first_name ? old.first_name : " "%>" placeholder="*Nombre"  name="first_name" id="first_name">
@@ -65,7 +63,7 @@
       </div>
       <div class="mp-cont-formulario" >
         <label for="avatar" class="mp-label-createProduct">Imagen de Perfil</label>
-        <input type="file" name="avatar" value="avatar"  >
+        <input type="file" name="avatar" value="avatar">
       </div>
 
 
