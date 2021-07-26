@@ -15,7 +15,7 @@
            
            
             <div class="contenedorMaxProd">
-         
+            <a href="/products/<%=productos[i].id%>">
               <div class="conteiner2" >
                 <img src ="/img/products/<%=productos[i].imagen %>" class= "imagenProducto"> </img>
                 <div id="conteinerTextoProducto">
@@ -27,7 +27,7 @@
               <div id="precio"> <!--carro compras-->
                 <div id="nomYPrecio">
                   <a><%=productos[i].nombre %><a>
-                  <a >$ <%=productos[i].precio %></a>
+                  <a>$ <%=productos[i].precio %></a>
                 </div>
                   
                 <span class="lineaSeparadora"></span>
@@ -54,7 +54,8 @@
                   <button class="botonCarrito">AGREGAR AL CARRITO</button>
                   
               </div>
-            </div>
+            </a>
+          </div>
             <% } %>
             <div class="sabores"> 
             <!--<h4>Sabores disponibles</h4>

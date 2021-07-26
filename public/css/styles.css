@@ -447,6 +447,11 @@ body {
       grid-template-columns: auto auto auto;
       margin-top: 15px;
   }
+  .danger{
+    color:red;
+    font-style: normal;
+    
+  }
   #mp-img-createProduct{
       width: auto;
       height: 100px;

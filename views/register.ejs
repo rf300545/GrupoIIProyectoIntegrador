@@ -13,36 +13,42 @@
 <br>
 <br>
 <main>
-  <form action="/users/register" class="formcenter" method="POST">
+
+
 
   <p class="titleform">
-    <h3 id=margen1> Formulario </h3>
-    <h3 id=margen2> de registro </h3>
-  </p>
+    <h3 id=margen1> Formulario de registro</h3>
+    <br>
+  </p> 
 
     <div class="formreg">
+      
+  <form action="/users/register" class="formcenter" method="POST" enctype="multipart/form-data">
+    <div class="danger">
+      <% if (locals.errors) {
+        errors.forEach(error => { %>
+           <p ><%= error.msg %> </p>
+          <% })
+          }
+          %>
+  
+    </div> <!--// CONSULTAR POR QUE NO cierra el DIV -->
       <div>
-        <label for="first_name"> </label>
-        <input type="text" class= "sinborde" placeholder="*Nombre" value="" maxlength="30" name="first_name" id:="first_name">
+        <label for="first_name"> Nombre</label>
+        <input type="text" class= "sinborde" value="<%= locals.old && old.first_name ? old.first_name : " "%>" placeholder="*Nombre"  name="first_name" id="first_name">
       </div>
 
       <br/> <br/>
       <div>
-        <label for="last_name"> </label>
-        <input type="text" class= "sinborde" placeholder="*Apellido" value= "" maxlength="30" name="last_name" id="last_name">
+        <label for="last_name"> Apellido </label>
+        <input type="text" class= "sinborde" placeholder="*Apellido" value= "<%= locals.old && old.last_name ? old.last_name : " "%>" maxlength="30" name="last_name" id="last_name">
       </div>
       <br/> <br/>
-     <!-- <div>
-        <label for="text"> Sexo: </label>
-        <label for="varon"> Masculino </label>
-        <input type="checkbox" name="gender" id="varon" value="Varón">
-        <label for="mujer"> Femenino </label>
-        <input type="checkbox" name="gender" id="mujer" value="Mujer">
-      </div> -->
+    
       <br/> <br/>
       <div>
-        <label for="email"> </label>
-        <input type="text" class= "sinborde" placeholder="*Dirección de e-mail" value="" maxlength="30" name="email" id="email">
+        <label for="email"> Email </label>
+        <input type="text" class= "sinborde" placeholder="*Dirección de e-mail" value="<%= locals.old && old.email ? old.email : " "%>" maxlength="30" name="email" id="email">
       </div>
     
       <br/> <br/>
@@ -58,8 +64,8 @@
         <input type="password" placeholder="Confirmar contraseña" class= "sinborde" name="contraseña">
       </div>
       <div class="mp-cont-formulario" >
-        <label id="formulario-texto" class="mp-label-createProduct">Imagen de Perfil</label>
-        <input type="file" name="userImg" value="Cargar imagenes" accept=".jpg" >
+        <label for="avatar" class="mp-label-createProduct">Imagen de Perfil</label>
+        <input type="file" name="avatar" value="avatar"  >
       </div>
 
 
