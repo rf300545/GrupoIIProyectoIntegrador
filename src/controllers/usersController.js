@@ -19,13 +19,19 @@ const usersController = {
     saveUser: (req, res) => {
         //validacion creacion usuario
         let errors = validationResult(req);
-        res.send(errors);
-        //
+        //res.send(errors);
+        if (errors.isEmpty()) {
         let idNuevo = user[user.length-1].id + 1;
         let newUser = Object.assign({id: idNuevo},req.body);;
         user.push(newUser);
         fs.writeFileSync(userFilePath, JSON.stringify(user,null, ' '));
         res.redirect("/");
-    }
+        } else {
+            res.render("register", { 
+                errors: errors.array(),
+                old: req.body
+               });
+        }
+        }
 }
     module.exports = usersController

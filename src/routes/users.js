@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
+
 // Constatante para validacion del user
 const { body } = require ("express-validator");
 const userController = require ("../controllers/usersController");
