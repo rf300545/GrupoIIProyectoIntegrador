@@ -18,15 +18,16 @@ const usersController = {
     },
 
     saveUser: (req, res) => {
-        let avatarName=req.file.filename
         //validacion creacion usuario
         let errors = validationResult(req);
-        //res.send(errors);
+        let avatarName=req.file.filename //causa error al no ingrear datos de registro
+        var password = bcrypt.hash(req.body.contraseña,10) 
         if (errors.isEmpty()) {
         let idNuevo = user[user.length-1].id + 1;
-        let newUser = Object.assign({id: idNuevo},req.body,{image:avatarName});;
+        let newUser = Object.assign({id: idNuevo},req.body,{image:avatarName},{contraseña:password});;
         user.push(newUser);
         fs.writeFileSync(userFilePath, JSON.stringify(user,null, ' '));
+        console.log(password);
         res.redirect("/");
         } else {
             res.render("register", { 
@@ -35,5 +36,6 @@ const usersController = {
                });
         }
         }
+        
 }
     module.exports = usersController
