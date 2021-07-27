@@ -15,8 +15,8 @@ const usersController = {
     processlogin:(req,res)=>{
         for (let i = 0; i <user.length; i++){
             if(req.body.email == user[i].email && bcrypt.compareSync (req.body.contraseña, user[i].contraseña) ){
-              // res.render("/")
-                res.send("/");
+                res.render("index");
+                const logued = true;
             }} 
                 res.send("error")
             
