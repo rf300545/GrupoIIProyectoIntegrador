@@ -19,7 +19,7 @@ const userController = require ("../controllers/usersController");
 
 // Validaciones
 const validacionCreacionUsuario = [
-    body ("first_name").notEmpty().withMessage("Pone un nombre"),
+    body ("first_name").notEmpty().withMessage("Pone un nombre").bail(),
     body ("last_name").notEmpty().withMessage("Pone un apellido"),
     body ("email").isEmail().withMessage("Ingresa un email valido"),
     body ("email").notEmpty().withMessage("Ingese un email"),
@@ -44,10 +44,10 @@ const validacionCreacionUsuario = [
 router.get("/register",userController.registrarse);
 
 //Procesar formulario de creacion
-router.post("/register", uploadFile.single('avatar'), validacionCreacionUsuario, userController.saveUser);
+router.post("/register",validacionCreacionUsuario, uploadFile.single('avatar'),  userController.saveUser);
 
 // Procesar log usuario
 router.get("/login",userController.iniciarSesion);
-
+router.post("/login",userController.processlogin);
 
 module.exports = router;
