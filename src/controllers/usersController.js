@@ -12,6 +12,17 @@ const usersController = {
     iniciarSesion: (req, res) => {
         res.render("login");
     },
+    processlogin:(req,res)=>{
+        for (let i = 0; i <user.length; i++){
+            if(user[i].email==req.body.email && bcrypt.compareSync == req.body.contraseña ){
+               // res.render("/")
+                res.send("ok!")
+            } else{
+                res.send("error")
+            }
+         }
+         
+    },
 
     registrarse: (req, res) => {
         res.render("register");
@@ -20,8 +31,13 @@ const usersController = {
     saveUser: (req, res) => {
         //validacion creacion usuario
         let errors = validationResult(req);
-        let avatarName=req.file.filename //causa error al no ingrear datos de registro 
+        let avatarName; 
         var contraseña = bcrypt.hashSync(req.body.contraseña,10)
+        if (req.file){
+            avatarName=req.file.filename
+        }else{
+            res.send("error")
+        };
         if (errors.isEmpty()){
         let idNuevo = user[user.length-1].id + 1;
         var newUser = Object.assign({id: idNuevo},req.body,{contraseña:contraseña},{image:avatarName});
