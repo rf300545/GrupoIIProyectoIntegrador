@@ -15,5 +15,14 @@
   "contraseña": "$2a$10$gp9oZihZkbBYq2korRqhR.8UEMubB8kZmd.B.YQN2n/0rJlaDpFjG",
   "combo": "Primero",
   "image": "1627342984439_img.jpg"
+ },
+ {
+  "id": 3,
+  "first_name": " elio",
+  "last_name": " pantoja",
+  "email": "qwe123@gmail.com",
+  "contraseña": "$2a$10$mjRadVAld6Wdyd3tIPjpDezkkQGJ57n39LEixibtf0ys51yozDuGO",
+  "combo": "Primero",
+  "image": "1627348643427_img.jpg"
  }
 ]
