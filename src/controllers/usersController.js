@@ -14,14 +14,12 @@ const usersController = {
     },
     processlogin:(req,res)=>{
         for (let i = 0; i <user.length; i++){
-            if(user[i].email==req.body.email && bcrypt.compareSync == req.body.contraseña ){
-               // res.render("/")
-                res.send("ok!")
-            } else{
+            if(req.body.email == user[i].email && bcrypt.compareSync (req.body.contraseña, user[i].contraseña) ){
+                res.render("index");
+                const logued = true;
+            }} 
                 res.send("error")
-            }
-         }
-         
+            
     },
 
     registrarse: (req, res) => {
@@ -29,14 +27,13 @@ const usersController = {
     },
 
     saveUser: (req, res) => {
-        //validacion creacion usuario
         let errors = validationResult(req);
-        let avatarName; 
+        let avatarName;
         var contraseña = bcrypt.hashSync(req.body.contraseña,10)
         if (req.file){
             avatarName=req.file.filename
         }else{
-            res.send("error")
+            res.send("Ingrese su foto de perfil")
         };
         if (errors.isEmpty()){
         let idNuevo = user[user.length-1].id + 1;

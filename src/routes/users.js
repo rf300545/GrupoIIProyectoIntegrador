@@ -22,8 +22,8 @@ const validacionCreacionUsuario = [
     body ("first_name").notEmpty().withMessage("Pone un nombre").bail(),
     body ("last_name").notEmpty().withMessage("Pone un apellido"),
     body ("email").isEmail().withMessage("Ingresa un email valido"),
-    body ("email").notEmpty().withMessage("Ingese un email"),
-    body('avatar').custom((value, { req }) => {
+    body ("email").notEmpty(),
+    body('avatar').custom((value, {req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
 		
@@ -44,7 +44,7 @@ const validacionCreacionUsuario = [
 router.get("/register",userController.registrarse);
 
 //Procesar formulario de creacion
-router.post("/register",validacionCreacionUsuario, uploadFile.single('avatar'),  userController.saveUser);
+router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario,  userController.saveUser);
 
 // Procesar log usuario
 router.get("/login",userController.iniciarSesion);
