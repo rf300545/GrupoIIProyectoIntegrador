@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+  <%-include("partials/head.ejs") %>
+  <body>
+  <%-include("partials/header.ejs") %>
+
+
+  <!-- FORMULARIO DE CONTACTO -->
+<br>
+<br>
+<br>
+<br>
+<main>     
+
+  <form action="/contacto" class="formcenter" method="POST" enctype="multipart/form-data">
+
+  
+    <h3 id=margen1> Contactanos </h3>
+    <br>
+  
+    <div class="contacto">
+        <label for="first_name"> Nombre y Apellido</label>
+        <input type="text" class= "sinborde"</input>
+      </div>
+
+      <br/> <br/>
+      <br/> <br/>
+    
+      <div>
+        <label for="email"> Email </label>
+        <input type="text" class= "sinborde" placeholder="*Dirección de e-mail" value="<%= locals.old && old.email ? old.email : " "%>" maxlength="30" name="email" id="email">
+      </div>
+
+      <br/> <br/>
+
+      <div>
+        <label for="msg">Mensaje:</label>
+        <textarea id="msg" class= "sinborde" name="user_message"></textarea>
+      </div>
+   
+      <br> <br/>
+      
+      <div>
+        <button type="submit" class="Cuenta"  style="width:250px; height:40px">Enviar</button>
+      </div>
+  </div>
+  </form>
+  
+</main>
+
+<%-include("partials/footer.ejs") %>
+
+
+
+ 
+  </body>
+  </html>
+
+

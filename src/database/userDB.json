@@ -24,5 +24,14 @@
   "contraseña": "$2a$10$mjRadVAld6Wdyd3tIPjpDezkkQGJ57n39LEixibtf0ys51yozDuGO",
   "combo": "Primero",
   "image": "1627348643427_img.jpg"
+ },
+ {
+  "id": 4,
+  "first_name": "Ruben",
+  "last_name": "Dieu",
+  "email": "ruben.dieu@unipar.com",
+  "contraseña": "$2a$10$zmdxGVvj8UbwfYqop644xOwYbIauPQENMybB.3Vq2xD9WQaBZ1FR6",
+  "combo": "Primero",
+  "image": "1629057453730_img.jpeg"
  }
 ]

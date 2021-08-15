@@ -8,6 +8,13 @@ const mainController = {
     index: (req, res) => {
         res.render("index", {products:products});
 },
+    nosotros: (req, res) => {
+        res.render("nosotros")
+},
+    contacto: (req, res) => {
+        res.render("contacto")
+
+},
 }
 
 module.exports = mainController
