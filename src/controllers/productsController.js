@@ -1,7 +1,7 @@
 const fs = require('fs');
 //const { reset } = require('nodemon');
 const path = require('path');
-
+const db = require ("../database/models")
 const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -22,6 +22,12 @@ const productsController = {
             products.push(nuevoObjeto);
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
             res.redirect("/products");
+            /*db.Flavor.findAll ()
+                .then (function (Flavor){
+                    
+                    return res.render ("/createProduct", {Flavor : sabores})
+                })*/
+
     },
     //Main de productos - OK
         producto: (req, res) => {                                    
