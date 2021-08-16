@@ -1,45 +1,45 @@
-function productData (sequelize, dataTypes) {
+module.exports = (sequelize, DataTypes) =>  {
 
     alias = "Product";
 
     cols = {
         id : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
             },
         nombre : {
-            type: dataTypes.STRING(200),          
+            type: DataTypes.STRING(200),          
             },        
         id_brand : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             },
         descripcion:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
             },
         id_category:{
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
         },
         ingrediente: {
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         peso:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         imagen: {
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         createdAt: {
-            type: dataTypes.DATE
+            type: DataTypes.DATE
         },
         updated_at: {
-            type: dataTypes.DATE   
+            type: DataTypes.DATE   
         },
         deleted: {
-            type:dataTypes.INTERGER,
+            type:DataTypes.INTEGER,
         },
         modoDeUso: {
-            type:dataTypes.STRING (200)
+            type:DataTypes.STRING (200)
         }       
     }
 
@@ -60,31 +60,22 @@ Product.associate = function (models) {
 
     })
     
-    Product.hasMany(models.Flavor,{
-        as: "products",
-        through: "product_flavor",
-        foreignKey: "id_product",
-        otherKey: "id_flavor",
-        timestamps: false, 
-
-    }),
+ 
     Product.belongsTo (models.Brand,{
         as:"brand",
         foreignKey: "id_brand",
 
-    }),
-    Product.hasMany(models.user,{
-        as: "products",
-        through: "product_user",
+    })
+    Product.belongsToMany (models.Flavor,{
+        as:"sabores",
+        through: "product_flavor",
         foreignKey: "id_product",
-        otherKey: "id_user",
-        timestamps: false, 
-
+        otherKey:"id_flavor",
+        timestamps: false,
     });
-
+  
 }
 
-return Product
+return Product;
 }
 
-module.exports = productData; 

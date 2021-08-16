@@ -1,33 +1,33 @@
-function userData (sequelize, dataTypes) {
+module.exports = (sequelize, DataTypes) =>  {
 
     alias = "User";
 
     cols = {
         id : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
             },
         nombre : {
-            type: dataTypes.STRING(200),          
+            type: DataTypes.STRING(200),          
             },        
         apellido:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
             },
         email:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         telefono: {
-            type: dataTypes.INTERGER
+            type: DataTypes.INTEGER
         },
         contrasenia:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         avatar: {
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         id_direccion: {
-            type: dataTypes.INTERGER
+            type: DataTypes.INTEGER
         },
       
         
@@ -40,19 +40,7 @@ function userData (sequelize, dataTypes) {
 
 
 const User = sequelize.define (alias, cols, config);
-User.associate = function (models) {
 
-    Product.hasMany(models.User,{
-        as: "products",
-        through: "product_user",
-        foreignKey: "id_product",
-        otherKey: "id_user",
-        timestamps: false, 
-
-    });
-
-}
 return User ;
 }
 
-module.exports = userData; 

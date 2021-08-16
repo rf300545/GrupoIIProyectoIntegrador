@@ -1,20 +1,20 @@
-function brandData (sequelize, dataTypes) {
+module.exports = (sequelize, DataTypes) => {
 
-    alias = "Brand";
+   let alias = "Brand";
 
-    cols = {
+   let cols = {
         id : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         nombre : {
-            type: dataTypes.STRING(200),
+            type: DataTypes.STRING(200),
             
         }
     }
 
-    config = {
+    let config = {
         tableName: "brand",
         timestamps: false
     };
@@ -32,6 +32,5 @@ Brand.associate = function (models) {
 }
 
 return Brand;
-}
 
-module.exports = brandData
+}

@@ -1,15 +1,15 @@
-function flavorData (sequelize, dataTypes) {
+module.exports = (sequelize, DataTypes) =>  {
 
     alias = "Flavor";
 
     cols = {
         id : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoincrement: true
         },
         nombre : {
-            type: dataTypes.STRING(200),
+            type: DataTypes.STRING(200),
             
         }
     },
@@ -24,8 +24,8 @@ function flavorData (sequelize, dataTypes) {
 const Flavor = sequelize.define (alias, cols, config);
 
 Flavor.associate = function (models){
-    Flavor.hasMany (models.Product, {
-        as: "flavors",
+    Flavor.belongsToMany (models.Product, {
+        as: "productos",
         through: "product_flavor",
         foreignKey: "id_flavor",
         otherKey: "id_product",
@@ -34,7 +34,6 @@ Flavor.associate = function (models){
     });
 
 }
-return flavors 
+return Flavor
 }
 
-module.exports = flavorData; 

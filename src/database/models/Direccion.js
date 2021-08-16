@@ -1,32 +1,32 @@
-function direccionData (sequelize, dataTypes) {
+module.exports = (sequelize, DataTypes) => {
 
     alias = "direccion";
 
     cols = {
         id : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
             },
         id_user : {
-            type: dataTypes.INTERGER,        
+            type: DataTypes.INTEGER,        
             },        
        
         provincia:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
             },
  
         localidad: {
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         calle:{
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         numero: {
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
         codigoPostal: {
-            type: dataTypes.STRING (200)
+            type: DataTypes.STRING (200)
         },
     
         
@@ -43,4 +43,3 @@ const direcciones = sequelize.define (alias, cols, config);
 return direcciones;
 }
 
-module.exports = direccionData; 

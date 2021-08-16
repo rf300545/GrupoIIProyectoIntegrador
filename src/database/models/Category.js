@@ -1,15 +1,15 @@
-function categoryData (sequelize, dataTypes) {
+module.exports= (sequelize, DataTypes)=> {
 
     alias = "Category";
 
     cols = {
         id : {
-            type: dataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         nombre : {
-            type: dataTypes.STRING(200),
+            type: DataTypes.STRING(200),
             
         }
     }
@@ -36,4 +36,3 @@ Category.associate = function (models) {
 return Category;
 }
 
-module.exports = categoryData; 
