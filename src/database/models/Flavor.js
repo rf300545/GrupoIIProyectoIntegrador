@@ -1,6 +1,6 @@
 function flavorData (sequelize, dataTypes) {
 
-    alias = "flavor";
+    alias = "Flavor";
 
     cols = {
         id : {
@@ -12,7 +12,7 @@ function flavorData (sequelize, dataTypes) {
             type: dataTypes.STRING(200),
             
         }
-    }
+    },
 
     config = {
         tableName: "flavor",
@@ -21,7 +21,19 @@ function flavorData (sequelize, dataTypes) {
 
 
 
-const flavors = sequelize.define (alias, cols, config);
+const Flavor = sequelize.define (alias, cols, config);
+
+Flavor.associate = function (models){
+    Flavor.hasMany (models.Product, {
+        as: "flavors",
+        through: "product_flavor",
+        foreignKey: "id_flavor",
+        otherKey: "id_product",
+        timestamps: false,
+
+    });
+
+}
 return flavors 
 }
 

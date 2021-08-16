@@ -1,6 +1,6 @@
 function userData (sequelize, dataTypes) {
 
-    alias = "brand";
+    alias = "User";
 
     cols = {
         id : {
@@ -39,9 +39,20 @@ function userData (sequelize, dataTypes) {
     };
 
 
-const usuarios = sequelize.define (alias, cols, config);
+const User = sequelize.define (alias, cols, config);
+User.associate = function (models) {
 
-return usuarios ;
+    Product.hasMany(models.User,{
+        as: "products",
+        through: "product_user",
+        foreignKey: "id_product",
+        otherKey: "id_user",
+        timestamps: false, 
+
+    });
+
+}
+return User ;
 }
 
 module.exports = userData; 

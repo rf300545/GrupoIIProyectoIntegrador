@@ -1,6 +1,6 @@
 function brandData (sequelize, dataTypes) {
 
-    alias = "brand";
+    alias = "Brand";
 
     cols = {
         id : {
@@ -20,9 +20,18 @@ function brandData (sequelize, dataTypes) {
     };
 
 
-const categories = sequelize.define (alias, cols, config);
+const Brand = sequelize.define (alias, cols, config);
+Brand.associate = function (models) {
 
-return categories;
+    Brand.hasMany(models.Product, {
+     
+        as: "products",
+        foreignKey: "id_brand"
+
+    })
+}
+
+return Brand;
 }
 
 module.exports = brandData
