@@ -9,28 +9,20 @@ function flavorData (sequelize, dataTypes) {
             autoincrement: true
         },
         nombre : {
-            type: dataTypes.STRING(300),
+            type: dataTypes.STRING(200),
             
         }
     }
 
     config = {
-        tableName: "g2.flavor",
+        tableName: "flavor",
         timestamps: false
     };
 
 
 
 const flavors = sequelize.define (alias, cols, config);
-
-flavors.associate = function  (models){
-    flavors.hasMany (models.Product) { // poner el nombre del modelo de productos (elio)
-        as 
-
-    }
-
-
-
-};
+return flavors 
+}
 
 module.exports = flavorData; 

@@ -1,6 +1,6 @@
-function categoryData (sequelize, dataTypes) {
+function brandData (sequelize, dataTypes) {
 
-    alias = "category";
+    alias = "brand";
 
     cols = {
         id : {
@@ -15,7 +15,7 @@ function categoryData (sequelize, dataTypes) {
     }
 
     config = {
-        tableName: "category",
+        tableName: "brand",
         timestamps: false
     };
 
@@ -25,4 +25,4 @@ const categories = sequelize.define (alias, cols, config);
 return categories;
 }
 
-module.exports = categoryData; 
+module.exports = brandData
