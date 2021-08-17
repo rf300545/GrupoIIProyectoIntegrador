@@ -22,16 +22,20 @@ const productsController = {
             products.push(nuevoObjeto);
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
             res.redirect("/products");
-            /*db.Flavor.findAll ()
-                .then (function (Flavor){
-                    
-                    return res.render ("/createProduct", {Flavor : sabores})
-                })*/
+            
 
     },
-    //Main de productos - OK
-        producto: (req, res) => {                                    
-            res.render ("producto", {productos: products});
+    //Main de productos -
+        producto: (req, res) => {                                                          
+            db.Product.findAll()
+                .then((resultado) =>{
+                    let allProducts = []
+                    for (Product of resultado){
+                    allProducts.push(resultado)}
+                    res.render ("producto", {productos: allProducts});
+                    console.log({productos: allProducts})
+                })
+        
     },
     //Ver un producto - OK
         unProducto: (req,res) =>{
