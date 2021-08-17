@@ -14,21 +14,24 @@ const productsController = {
         createProduct: (req, res) => {
             res.render("createProduct");
     },
-    //todavia no captura los datos del form, pero si genera el ID en la DB
-        store: (req,res) =>{
-            //let productoNuevo = req.body;
-            let idNuevo = products[products.length-1].id + 1;
-            let nuevoObjeto = Object.assign({id: idNuevo},req.body);;
-            products.push(nuevoObjeto);
-            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-            res.redirect("/products");
-            /*db.Flavor.findAll ()
-                .then (function (Flavor){
-                    
-                    return res.render ("/createProduct", {Flavor : sabores})
-                })*/
+    //GUARDAR UN PRODUCTOgi
+    store: (req,res) =>{
+        // let productoNuevo = req.body;
+        db.Product.create ({
+        nombre: req.body.nombre,
+        id_brand: req.body.marca,
+        id_category: req.body.categoria,
+        precio: req.body.precio,
+        peso: req.body.pesoNeto,
+        modoDeUso: req.body.modoDeUso,
+        ingrediente: req.body.ingredientes,
+        imagen: req.body.productImg,
+    });
 
-    },
+         res.render ("./createProduct")
+                
+                
+},
     //Main de productos - OK
         producto: (req, res) => {                                    
             res.render ("producto", {productos: products});
