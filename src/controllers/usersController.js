@@ -28,30 +28,11 @@ const usersController = {
         res.render("register");
     },
 
-    /*saveUser: (req, res) => {
-        let errors = validationResult(req);
-        let avatarName;
-        var contraseña = bcrypt.hashSync(req.body.contraseña,10)
-        if (req.file){
-            avatarName=req.file.filename
-        }else{
-            res.send("Ingrese su foto de perfil")
-        };
-        if (errors.isEmpty()){
-        let idNuevo = user[user.length-1].id + 1;
-        var newUser = Object.assign({id: idNuevo},req.body,{contraseña:contraseña},{image:avatarName});
-        user.push(newUser);
-        fs.writeFileSync(userFilePath, JSON.stringify(user,null, ' '));
-        res.redirect("/");
-        } else {
-            res.render("register", { 
-                errors: errors.array(),
-                old: req.body
-               });
-        }
-        }*/
     saveUser: (req, res) => {
-        db.user.create({
+        let errors = validationResult(req);
+        var contraseña = bcrypt.hashSync(req.body.contraseña,10)
+        if (errors.isEmpty()){ 
+        db.User.create({    
             nombre : req.body.first_name,
             apellido : req.body.last_name,
             email : req.body.email,
@@ -59,10 +40,12 @@ const usersController = {
         })
         .then((resultados)  => { 
             res.redirect('/');
-         });
+        });
+        }else {res.render("register",{ 
+            errors: errors.array(),
+            old: req.body});
+        }
         
     }
-
-        
 }
     module.exports = usersController
