@@ -28,7 +28,7 @@ const usersController = {
         res.render("register");
     },
 
-    saveUser: (req, res) => {
+    /*saveUser: (req, res) => {
         let errors = validationResult(req);
         let avatarName;
         var contraseña = bcrypt.hashSync(req.body.contraseña,10)
@@ -49,7 +49,20 @@ const usersController = {
                 old: req.body
                });
         }
-        }
+        }*/
+    saveUser: (req, res) => {
+        db.user.create({
+            nombre : req.body.first_name,
+            apellido : req.body.last_name,
+            email : req.body.email,
+            contrasenia: req.body.contraseña
+        })
+        .then((resultados)  => { 
+            res.redirect('/');
+         });
+        
+    }
+
         
 }
     module.exports = usersController
