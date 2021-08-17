@@ -44,7 +44,7 @@ const productsController = {
 },
     //Main de productos - OK
         producto: (req, res) => {                                                          
-            db.Product.findAll() //Va el alias del modelo
+            db.Product.findAll() //Alias del modelo - {include : [{association: "brand"}]} dentro del findAll 
                 .then((resultado) =>{
                     //res.send(resultado)
                     let allProducts = []
@@ -54,7 +54,7 @@ const productsController = {
                 })            
     },
     //Ver un producto - OK
-        unProducto: (req,res) =>{
+        /*unProducto: (req,res) =>{
             let idP = req.params.id;
             for(let i=0;i<products.length;i++){
                 if (products[i].id == idP){
@@ -62,6 +62,15 @@ const productsController = {
                 }
             }
             res.render("unProducto",{productoUnico : productoSeleccionado});
+    },*/
+        unProducto: (req,res) =>{
+            db.Product.findOne(
+                {where:{id : req.params.id}}
+            )
+            .then((unProducto)=>{
+                //res.send(productoUnico)
+                res.render("unProducto",{productoUnico : unProducto});
+            })  
     },
 
         editProduct: (req, res) => {
