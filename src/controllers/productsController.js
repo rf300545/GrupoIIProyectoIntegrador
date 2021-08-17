@@ -15,7 +15,7 @@ const productsController = {
             res.render("createProduct");
     },
     //GUARDAR UN PRODUCTOgi
-    store: (req,res) =>{
+        store: (req,res) =>{
         // let productoNuevo = req.body;
         db.Product.create ({
         nombre: req.body.nombre,
