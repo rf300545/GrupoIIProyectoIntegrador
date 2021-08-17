@@ -11,23 +11,23 @@
          <section>  
           <article >
             
-          <% for(let i=0; i<productos.length;i++){ %> 
+          <% for(let i=0; i<producto.length;i++){ %> 
            
            
             <div class="contenedorMaxProd">
-            <a href="/products/<%=productos[i].id%>">
+            <a href="/products/<%=producto[i].id%>">
               <div class="conteiner2" >
-                <img src ="/img/products/<%=productos[i].imagen %>" class= "imagenProducto"> </img>
+                <img src ="/img/products/<%=producto[i].imagen %>" class= "imagenProducto"> </img>
                 <div id="conteinerTextoProducto">
-                  <h3><%=productos[i].nombre%> </h3>
-                  <p><%=productos[i].descripcion %> </p>
+                  <h3><%=producto[i].nombre%> </h3>
+                  <p><%=producto[i].descripcion %> </p>
                 </div>
               </div>
 
               <div id="precio"> <!--carro compras-->
                 <div id="nomYPrecio">
-                  <a><%=productos[i].nombre %><a>
-                  <a>$ <%=productos[i].precio %></a>
+                  <a><%=producto[i].nombre %><a>
+                  <a>$ <%=producto[i].precio %></a>
                 </div>
                   
                 <span class="lineaSeparadora"></span>

@@ -11,19 +11,13 @@ const productsController = {
             res.render("carro_compras");
     },
     // CREAR PRODUCTO - en desarrollo
-        createProduct: (req, res) => {
-
-            
+        createProduct: (req, res) => {            
             db.Flavor.findAll () 
-                 .then (function (flavors){
-            
+                 .then (function (flavors){        
             db.Category.findAll () 
-                .then (function (category){
-
-                
-                     db.Brand.findAll () 
-                          .then (function (marca){
-                 
+                .then (function (category){            
+            db.Brand.findAll () 
+                .then (function (marca){               
                 return res.render("./createProduct", {flavors : flavors, category : category, marca : marca });
              })
                 })
@@ -49,8 +43,15 @@ const productsController = {
                 
 },
     //Main de productos - OK
-        producto: (req, res) => {                                    
-            res.render ("producto", {productos: products});
+        producto: (req, res) => {                                                          
+            db.Product.findAll() //Va el alias del modelo
+                .then((resultado) =>{
+                    //res.send(resultado)
+                    let allProducts = []
+                    for (unProducto of resultado){ 
+                    allProducts.push(unProducto)};
+                    res.render ("producto", {producto: allProducts});
+                })            
     },
     //Ver un producto - OK
         unProducto: (req,res) =>{
