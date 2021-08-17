@@ -10,11 +10,27 @@ const productsController = {
         carro: (req, res) => {
             res.render("carro_compras");
     },
-    // Crear Producto - Ok
+    // CREAR PRODUCTO - en desarrollo
         createProduct: (req, res) => {
-            res.render("createProduct");
+
+            
+            db.Flavor.findAll () 
+                 .then (function (flavors){
+            
+            db.Category.findAll () 
+                .then (function (category){
+
+                
+                     db.Brand.findAll () 
+                          .then (function (marca){
+                 
+                return res.render("./createProduct", {flavors : flavors, category : category, marca : marca });
+             })
+                })
+                     })
     },
-    //GUARDAR UN PRODUCTOgi
+
+    //GUARDAR UN PRODUCTO - OK
         store: (req,res) =>{
         // let productoNuevo = req.body;
         db.Product.create ({
@@ -28,7 +44,7 @@ const productsController = {
         imagen: req.body.productImg,
     });
 
-         res.render ("./createProduct")
+         res.render ("./")
                 
                 
 },

@@ -25,36 +25,48 @@
 
             <div class="mp-cont-formulario" >
               <label for="Marca" class="mp-label-createProduct">Marca</label>
-              <input type= "text" name="marca" id="Marca" placeholder="Marca del producto" class="mp-input-createProduct" >
+              <select name="marca"> <% for (let i =0; i <marca.length; i ++) { %> 
+                <option value="<%=marca[i].id%>">
+                <%=marca[i].nombre %> 
+              
+            </option>
+              <%  } %>
+            </select>      
             </div>  
         
             <div class="mp-cont-formulario"> 
-              <label for="Categoria" class="mp-label-createProduct" >Categoría</label>
-              <input list="Categorias" name="categoria" id="Categoria"  class="mp-input-createProduct" >
-              <datalist id="Categorias">
-                <option value="Quemadores de grasa">
-                <option value= "Proteinas">
-                <option value="Post entrenamiento">
-              </datalist>
+              <label for="" class="mp-label-createProduct">Categoría</label>
+              <select name="categoria"> <% for (let i =0; i <category.length; i ++) { %> 
+                <option value="<%=category[i].id%>">
+                <%=category[i].nombre %> 
+              
+            </option>
+              <%  } %>
+            </select>      
             </div>    
+
             <div class="mp-cont-formulario">
               <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
               <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
             </div>
+
+            
             <div class="mp-cont-formulario">
-              <label for="Sabores" class="mp-label-createProduct">Sabores</label>
+              <label for="" class="mp-label-createProduct">Sabores</label>
+              <select name="sabores"> <% for (let i =0; i <flavors.length; i ++) { %> 
+                <option value="<%=flavors[i].id%>">
+                  <%=flavors[i].nombre %> 
+                
+              </option>
+                <%  } %>
+              </select>
                 <div>
-                  <input type="text" name="sabores" id="sabores" class="mp-input-createProduct">
+                  <!-- <input type="text" name="sabores" id="sabores" class="mp-input-createProduct"> -->
+                  
                   <input type="button" value="Agregar Sabor" class="mp-button-createProduct">
                 </div>
             </div>
-            <div class="mp-cont-formulario">
-                <p></p>
-                <ul> <!-- se deberian agregar en una lista los sabores que se van     agregando-->
-                  <li>Banana</li>
-                  <li>Chocolate</li>
-                </ul>
-            </div> 
+      
                           
             <div class="mp-cont-formulario">
                 <label for="precio" class="mp-label-createProduct">Precio</label>
