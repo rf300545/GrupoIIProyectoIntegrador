@@ -53,16 +53,7 @@ const productsController = {
                     res.render ("producto", {producto: allProducts});
                 })            
     },
-    //Ver un producto - OK
-        /*unProducto: (req,res) =>{
-            let idP = req.params.id;
-            for(let i=0;i<products.length;i++){
-                if (products[i].id == idP){
-                    var productoSeleccionado = products[i];
-                }
-            }
-            res.render("unProducto",{productoUnico : productoSeleccionado});
-    },*/
+    //Un producto - Ok
         unProducto: (req,res) =>{
             db.Product.findOne(
                 {where:{id : req.params.id}}
