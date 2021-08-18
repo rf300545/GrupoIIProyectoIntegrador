@@ -14,6 +14,7 @@ const storage = multer.diskStorage({
 	}
 })
 const uploadFile = multer({ storage });
+console.log(uploadFile)
 
 // Constatante para validacion del user
 const { body } = require ("express-validator");
@@ -28,9 +29,8 @@ const validacionCreacionUsuario = [
     body('avatar').custom((value, {req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
-		
 		if (!file) {
-			db.User.create({avatar:"avatar_default.png"})
+			//db.User.create({avatar:"avatar_default.png"})
 			//throw new Error('Tienes que subir una imagen');
 		} else {
 			let fileExtension = path.extname(file.originalname);
