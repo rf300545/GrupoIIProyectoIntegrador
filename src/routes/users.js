@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const path = require ("path");
 const multer = require("multer");
+const db= require ("../database/models")//ver
+
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		cb(null, './public/img/avatars');
@@ -28,7 +30,8 @@ const validacionCreacionUsuario = [
 		let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
 		
 		if (!file) {
-			throw new Error('Tienes que subir una imagen');
+			db.User.create({avatar:"avatar_default.png"})
+			//throw new Error('Tienes que subir una imagen');
 		} else {
 			let fileExtension = path.extname(file.originalname);
 			if (!acceptedExtensions.includes(fileExtension)) {
