@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 	}
 })
 const uploadFile = multer({ storage });
-console.log(uploadFile)
+
 
 // Constatante para validacion del user
 const { body } = require ("express-validator");
