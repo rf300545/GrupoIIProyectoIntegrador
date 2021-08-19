@@ -12,13 +12,30 @@ const usersController = {
         res.render("login");
     },
     
-    processlogin:(req,res)=>{
+    /*processlogin:(req,res)=>{
         for (let i = 0; i <user.length; i++){
             if(req.body.email == user[i].email && bcrypt.compareSync (req.body.contraseña, user[i].contraseña) ){
                 res.render("index");
                 const logued = true;
             }} 
                 res.send("error")
+            
+    },*/
+
+    processlogin:(req,res)=>{
+            db.User.findOne({
+                where: {
+                        contrasenia:bcrypt.compareSync (req.body.contraseña, db.User.contrasenia)}
+            })
+            .then((usuario)=>{
+                console.log("logueado")
+            })
+            /*if(req.body.email == db.User.email && bcrypt.compareSync (req.body.contraseña, db.User.contrasenia) ){
+                res.render("index");
+                console.log("login ok")
+                const logued = true;
+            }
+                res.send("error")*/
             
     },
 
