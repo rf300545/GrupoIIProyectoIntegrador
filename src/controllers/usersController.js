@@ -29,14 +29,14 @@ const usersController = {
     saveUser: (req, res) => {
         let errors = validationResult(req);
         var contraseña = bcrypt.hashSync(req.body.contraseña,10)
-        if (errors.isEmpty() && {avatar:null} ){ 
-        db.User.create({    
-            nombre : req.body.first_name,
-            apellido : req.body.last_name,
-            email : req.body.email,
-            contrasenia: contraseña,
-            avatar:"avatar_default.png"
-        })
+        if (errors.isEmpty()){ 
+            db.User.create({    
+                nombre : req.body.first_name,
+                apellido : req.body.last_name,
+                email : req.body.email,
+                contrasenia: contraseña,
+                avatar: req.file.filename,
+            })
         .then((resultados)  => { 
             res.redirect('/');
         });

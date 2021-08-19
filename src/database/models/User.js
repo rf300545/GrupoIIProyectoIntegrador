@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) =>  {
         id_direccion: {
             type: DataTypes.INTEGER
         },
-      
         
     }
 

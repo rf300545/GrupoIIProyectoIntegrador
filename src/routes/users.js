@@ -9,12 +9,12 @@ const storage = multer.diskStorage({
 		cb(null, './public/img/avatars');
 	},
 	filename: (req, file, cb) => {
-		let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
+		let fileName = `${Date.now()}_img${path.extname(file.originalname)}` //|| "avatar_default.png"; //VER SI FUNCIONA -----
 		cb(null, fileName);
 	}
 })
 const uploadFile = multer({ storage });
-console.log(uploadFile)
+
 
 // Constatante para validacion del user
 const { body } = require ("express-validator");
@@ -30,7 +30,8 @@ const validacionCreacionUsuario = [
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
 		if (!file) {
-			//db.User.create({avatar:"avatar_default.png"})
+			console.log("Asignado avatar default")
+			//filename = "avatar_default.png"
 			//throw new Error('Tienes que subir una imagen');
 		} else {
 			let fileExtension = path.extname(file.originalname);
