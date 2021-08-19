@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const userFilePath = path.join(__dirname, '../database/userDB.json');
-const user = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+//const userFilePath = path.join(__dirname, '../database/userDB.json');
+//const user = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 const bcrypt =require ("bcryptjs")
 const db= require ("../database/models")
 
@@ -12,30 +12,22 @@ const usersController = {
         res.render("login");
     },
     
-    /*processlogin:(req,res)=>{
-        for (let i = 0; i <user.length; i++){
-            if(req.body.email == user[i].email && bcrypt.compareSync (req.body.contraseña, user[i].contraseña) ){
-                res.render("index");
-                const logued = true;
-            }} 
-                res.send("error")
-            
-    },*/
-
+    
     processlogin:(req,res)=>{
             db.User.findOne({
-                where: {
-                        contrasenia:bcrypt.compareSync (req.body.contraseña, db.User.contrasenia)}
-            })
+                where: {email : req.body.email}
+            }) 
             .then((usuario)=>{
-                console.log("logueado")
+               //console.log(usuario.contrasenia) 
+                let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
+                if(pswrd == true){
+                    res.redirect("/")    
+                }else{res.send("contraseña incorrecta")}             
             })
-            /*if(req.body.email == db.User.email && bcrypt.compareSync (req.body.contraseña, db.User.contrasenia) ){
-                res.render("index");
-                console.log("login ok")
-                const logued = true;
-            }
-                res.send("error")*/
+            .catch((err)=> {
+                res.send("email no registrado")
+              });
+            
             
     },
 
