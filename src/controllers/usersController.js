@@ -11,8 +11,7 @@ const usersController = {
     iniciarSesion: (req, res) => {
         res.render("login");
     },
-    
-    
+        
     processlogin:(req,res)=>{
             db.User.findOne({
                 where: {email : req.body.email}
@@ -24,8 +23,9 @@ const usersController = {
                     res.redirect("/")    
                   //  req.session.usuario
 
-
-                }else{res.send("contraseña incorrecta")}             
+                }else {
+                    res.render ("login")};
+                    //res.send("contraseña incorrecta")}             
             })
             .catch((err)=> {
                 res.send("email no registrado")
