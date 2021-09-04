@@ -28,7 +28,7 @@ const usersController = {
                     //res.send("contraseña incorrecta")}             
             })
             .catch((err)=> {
-                res.send("email no registrado")
+                res.render("login")
               });
             
             
