@@ -22,6 +22,9 @@ const usersController = {
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
                 if(pswrd == true){
                     res.redirect("/")    
+                  //  req.session.usuario
+
+
                 }else{res.send("contraseña incorrecta")}             
             })
             .catch((err)=> {
