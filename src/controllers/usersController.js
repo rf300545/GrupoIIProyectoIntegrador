@@ -7,29 +7,39 @@ const db= require ("../database/models")
 
 const { validationResult } = require("express-validator");
 
+
 const usersController = {
     iniciarSesion: (req, res) => {
-        res.render("login");
+        let errorPass=[""]
+        let errorUser=[""]
+        res.render("login",{errorPass:errorPass, errorUser:errorUser});
     },
         
     processlogin:(req,res)=>{
-            db.User.findOne({
+        let errorPass=[""]
+        let errorUser=[""]
+        db.User.findOne({
                 where: {email : req.body.email}
             }) 
             .then((usuario)=>{
-               //console.log(usuario.contrasenia) 
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
                 if(pswrd == true){
-                    res.redirect("/")    
-                  //  req.session.usuario
+                   //req.session.usuarioLogueado = usuario--- pareciera que no anda session, al hacer un res.send de req.session, directamente pasa a la linea del catch, como si se cortara el if por tener un error
+                  res.redirect("/")
+                  //res.send (req.session.usuarioLogueado)   
+                   
 
                 }else {
-                    res.render ("login")};
+                    let errorPass=["Contraseña incorrecta"]
+                    let errorUser=[""]
+                   res.render ("login",{errorPass:errorPass, errorUser:errorUser}); };
+                    
                     //res.send("contraseña incorrecta")}             
             })
             .catch((err)=> {
-                res.render("login")
-              });
+                let errorUser=["Usuario no registrado"]
+                res.render("login",{errorPass:errorPass, errorUser:errorUser})
+              })
             
             
     },
