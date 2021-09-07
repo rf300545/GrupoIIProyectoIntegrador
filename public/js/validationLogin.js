@@ -50,4 +50,4 @@ form.addEventListener ( "submit", function (e) {
 
     
     )
-    console.log ("esto esta fyuncionacndo")
+    console.log ("esto esta funcionacndo")
