@@ -2,7 +2,10 @@ const form= document.getElementById("form");
 const errores = []
 form.addEventListener("submit",function(e){
     let product = document.getElementById("Producto")
+    let marca = document.getElementById("Marca")
     let pesoNeto = document.getElementById("pesoNeto")
+    let sabores = document.getElementById("pesoNeto")
+
     let precios = document.getElementById("precios")
     let tipoDeEnvase = document.getElementById("tipoDeEnvase")
     let modoDeUso = document.getElementById("modoDeUso")

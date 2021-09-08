@@ -1,4 +1,3 @@
-
 const form= document.getElementById("form")// no lo hice con querySelector porque ya esta el formulario de busqueda en la barra 
 const emailField = form.email
 const userPassword= form.contraseña // ver de sacarle la ñ en el html y en el contrlolador 
@@ -44,7 +43,6 @@ form.addEventListener ( "submit", function (e) {
 
     
         if (contador.length>0){
-
            e.preventDefault ();
         }}
 
