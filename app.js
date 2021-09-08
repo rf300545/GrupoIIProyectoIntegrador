@@ -6,6 +6,11 @@ const session = require ("express-session"); // incluyo session como middleware 
 //Captura la info del form de creacion
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(session({
+    secret: "cookie_secret",
+    resave: true,
+    saveUninitialized: true
+ }));
 
 const methodOverride = require('method-override');
 app.use(methodOverride("_method"))
@@ -29,11 +34,7 @@ app.use("/users", rutasUsuario);
 app.use("/", rutasMain);
 // USO DE SESSION-------------------------------------------------------------------------------------------
 //app.use(session({secret: "Esto es un secreto!"}));
-app.use(session({
-    secret: "cookie_secret",
-    resave: true,
-    saveUninitialized: true
- }));
+
 
 
 

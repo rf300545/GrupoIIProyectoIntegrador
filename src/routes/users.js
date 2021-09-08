@@ -38,7 +38,7 @@ const validacionCreacionUsuario = [
 			if (!acceptedExtensions.includes(fileExtension)) {
 				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
 			}
-		}
+		}// intenar poner aca para consultar si el mail ya existe en la dB
 		return true;
 	})
 
