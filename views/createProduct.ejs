@@ -16,7 +16,7 @@
     
       <div >
         <br>
-        <form action="/products/createProduct" method="POST" class="mp-main-createProduct mp-cont-formulario-padre " >
+        <form action="/products/createProduct" method="POST" class="mp-main-createProduct mp-cont-formulario-padre" id="form">
           <div>
             <div class="mp-cont-formulario" >
               <label  for="Producto" class="mp-label-createProduct">Producto</label>
@@ -60,17 +60,13 @@
               </option>
                 <%  } %>
               </select>
-                <div>
-                  <!-- <input type="text" name="sabores" id="sabores" class="mp-input-createProduct"> -->
-                  
-                  <input type="button" value="Agregar Sabor" class="mp-button-createProduct">
-                </div>
+                
             </div>
       
                           
             <div class="mp-cont-formulario">
                 <label for="precio" class="mp-label-createProduct">Precio</label>
-                <input type="text" name="precio" id="pesoNeto" class="mp-input-createProduct">
+                <input type="text" name="precio" id="precios" class="mp-input-createProduct">
             </div>
           
             <div class="mp-cont-formulario">
@@ -110,5 +106,6 @@
      </div>
 
      <%-include("partials/footer.ejs") %>
+<script src="/js/validationCreateProduct.js"></script>
 </body>
 </html>
