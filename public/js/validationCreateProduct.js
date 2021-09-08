@@ -1,6 +1,9 @@
 const form= document.getElementById("form");
 const errores = []
 form.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
     let product = document.getElementById("Producto")
     let pesoNeto = document.getElementById("pesoNeto")
     let precios = document.getElementById("precios")
@@ -9,12 +12,8 @@ form.addEventListener("submit",function(e){
     let ingredientes = document.getElementById("ingredientes")
     let productImg = document.getElementById("productImg")
 
-    e.preventDefault();         
-    
-
     if(product.value =="") {
         errores.push("Ingrese el nombre del producto")
-        alert("fs")
     };
     if(pesoNeto.value =="") {
         errores.push("Ingrese el peso")
@@ -35,9 +34,8 @@ form.addEventListener("submit",function(e){
         errores.push("Ingrese la imagen")
     };
 
-if (errores.length > 0){
-    e.preventDefault();
-
+if (errores.length == 0){
+    form.submit()
 }
 
 })

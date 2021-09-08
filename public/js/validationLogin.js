@@ -6,9 +6,6 @@ const isEmail = (field)=>{
     return regex.test (field.value.toLowerCase())// validacion para ver si es correcto el formato de email
       }
 
-
-
-
 const isEmpty = (field) => {
     return field.value.trim().length === 0
     
