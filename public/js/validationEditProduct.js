@@ -14,38 +14,43 @@ form.addEventListener("submit",function(e){
     let productImg = document.getElementById("productImg")   
 
     if(product.value =="") {
-        errores.push("Ingrese el nombre del producto")
+        errores.push(" producto")
         alert("fs")
     };
     if(marca.value =="") {
-        errores.push("Ingrese la marca del  producto")
+        errores.push(" marca")
         alert("fs")
     };
     if(pesoNeto.value =="") {
-        errores.push("Ingrese el peso")
+        errores.push(" peso")
     };
     if(sabores.value =="") {
-        errores.push("Ingrese el sabor")
+        errores.push(" sabor")
         alert("fs")
     };
     if(precios.value =="") {
-        errores.push("Ingrese el precio")
+        errores.push(" precio")
     };
     if(tipoDeEnvase.value =="") {
-        errores.push("Ingrese el tipo de envase")
+        errores.push(" tipo de envase")
     };
     if(modoDeUso.value =="") {
-        errores.push("Ingrese el modo de uso")
+        errores.push(" modo de uso")
     };
     if(ingredientes.value =="") {
-        errores.push("Ingrese los ingredientes")
+        errores.push(" ingredientes")
     };
-    if(productImg.value =="") {
+    /* if(productImg.value =="") {
         errores.push("Ingrese la imagen")
-    };
+    }; */
 
 if (errores.length == 0){
     form.submit()
+}
+
+if (errores.length > 0){
+    console.log(errores)
+    alert("Ingrese los datos faltantes en" +" " + errores )
 }
 
 })
