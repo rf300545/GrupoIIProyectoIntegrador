@@ -16,13 +16,10 @@ const isEmpty = (field) => {
 const generateError = (field, message) => {
     const span = field.nextElementSibling
     span.innerHTML = message
-    span.classList.add("danger")// 
-    
-    
+    span.classList.add("danger")
 }
 const confirmacion= function(){
     if (passwordField==confirmPassField){
-        
     }
 }
 /* form.addEventListener ("submit", function (e){
@@ -36,7 +33,6 @@ form.addEventListener ( "submit", function (e) {
         if (isEmpty(firstNameField)==true){
             generateError(firstNameField, "El campo nombre no puede estar vacío")
             contador.push("nombre vacio ")
-         
         }
         if (isEmpty(lastNameField)==true){
             generateError(lastNameField, "El campo apellido no puede estar vacío")
@@ -66,7 +62,6 @@ form.addEventListener ( "submit", function (e) {
             contador.push("email invalido")
     
         if (contador.length>0){
-          
            console.log (contador)
         }}
 
