@@ -24,15 +24,17 @@ const usersController = {
             .then((usuario)=>{
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
                 if(pswrd == true){
-                   req.session.usuarioLogueado = usuario //--- pareciera que no anda session, al hacer un res.send de req.session, directamente pasa a la linea del catch, como si se cortara el if por tener un error
+                   console.log(req.session.usuarioLogueado) 
+                   req.session.usuarioLogueado = usuario 
+                   //pareciera que no anda session, al hacer un res.send de req.session, 
+                   //directamente pasa a la linea del catch, como si se cortara el if por tener un error
                   //res.redirect("/")
                   res.send (req.session.usuarioLogueado)   
                    
-
                 }else {
                     let errorPass=["Contraseña incorrecta"]
                     let errorUser=[""]
-                   res.render ("login",{errorPass:errorPass, errorUser:errorUser}); };
+                    res.render ("login",{errorPass:errorPass, errorUser:errorUser}); };
                     
                     //res.send("contraseña incorrecta")}             
             })
@@ -40,7 +42,10 @@ const usersController = {
                 let errorUser=["Usuario no registrado"]
                 res.render("login",{errorPass:errorPass, errorUser:errorUser})
               })
-            
+        if(req.body.saveUser != undefined){
+            res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
+
+        }      
             
     },
 
