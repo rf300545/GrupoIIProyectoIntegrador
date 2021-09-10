@@ -26,26 +26,22 @@ const usersController = {
                 if(pswrd == true){
                    console.log(req.session.usuarioLogueado) 
                    req.session.usuarioLogueado = usuario 
-                   //pareciera que no anda session, al hacer un res.send de req.session, 
-                   //directamente pasa a la linea del catch, como si se cortara el if por tener un error
-                  //res.redirect("/")
-                  res.send (req.session.usuarioLogueado)   
+                   //res.send(req.session.usuarioLogueado) 
+                   if(req.body.saveUser != undefined){ //si el checkbox esta marcado, guarda en cookie al email del user
+                    res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
+                    }   
+                res.redirect("/")  
                    
                 }else {
                     let errorPass=["Contraseña incorrecta"]
                     let errorUser=[""]
-                    res.render ("login",{errorPass:errorPass, errorUser:errorUser}); };
-                    
-                    //res.send("contraseña incorrecta")}             
+                    res.render ("login",{errorPass:errorPass, errorUser:errorUser}); };         
             })
             .catch((err)=> {
                 let errorUser=["Usuario no registrado"]
                 res.render("login",{errorPass:errorPass, errorUser:errorUser})
               })
-        if(req.body.saveUser != undefined){
-            res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
-
-        }      
+           
             
     },
 
