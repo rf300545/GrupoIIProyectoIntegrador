@@ -68,6 +68,10 @@ const usersController = {
             old: req.body});
         }
         
+    },
+    userInfo: (req,res)=>{
+        res.render("userInfo")
     }
+    
 }
     module.exports = usersController

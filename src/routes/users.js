@@ -53,5 +53,6 @@ router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario, 
 // Procesar log usuario
 router.get("/login",userController.iniciarSesion);
 router.post("/login",userController.processlogin);
+router.get ("/info",userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
 
 module.exports = router;
