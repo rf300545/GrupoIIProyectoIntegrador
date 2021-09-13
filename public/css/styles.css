@@ -1,12 +1,7 @@
 body{
     background-color:hsl(0, 0%, 100%);
-<<<<<<< HEAD
-     font-family: 'Montserrat', sans-serif;
-
-=======
      font-family: 'Montserrat', sans-serif; 
    z-index: -1;
->>>>>>> 2b5f9df9d354d7b155f1e8359ce6b857911767c3
     }
   li{
     list-style-type: none;
@@ -31,11 +26,7 @@ body{
     margin: 0;
     position:fixed;
     width: 100%;
-<<<<<<< HEAD
-    /* background-color: red; */
-=======
     z-index: 1;
->>>>>>> 2b5f9df9d354d7b155f1e8359ce6b857911767c3
 }
 #mp-listItems-header{
   border-right: 2px solid #b3b3b3;
