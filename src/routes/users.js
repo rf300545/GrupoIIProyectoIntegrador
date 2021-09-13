@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const path = require ("path");
 const multer = require("multer");
-const db= require ("../database/models")//ver
+
 
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		cb(null, './public/img/avatars');
 	},
 	filename: (req, file, cb) => {
-		let fileName = `${Date.now()}_img${path.extname(file.originalname)}` //|| "avatar_default.png"; //VER SI FUNCIONA -----
+		let fileName = `${Date.now()}_img${path.extname(file.originalname)}` 
 		cb(null, fileName);
 	}
 })
@@ -53,5 +53,6 @@ router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario, 
 // Procesar log usuario
 router.get("/login",userController.iniciarSesion);
 router.post("/login",userController.processlogin);
+router.get ("/info",userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
 
 module.exports = router;
