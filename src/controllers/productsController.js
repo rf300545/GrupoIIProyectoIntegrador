@@ -44,9 +44,8 @@ const productsController = {
 },
     //Main de productos - OK
         producto: (req, res) => {                                                          
-            db.Product.findAll() //Alias del modelo - {include : [{association: "brand"}]} dentro del findAll 
+            db.Product.findAll()  
                 .then((resultado) =>{
-                    //res.send(resultado)
                     let allProducts = []
                     for (unProducto of resultado){ 
                     allProducts.push(unProducto)};
@@ -59,7 +58,6 @@ const productsController = {
                 {where:{id : req.params.id}}
             )
             .then((unProducto)=>{
-                //res.send(productoUnico)
                 res.render("unProducto",{productoUnico : unProducto});
             })  
     },

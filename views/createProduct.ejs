@@ -16,7 +16,7 @@
     
       <div >
         <br>
-        <form action="/products/createProduct" method="POST" class="mp-main-createProduct mp-cont-formulario-padre" id="form">
+        <form action="/products/createProduct" method="POST" enctype="multipart/form-data" class="mp-main-createProduct mp-cont-formulario-padre" id="form">
           <div>
             <div class="mp-cont-formulario" >
               <label  for="Producto" class="mp-label-createProduct">Producto</label>
@@ -87,7 +87,7 @@
             </div>
             <div class="mp-cont-formulario" >
               <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
-              <input type="file" name="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta">
+              <input type="file" name="productImg" id="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta" multiple>
             </div>
             <div class="mp-cont-formulario">
               <p></p>

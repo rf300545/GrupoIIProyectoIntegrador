@@ -11,7 +11,7 @@ form.addEventListener("submit",function(e){
     let modoDeUso = document.getElementById("modoDeUso")
     let ingredientes = document.getElementById("ingredientes")
     let productImg = document.getElementById("productImg")
-
+    
     if(product.value =="") {
         errores.push("producto")
     };
@@ -30,6 +30,7 @@ form.addEventListener("submit",function(e){
     if(ingredientes.value =="") {
         errores.push(" ingredientes")
     };
+    
     /* if(productImg.value =="") {
         errores.push("Ingrese la imagen")
     }; */
