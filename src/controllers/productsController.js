@@ -4,6 +4,8 @@ const path = require('path');
 const db = require ("../database/models")
 const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { validationResult } = require("express-validator");
+
 
 const productsController = {
     //se muestra, pero falta que sea dinamico
@@ -26,20 +28,25 @@ const productsController = {
 
     //GUARDAR UN PRODUCTO - OK
         store: (req,res) =>{
-        // let productoNuevo = req.body;
-        db.Product.create ({
-        nombre: req.body.nombre,
-        id_brand: req.body.marca,
-        id_category: req.body.categoria,
-        precio: req.body.precio,
-        peso: req.body.pesoNeto,
-        modoDeUso: req.body.modoDeUso,
-        ingrediente: req.body.ingredientes,
-        imagen: req.body.productImg,
-    });
-
-         res.render ("./")
-                
+        let errors = validationResult(req);  
+        if (errors.isEmpty()){
+            db.Product.create ({
+            nombre: req.body.nombre,
+            id_brand: req.body.marca,
+            id_category: req.body.categoria,
+            precio: req.body.precio,
+            peso: req.body.pesoNeto,
+            modoDeUso: req.body.modoDeUso,
+            ingrediente: req.body.ingredientes,
+            imagen: req.body.productImg,
+        })
+            .then((resultados)=>{
+            res.redirect ("/");
+        });
+        }else {res.render("productsController",{ 
+            errors: errors.array(),
+            old: req.body});
+        }           
                 
 },
     //Main de productos - OK

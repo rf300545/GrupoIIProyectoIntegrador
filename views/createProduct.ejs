@@ -17,7 +17,10 @@
       <div >
         <br>
         <form action="/products/createProduct" method="POST" enctype="multipart/form-data" class="mp-main-createProduct mp-cont-formulario-padre" id="form">
-          <div>
+          <div class="danger">
+            <% if (locals.errors) { errors.forEach (error => { %>
+              <p><%= error.msg %></p>
+            <% } ) } %>
             <div class="mp-cont-formulario" >
               <label  for="Producto" class="mp-label-createProduct">Producto</label>
               <input type="text" name="nombre" id="Producto"  class="mp-input-createProduct" >

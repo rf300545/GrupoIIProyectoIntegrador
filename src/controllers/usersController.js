@@ -40,9 +40,7 @@ const usersController = {
             .catch((err)=> {
                 let errorUser=["Usuario no registrado"]
                 res.render("login",{errorPass:errorPass, errorUser:errorUser})
-              })
-           
-            
+              })           
     },
 
     registrarse: (req, res) => {
@@ -60,7 +58,7 @@ const usersController = {
                 contrasenia: contraseña,
                 avatar: req.file.filename,
             })
-        .then((resultados)  => { 
+        .then((resultados) => { 
             res.redirect('/');
         });
         }else {res.render("register",{ 
