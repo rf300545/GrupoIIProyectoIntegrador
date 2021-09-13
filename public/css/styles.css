@@ -1,7 +1,7 @@
 body{
     background-color:hsl(0, 0%, 100%);
-     font-family: 'Montserrat', sans-serif; 
-   
+     font-family: 'Montserrat', sans-serif;
+
     }
   li{
     list-style-type: none;
@@ -11,22 +11,22 @@ body{
   }
   a:visited{
     text-decoration:none;
-    color:inherit
+    color:inherit;
+    text-align: center;
   }
   ::placeholder{
     font-size: 14px;
     font-style: italic;
   }
-/*HEADER*/
+/*----------------HEADER-----------------------------*/
 .mp-contGral-header{
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
-    background-color: #ffffff;
-    border-bottom: 1px solid grey;
-    margin: -8px;
+    /* border-bottom: 1px solid #1e11e4; */
+    margin: 0;
     position:fixed;
     width: 100%;
+    /* background-color: red; */
 }
 #mp-listItems-header{
   border-right: 2px solid #b3b3b3;
@@ -35,6 +35,57 @@ body{
   color: black;
   height:10%;
 }
+.dropbox a{
+  line-height: 23px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.dropbox{
+  font-weight: bold;
+  position: relative;
+}
+.dropbox ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dropbox ul li {
+  float: left;
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  opacity: .8;
+  line-height: 40px;
+  text-align: center;
+  font-size: roboto;
+  font-weight: bold;
+}
+.dropbox ul li a{
+  text-decoration: none;
+  color: #141420;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  line-height: 48px;
+}
+.dropbox ul li a:hover{
+  background-color:rgb(241, 239, 239);
+}
+.dropbox ul li ul li{
+  display: none;
+}
+.dropbox ul li:hover ul li{
+  display: block;
+}
+
+/* #fd-listItems-header{
+  border-right: 2px solid #b3b3b3;
+  padding-right: 7%;
+  font-weight: bold;
+  color: black;
+  height:10%;
+
+} */
 #mp-listItems-header-faq{
   padding-right: 5%;
   font-weight: bold;
@@ -52,32 +103,37 @@ body{
 }
 .mp-contList-header-icons{
   display:flex;
+  /* justify-content: center; */
   flex-direction: row;
   justify-content: space-between;
-  flex-grow: 0;
+  /* flex-grow: 0; */
   /* border:1px solid red; */
-  width: 30%;
   text-align: center;
   align-self: center;
-
+  position: relative;
+  top: 50%;
+  left: 0%;
+  width: 26%;
 }
 .mp-serchbar-header{
   align-self:center;
   border:none;
   background-color: #ffffff;
+  outline: none;
 }
 .mp-searchbar-header-icon{
   color: black;
   border:none;
   background-color: #ffffff;
-}
-header img{max-width: 60px;max-height: 40px;align-self: center;}
+} 
+/* header img{max-width: 60px;max-height: 40px;align-self: center;}*/
 
 
 #Banner{
-    width: 102%;
-    margin-left: -8px;
-    /* margin-right: -2px; */
+    width: 101%;
+    margin-left: -7px;
+    margin-right: -2px;
+    margin-top: 51px;
 }
 .mp-header-icon{
   z-index: 2;
@@ -146,12 +202,12 @@ section{
   border-right: 1px solid white;
 }
 
-#footerLinks{  
+#footerLinks{
     text-align:center;
     box-sizing:content-box;
     display: inline-flex;
     flex-direction: column;
-    justify-content: flex-start;   
+    justify-content: flex-start;
 }
 #footerEmail{
     text-align:center;
@@ -165,7 +221,7 @@ section{
     }
 
 .imagenProducto{
-    
+
     margin:2%;
     object-fit: contain;
     margin:5%
@@ -208,7 +264,7 @@ section{
   line-height:0;
   border: none;
   border-style: hidden;
- 
+
 }
 
 table td:nth-child(2) {
@@ -262,8 +318,8 @@ table td:nth-child(4) {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
-    
-     
+
+
 }
 #medioenvio {
   border: 15px solid rgb(129, 141, 141);
@@ -299,7 +355,7 @@ table td:nth-child(4) {
 
 .titleform{
   float: right;
-  line-height: 12px; 
+  line-height: 12px;
   font-family: 'Montserrat', sans-serif;
 }
 #margen1 {
@@ -326,14 +382,14 @@ table td:nth-child(4) {
       font-style: normal;
       font-weight: bold;
       font-size: 10px;
-      font-family: 'Montserrat', sans-serif;   
+      font-family: 'Montserrat', sans-serif;
   }
 
   .Cuenta {
       font-family: 'Montserrat', sans-serif, bold;
       font-weight: bold;
       border-radius: 17px;
-      background-color: whitesmoke; 
+      background-color: whitesmoke;
   }
 
   .contenedorForm{
@@ -352,14 +408,14 @@ table td:nth-child(4) {
   #img{
       width:60%;
       height:auto;
-      
+
   }
-  
+
 /*CSS de forregistro*/
 html {
 	overflow-y: scroll;
 	/* box-sizing: border-box; */
-} 
+}
 
 body {
     background: white;
@@ -372,7 +428,7 @@ body {
 
 .titleform{
     float: right;
-    line-height: 12px; 
+    line-height: 12px;
     font-family: 'Montserrat', sans-serif;
 }
 #margen1 {
@@ -429,7 +485,7 @@ body {
       margin-top: 3%;
   }
   .mp-input-formulario{
-    
+
       margin-top: 3%;
       align-items: center;
       text-align: center;
@@ -441,7 +497,7 @@ body {
       /* align-items: center; */
       /* height: fit-content; */
   }
-  
+
   .mp-img-formulario{
       display:grid;
       grid-template-columns: auto auto auto;
@@ -450,14 +506,14 @@ body {
   .danger{
     color:red;
     font-style: normal;
-    
+
   }
   #mp-img-createProduct{
       width: auto;
       height: 100px;
   }
   .mp-main-createProduct{
-  
+
      margin: 0% 10%
   }
   .mp-input-createProduct{
@@ -563,9 +619,9 @@ body {
   margin-left:5%;
 }
 #cajaSabores{
- 
+
  margin-left:5%;
- 
+
  flex-grow: 4;
 }
 .linea{
@@ -613,14 +669,14 @@ body {
   font-size: 24px;
   font-weight: bold;
   color:grey;
-  
+
 }
 .lineaSeparadora{
   border-bottom: 2px solid grey;
 
 }
 .lineaSeparadora2{
-  border-bottom: px solid grey;     
+  border-bottom: px solid grey;
   margin-left: 5%;
 }
 
@@ -674,7 +730,7 @@ body {
           border:2px solid black;
           margin-top:5%
           }
-      
+
        .contenedorMaxProd{
            display:flex;
            flex-direction: row;
