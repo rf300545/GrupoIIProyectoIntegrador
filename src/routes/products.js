@@ -16,7 +16,7 @@ router.post("/createProduct", productsController.store);
 //VER DETALLE DE UN PRODUCTO - ok
 router.get("/:id", productsController.unProducto); 
 
-//Editar Producto
+//Editar Producto .
 router.get("/editProduct/:id", productsController.editProduct);
 router.put("/editProduct/:id", productsController.actualizar); 
 
