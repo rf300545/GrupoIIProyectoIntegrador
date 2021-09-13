@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+  <%-include("partials/head.ejs") %>
+  <body>
+  <%-include("partials/header.ejs") %>
+
+
+  <!-- FORMULARIO DE REGISTRO -->
+<br>
+<br>
+<br>
+<br>
+<main>
+  <!-- <form action="/users/register" class="formcenter" method="POST" enctype="multipart/form-data" id="form" >
+ -->
+ <div class="mp-contenedor">
+  <div>
+    <p class = "mp-claseprueba">Bienvenido <!-- traer nombre desde sessions --></p>
+    
+  </div>
+  <div class="mp-contenedor-fila">
+    <div class= "img-cont-user" >
+      <img src="/img/avatars/avatar_default.png" id="mp-img-avatar"> 
+      <label>
+        <input type="file"  style="display:none"><i class="far fa-edit mp-btn-img"></i></button>
+      </label>
+      
+    </div>
+    
+   
+  
+  <div class="mp-maincontainer">
+
+  <div >
+
+    <div class="mp-contenedor-info" > 
+      
+        <div >
+          <p>Mis Datos <!-- traer nombre desde sessions --></p>
+        </div>
+
+        <div  >
+          <div class="mp-contenedor-datos" >
+            <p >Email</p>
+            <p >correo traido x session</p>
+            <button type= "button" id="mp-button-invisible" ><i class="fas fa-chevron-right"></i></button> <!-- boton para editar el email registrado -->
+          </div> 
+
+          <div  class="mp-contenedor-datos">
+            <p>Nombre y Apellido</p>
+            <p>nombre traido de bd</p>
+            <button type= "button"  id="mp-button-invisible" ><i class="fas fa-chevron-right"></i></button> <!-- boton para editar el nombre y apellido registrado -->
+          </div>
+
+          <div class="mp-contenedor-datos">
+            <p>Contraseña</p>
+            <p>*********</p>
+            <button type= "button" id="mp-button-invisible" ><i class="fas fa-chevron-right"></i></button> <!-- boton para cambiar contraseña -->      
+          </div>
+        </div>
+        
+          
+    </div>
+  </div>  
+
+  <div class= "mp-contenedor-todos">
+  
+    <div class="mp-contenedor-info" > 
+      
+        <div >
+          <p>Mis direcciones <!-- traer nombre desde sessions --></p>
+        </div>
+
+        <div  >
+          <div class="mp-contenedor-datos" >
+            <p >Provincia</p>
+            <p >provincia traida desde bd</p>
+            <button type= "button" id="mp-button-invisible" ><i class="fas fa-chevron-right"></i></button> <!-- boton para editar el email registrado -->
+          </div> 
+
+          <div  class="mp-contenedor-datos">
+            <p>Ciudad</p>
+            <p>viene desde bd</p>
+            <button type= "button"  id="mp-button-invisible" ><i class="fas fa-chevron-right"></i></button> <!-- boton para editar el nombre y apellido registrado -->
+          </div>
+
+          <div class="mp-contenedor-datos">
+            <p>Calle</p>
+            <p>viene desde BD</p>
+            <button type= "button" id="mp-button-invisible" ><i class="fas fa-chevron-right"></i></button> <!-- boton para cambiar contraseña -->      
+          </div>
+        </div>
+          
+    </div>
+  </div>
+  </div>
+</div>
+  
+  
+</main>
+<%-include("partials/footer.ejs") %>
+<script src="/js/validationRegister.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+

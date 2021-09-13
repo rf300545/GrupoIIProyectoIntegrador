@@ -22,10 +22,7 @@ const confirmacion= function(){
     if (passwordField==confirmPassField){
     }
 }
-/* form.addEventListener ("submit", function (e){
-    e.preventDefault();
-    console.log ("esto creo que funciona")
-}) */
+
 
 form.addEventListener ( "submit", function (e) {
     e.preventDefault();
@@ -73,7 +70,6 @@ form.addEventListener ( "submit", function (e) {
             console.log ("llegue")
             form.submit();
         }
-
         
     })
     console.log ("esto esta fyuncionacndo")
