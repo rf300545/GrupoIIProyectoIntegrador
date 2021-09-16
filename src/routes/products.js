@@ -20,6 +20,7 @@ router.get("/carro_compras", productsController.carro);
 
 //TODOS LOS PRODUCTOS - ok
 router.get("/", productsController.producto);
+router.get("/quemadores", productsController.quemadores)
 
 //CREAR PRODUCTO - falta que agregue el producto nuevo a la DB
 router.get("/createProduct", productsController.createProduct);

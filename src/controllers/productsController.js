@@ -1,6 +1,7 @@
 const fs = require('fs');
 //const { reset } = require('nodemon');
 const path = require('path');
+const { debugPort } = require('process');
 const db = require ("../database/models")
 const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -106,6 +107,22 @@ const productsController = {
 	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
 		fs.unlinkSync(path.join(__dirname,'../../public/img/products/'+nombreImagen));
 		res.render('index',{productos: products});
-       }
-} 
+       },
+       quemadores: (req,res)=>{ //intentando hacer controlador para que traiga los productos de una categoria especifica
+          db.Product.findAll({
+            include: [
+                {
+                  model: Category,
+                  where: { nombre: "Pre-training" },
+                }]
+            })  .then((resultado) =>{
+                let allProducts = []
+                for (unProducto of resultado){ 
+                allProducts.push(unProducto)};
+                //res.render ("producto", {producto: allProducts});
+                res.send(resultado)
+            })       
+       
+        }
+ }
 module.exports = productsController
