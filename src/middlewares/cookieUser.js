@@ -1,3 +1,5 @@
+const db= require ("../database/models")
+
 function cookieUser (req, res,next){
 next()
     if(req.cookies.savedUser != undefined && req.session.usuarioLogueado == undefined){

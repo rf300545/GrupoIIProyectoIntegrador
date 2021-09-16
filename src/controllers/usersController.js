@@ -23,10 +23,9 @@ const usersController = {
             }) 
             .then((usuario)=>{
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
-                if(pswrd == true){
-                   console.log(req.session.usuarioLogueado) 
+                if(pswrd == true){ 
                    req.session.usuarioLogueado = usuario 
-                   //res.send(req.session.usuarioLogueado) 
+                   //console.log(req.session.usuarioLogueado)
                    if(req.body.saveUser != undefined){ //si el checkbox esta marcado, guarda en cookie al email del user
                     res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
                     }   
@@ -40,9 +39,7 @@ const usersController = {
             .catch((err)=> {
                 let errorUser=["Usuario no registrado"]
                 res.render("login",{errorPass:errorPass, errorUser:errorUser})
-              })
-           
-            
+              })           
     },
 
     registrarse: (req, res) => {
@@ -60,7 +57,7 @@ const usersController = {
                 contrasenia: contraseña,
                 avatar: req.file.filename,
             })
-        .then((resultados)  => { 
+        .then((resultados) => { 
             res.redirect('/');
         });
         }else {res.render("register",{ 
@@ -70,7 +67,9 @@ const usersController = {
         
     },
     userInfo: (req,res)=>{
-        res.render("userInfo")
+        let userProfile = req.session.usuarioLogueado
+        res.render("userInfo",{userData: userProfile})
+        //console.log(userData)
     }
     
 }

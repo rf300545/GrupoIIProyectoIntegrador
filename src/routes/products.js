@@ -3,6 +3,17 @@ const router = express.Router();
 const path = require ("path");
 const productsController = require("../controllers/productsController")
 const multer = require("multer");
+const { body } = require ("express-validator");
+
+// Validaciones
+const productsValidator = [
+    body ("nombre").notEmpty().withMessage("Ingrese el nombre").bail(),
+    body ("pesoNeto").notEmpty().withMessage("Ingrese el peso"),
+    body ("precio").notEmpty().withMessage("Ingrese el precio"),
+    body ("tipoDeEnvase").notEmpty().withMessage("Ingrese el tipo de envase"),
+    body ("modoDeUso").notEmpty().withMessage("Ingrese el modo de uso"),
+    body ("ingredientes").notEmpty().withMessage("Ingrese los ingredientes"),
+];
 
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
@@ -24,7 +35,7 @@ router.get("/quemadores", productsController.quemadores)
 
 //CREAR PRODUCTO - falta que agregue el producto nuevo a la DB
 router.get("/createProduct", productsController.createProduct);
-router.post("/createProduct",uploadFile.single('productImg'), productsController.store);
+router.post("/createProduct",uploadFile.array('productImg'),productsValidator, productsController.store);
 
 //VER DETALLE DE UN PRODUCTO - ok
 router.get("/:id", productsController.unProducto); 

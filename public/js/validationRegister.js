@@ -59,11 +59,6 @@ form.addEventListener ( "submit", function (e) {
         if (!isEmail(emailField)&& (!isEmpty(emailField))){
             generateError (emailField,"Formato de email invalido")
             contador.push("email invalido")
-    
-        /* if (contador.length>0){
-           
-          
-           console.log (contador) */
         }
         console.log (contador.length)
         if (contador.length==0){
@@ -72,4 +67,4 @@ form.addEventListener ( "submit", function (e) {
         }
         
     })
-    console.log ("esto esta fyuncionacndo")
+    console.log ("esto esta funcionacndo")
