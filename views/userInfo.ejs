@@ -22,7 +22,11 @@
   </div>
   <div class="mp-contenedor-fila">
     <div class= "img-cont-user" >
-      <img src="/img/avatars/avatar_default.png" id="mp-img-avatar"> 
+      <% if (userData.avatar){ %>
+        <img src="/img/avatars/<%= userData.avatar %> " id="mp-img-avatar">
+      <%} else { %>
+        <img src="/img/avatars/avatar_default.png" id="mp-img-avatar">
+      <% }  %>
       <label>
         <input type="file"  style="display:none"><i class="far fa-edit mp-btn-img"></i></button>
       </label>
