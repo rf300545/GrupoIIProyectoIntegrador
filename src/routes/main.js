@@ -15,6 +15,8 @@ router.get("/nosotros", mainController.nosotros);
 router.get("/contacto", mainController.contacto);
 //CREAR PRODUCTO
 router.get ("/createProduct", productsController.createProduct)
+//CARRITO
+router.get ("/carrito")
 
 
 // PARA PROBAR SI ANDA SESSION

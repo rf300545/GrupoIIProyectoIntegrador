@@ -15,10 +15,10 @@
            
            
             <div class="contenedorMaxProd">
-            <a href="/products/<%=producto[i].id%>">
+            <a href="/products/<%=producto[i].id%>" >
               <div class="conteiner2" >
                 <img src ="/img/products/<%=producto[i].imagen%>" class= "imagenProducto"> </img>
-                <div id="conteinerTextoProducto">
+                <div id="conteinerTextoProducto" class="prod">
                   <h3><%=producto[i].nombre%> </h3>
                   <p><%=producto[i].descripcion %> </p>
                 </div>
@@ -26,7 +26,7 @@
 
               <div id="precio"> <!--carro compras-->
                 <div id="nomYPrecio">
-                  <a><%=producto[i].nombre %><a>
+                  <a><%=producto[i].nombre %></a>
                   <a>$ <%=producto[i].precio %></a>
                 </div>
                   
@@ -52,7 +52,7 @@
               </div>
                   <span class="lineaSeparadora"></span>
                   <button class="botonCarrito">AGREGAR AL CARRITO</button>
-                  
+                  <span id="prod"><%=producto[1].nombre %></span>
               </div>
             </a>
           </div>
@@ -79,5 +79,10 @@
           </article>    
     </main>
     <%-include("partials/footer.ejs") %>
+    <script >
+    let data= "<%- producto %>"
+    
+console.log (toJson(data))
+    </script>
   </body>
 </html>
