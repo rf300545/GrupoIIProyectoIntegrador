@@ -28,8 +28,8 @@ const usersController = {
                    //console.log(req.session.usuarioLogueado)
                    if(req.body.saveUser != undefined){ //si el checkbox esta marcado, guarda en cookie al email del user
                     res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
-                    }   
-                res.redirect("/")  
+                    }  
+                res.render("index", {userDatas : req.session.usuarioLogueado})  
                    
                 }else {
                     let errorPass=["Contraseña incorrecta"]
@@ -67,9 +67,8 @@ const usersController = {
         
     },
     userInfo: (req,res)=>{
-        let userProfile = req.session.usuarioLogueado
+        const userProfile = req.session.usuarioLogueado
         res.render("userInfo",{userData: userProfile})
-        //console.log(userData)
     }
     
 }
