@@ -14,6 +14,9 @@ const productsController = {
         carro: (req, res) => {
             res.render("carro_compras");
     },
+        carro2: (req, res) => { // borrar al terminar de armar el carrito
+            res.render("carro_compra2");
+    },
     // CREAR PRODUCTO - en desarrollo
         createProduct: (req, res) => {            
             db.Flavor.findAll () 
@@ -81,7 +84,7 @@ const productsController = {
             res.render('editProduct',{productoEdit: productoEncontrado});
     },
 
-       actualizar: (req,res)=>{
+       actualizar: (req,res)=>{ // falta actualizarlo para que trabaje con la bd
         let valoresNuevos = req.body;
 		let idProducto = req.params.id;	
 		for(let i=0;i<products.length;i++){
@@ -116,22 +119,6 @@ const productsController = {
 		fs.unlinkSync(path.join(__dirname,'../../public/img/products/'+nombreImagen));
 		res.render('index',{productos: products});
        },
-       quemadores: (req,res)=>{ //intentando hacer controlador para que traiga los productos de una categoria especifica
-          db.Product.findAll({
-            include: [
-                {
-                  model: db.Category,
-                  as: "category",
-                  where: { nombre: "Pre-training" },
-                }]
-            })  .then((resultado) =>{
-                let allProducts = []
-                for (unProducto of resultado){ 
-                allProducts.push(unProducto)};
-                res.render ("producto", {producto: allProducts});
-                
-            })       
-       
-        }
+      
  }
 module.exports = productsController

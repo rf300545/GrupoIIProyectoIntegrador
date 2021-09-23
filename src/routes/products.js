@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require ("path");
 const productsController = require("../controllers/productsController")
+const searchController = require("../controllers/searchController")
 const multer = require("multer");
 const { body } = require ("express-validator");
 
@@ -28,10 +29,19 @@ const uploadFile = multer({ storage });
 
 //CARRO DE COMPRAS -ok
 router.get("/carro_compras", productsController.carro);
+router.get("/carro_compra2", productsController.carro2);
 
 //TODOS LOS PRODUCTOS - ok
 router.get("/", productsController.producto);
-router.get("/quemadores", productsController.quemadores)
+
+//CATEGORIAS NAVBAR
+router.get("/preTraining", searchController.preTraining);
+router.get("/quemadores", searchController.quemadores);
+router.get("/ganadoresDePeso", searchController.ganadoresDePeso);
+router.get("/postTraining", searchController.postTraining);
+router.get("/intraTraining", searchController.intraTraining);
+router.get("/aminoacidos", searchController.aminoacidos);
+router.get("/otros", searchController.otros);
 
 //CREAR PRODUCTO - falta que agregue el producto nuevo a la DB
 router.get("/createProduct", productsController.createProduct);
