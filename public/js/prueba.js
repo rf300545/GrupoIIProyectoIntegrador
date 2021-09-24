@@ -4,9 +4,16 @@ let precioCarrito = document.getElementById("precioCarrito").innerText
 let precio=precioCarrito.replace(/\D/g,'');
 let img =document.getElementById("imgCart").src
    
+/* script para guardar los datos en localstorage cuando haces click en el boton de agregar carrito en la pagina de unProducto */
 
-
-let arrayProducts =[];
+if (localStorage.getItem("carrito")== undefined){
+    arrayProducts =[]
+    console.log ("esoty vacio")
+} else{
+    arrayProducts =JSON.parse(localStorage.getItem("carrito"))
+    
+}
+ 
 boton[0].addEventListener("click",()=>{
     
   let producto= {
@@ -14,20 +21,19 @@ boton[0].addEventListener("click",()=>{
         "precio": precio,
         "img": img}  
          
-    if (arrayProducts.lenght<1){
+    if (arrayProducts.length<1){
         arrayProducts.push(producto);
-        localStorage.setItem("carrito",arrayProducts)
-        console.log(arrayProducts)
+        localStorage.setItem("carrito",JSON.stringify(arrayProducts) )
+
+        
         
     }else{ 
-        arrayProducts = localStorage.getItem("carrito").push(producto)
+        arrayProducts.push(producto)
+        localStorage.setItem("carrito",JSON.stringify (arrayProducts))
+        console.log ("ya cargue otro producto")
    }; 
-   console.log(arrayProducts)
             
 })
     
 
-
-
-/* script para guardar los datos en localstorage cuando haces click en el boton de agregar carrito en la pagina de unProducto */
 // let arregloProdutos = localStorage.getItem("carrito");
