@@ -5,98 +5,64 @@
 
   <body>
       <%-include("partials/header.ejs") %>
-    
-   
-
- 
-   <br>
-   <br>
-   <br>
-    <section class="section">
-      <table class="tabla" style= "width: 100%; height: 100%;">
-        <caption id="captioncarrito"> CARRITO DE COMPRAS <i class="fas fa-shopping-cart"></i> </caption>
-         <tr>
-          <th>Presentación</th>
-          <th>Producto</th>
-          <th>Subtotal</th>
-          <th></th>
-         </tr>
-         <tr>
-         <td> <img src="/img/products/pump.JPG" id="img1"/> </td>
-
-         <td>Creatina monohidrato <br> Costo unitario $123</td>
-         <td> $123</td>
-         <td> <i class="far fa-minus-square"></i> <i class="far fa-plus-square"></i> <i class="far fa-trash-alt"> </td>
-        </tr>
-
-        <tr>
-         <td> <img src = "/img/products/nitro_whey.JPG" id="img2"/> </td>
-         <td>Nitro whey <br> Costo unitario $123 </td>
-         <td> $123</td>
-         <td> <i class="far fa-minus-square"></i> <i class="far fa-plus-square"></i> <i class="far fa-trash-alt"> </td>
-        </tr>
- 
-        <tfoot>
-          <tr>
-            <td></td>
-            <td>TOTAL</td>
-            <td> $246</td>
-          </tr>
-        </tfoot>
-      </table>
-
-    
-     
-     <a id="medioenvio"> Medio de envio </a>
-     <a class="envios">
-       <label for="Provincia de envío"> </label>
-       <input type="text" class= "envio" placeholder="*Provincia de envio" value= "" maxlength="30" name="pcia" id="text" >
-       <label for="Calculo envio"> </label>
-      <input type="submit" class="envio" value="CALCULAR ENVIO" >
-      </a>
-
-    </section>
-
-          <!-- <article>
-            <img src = "./img/pump.JPG" > </img>
-            <h3>Nombre producto</h3>
-            <p>Descripcion de producto - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolorum sequi iste veniam necessitatibus sed quo, corporis veritatis laborum doloremque reiciendis fugit architecto reprehenderit et facilis ut consequuntur deleniti labore?</p>
-            <h4>Sabores disponibles</h4>
-          <select name="Sabores">
-            <option>Frutilla</option>
-            <option>Chocolate</option>
-            <option>Vainilla</option>
-          </select>
-          </article>
-          <div>
-            <p>+ Modo de uso</p>
-            <p>+ Ingredientes</p>
-            
-          </div>
-
-           <div> carrusel de fotos -->
-            <!-- <img src = "./img/Multifruta.JPG" > </img>
-            <img src = "./img/info nutri.JPG" > </img>
-            <img src = "./img/pump.JPG" > </img>
-           </div> -->
-
-          <!-- <div> Carro compras-->
-            <!-- <h3>Nompre de producto</h3>
-            <h3>$$$$</h3>
-            <button id="carro de compras">Añadir a mis compras</button>
-            <p>12 cuotas sin Interes</p>
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-amex"></i>  --> 
-
+      <main>
+          <br>
+          <br>
+          <br>
+          <br>
           
+      <div class="card">
+        <div class="row">
+            <div class="col-md-8 cart-mp">
+                <div class="title">
+                    <div class="row">
+                        <div class="col">
+                            <h4><b>Tu Carrito</b></h4>
+                        </div>
+                        <div class="col align-self-center text-right text-muted">3 items</div>
+                    </div>
+                </div>
+                <div class="row border-top border-bottom">
+                    <div class="row main align-items-center">
+                        <p>Carrito vacío</p>
+                    </div>
+                </div>
+      
+                <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Atrás</span></div>
+            </div>
+            <div class="col-md-4 summary">
+                <div>
+                    <h5><b>Resumen</b></h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col" style="padding-left:0;">ITEMS 3</div> <!-- hacer que diga la cantidad de items del carrito -->
+                    <div class="col text-right">&euro; 132.00</div> <!-- traer total de suma de los productos -->
+                </div>
+                <form>
+                    <p>ENVÍO</p> <select>
+                        <option class="text-muted">Envio Express &euro;5.00</option>
+                        <option class="text-muted">Envio Correo Argentino &euro;5.00</option>
+                        <option class="text-muted">Retiro por sucursal &euro;5.00</option>
+                    </select>
+                    <p>CODIGO DE DESCUENTO</p> <input id="code" placeholder="Enter your code">
+                </form>
+                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                    <div class="col">TOTAL</div> 
+                    <div class="col text-right">&euro; 137.00</div> <!-- agregarle a la suma anterior el costo de envio -->
+                </div> <button class="btn">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
 
-    </main>
-
-
+  </main>
+    
      <!--insertar footer de elio-->
       <%-include("partials/footer.ejs") %>
-
+<script src = "/js/cart.js"></script>
       
     
    

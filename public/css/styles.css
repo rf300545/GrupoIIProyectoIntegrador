@@ -907,6 +907,13 @@ a:hover {
 
 
 /* fin */
+/* agregados carrito */
+.mp-cart-symbol{
+  color:rgba(3, 3, 3, 0.575);
+  font-size: 5 px;
+}
+
+
 @media (min-width: 1000px){
 
       .conteiner2{
