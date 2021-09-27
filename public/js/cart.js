@@ -105,6 +105,7 @@ function suma(){
   
    localStorage.setItem("total_compra", total)
     let totalCount= document.getElementById("total").innerHTML= "$ " + total.toString()
+    let totalEvio= document.getElementById ("total-envio").innerHTML = "$ "+ total.toString ()
    
 }
 suma() 
@@ -119,8 +120,9 @@ suma()
              total=total+suma
             
         })
-        console.log(total)
+        
         let totalCount= document.getElementById("total").innerHTML= "$ " + total.toString()
+        let totalEvio= document.getElementById ("total-envio").innerHTML = "$ "+ total.toString ()
         localStorage.setItem("total_compra", total)
     
 
@@ -134,8 +136,9 @@ suma()
              total=total+suma
             
         })
-        console.log(total)
+     
         let totalCount= document.getElementById("total").innerHTML= "$ " + total.toString()
+        let totalEvio= document.getElementById ("total-envio").innerHTML = "$ "+ total.toString ()
         localStorage.setItem("total_compra", total)
     
 
@@ -144,6 +147,7 @@ suma()
     let totalCount= document.getElementById("total").innerHTML= "$ " + totalCalc.toString()
   
     
+
 
 
 

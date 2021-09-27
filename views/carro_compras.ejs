@@ -19,7 +19,7 @@
                         <div class="col">
                             <h4><b>Tu Carrito</b></h4>
                         </div>
-                        <div class="col align-self-center text-right text-muted">3 items</div>
+                        <div class="col align-self-center text-right text-muted"></div>
                     </div>
                 </div>
                 <div class="row border-top border-bottom">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
       
-                <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Atrás</span></div>
+                <div class="back-to-shop"><a href="javascript:history.back()">&leftarrow;</a><span class="text-muted">Atrás</span></div>
             </div>
             <div class="col-md-4 summary">
                 <div>
@@ -41,15 +41,15 @@
                 </div>
                 <form>
                     <p>ENVÍO</p> <select>
-                        <option class="text-muted">Envio Express &euro;5.00</option>
-                        <option class="text-muted">Envio Correo Argentino &euro;5.00</option>
-                        <option class="text-muted">Retiro por sucursal &euro;5.00</option>
+                        <option class="text-muted">Envio Express </option>
+                        <option class="text-muted">Envio Correo Argentino </option>
+                        <option class="text-muted">Retiro por sucursal </option>
                     </select>
-                    <p>CODIGO DE DESCUENTO</p> <input id="code" placeholder="Enter your code">
+                    <p>CODIGO DE DESCUENTO</p> <input id="code" placeholder="Ingresá tu Código">
                 </form>
                 <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                     <div class="col">TOTAL</div> 
-                    <div class="col text-right">&euro; 137.00</div> <!-- agregarle a la suma anterior el costo de envio -->
+                    <div class="col text-right " id="total-envio">&euro; 137.00</div> <!-- agregarle a la suma anterior el costo de envio -->
                 </div> <button class="btn">CHECKOUT</button>
             </div>
         </div>
