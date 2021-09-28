@@ -11,7 +11,7 @@ const { REPL_MODE_SLOPPY } = require('repl');
 
 const apiController = {
   
-       categoriaProductos: (req, res) => {                                                          
+       categoriaProductos: (req, res) => {          //trae todos los productos                                                 
         db.Product.findAll()  
             .then(productos =>{
              /*  res.send(productos) */
@@ -24,7 +24,38 @@ const apiController = {
 
             })           
       })},
-      
+        userData: (req,res) => {        //Trae todos los usuarios
+          db.User.findAll()
+          .then (usuarios => {
+            return res.status(200).json ({
+              total:usuarios.length,
+              data: usuarios,
+              status:200
+            })
+          })
+        },
+        
+        singleUser: (req,res) => {
+          db.User.findOne ({
+            where: {id : 1}
+        }) .then(user => {
+          return res.status(200).json({
+            data:user,
+            status:200
+          })
+        })
+        },
+
+      categorias:(req,res) => {
+        db.Category.findAll()
+        .then (categoria => {
+          return res.status(200).json ({
+            total:categoria.length,
+            data:categoria,
+            status: 200
+          })
+        })
+      }
     
 }
 module.exports = apiController

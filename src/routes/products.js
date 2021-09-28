@@ -46,6 +46,8 @@ router.get("/otros", searchController.otros);
 
 //API//
 router.get("/categoriaProductos",apiController.categoriaProductos)
+router.get("/categorias",apiController.categorias)
+
 //CREAR PRODUCTO - falta que agregue el producto nuevo a la DB
 router.get("/createProduct", productsController.createProduct);
 router.post("/createProduct",uploadFile.array('productImg'),productsValidator, productsController.store);

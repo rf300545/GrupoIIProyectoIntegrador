@@ -32,12 +32,12 @@ module.exports = (sequelize, DataTypes) =>  {
         imagen: {
             type: DataTypes.STRING (200)
         },
-        createdAt: {
+      /*   createdAt: {
             type: DataTypes.DATE
-        },
-        updated_at: {
+        }, */
+   /*      updated_a:t {
             type: DataTypes.DATE   
-        },
+        }, */
         deleted: {
             type:DataTypes.INTEGER,
         },
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) =>  {
 
     config = {
         tableName: "product",
-        timestamps: false
+        timestamps: true
     };
 
 
