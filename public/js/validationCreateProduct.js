@@ -1,5 +1,24 @@
 const form= document.getElementById("form");
 const errores = []
+
+const inputPhoto = document.getElementById("productImg")
+const photoContainer = document.getElementById("mp-img-createProductContainer")
+const photo = photoContainer.querySelector(".mp-img-createProduct")
+
+
+inputPhoto.addEventListener("change", function(){
+    const file = this.files[0] //file es undefined si no hay img cargada
+    if (file){
+        const showPhoto = new FileReader()
+        showPhoto.addEventListener("load", function(){
+            photo.setAttribute("src", this.result)
+            console.log(this.result) //.result es un 1 prop de FileReader
+        })
+        showPhoto.readAsDataURL(file)
+    }
+
+})
+
 form.addEventListener("submit",function(e){
 
     e.preventDefault();
