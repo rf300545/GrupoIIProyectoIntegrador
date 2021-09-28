@@ -8,12 +8,9 @@ let img =document.getElementById("imgCart").src
 
 if (localStorage.getItem("carrito")== undefined){
     arrayProducts =[]
-    console.log ("esoty vacio")
+    console.log ("estoy vacio")
 } else{
     arrayProducts =JSON.parse(localStorage.getItem("carrito"))
-  
-    
-    
 }
  
 boton[0].addEventListener("click",()=>{

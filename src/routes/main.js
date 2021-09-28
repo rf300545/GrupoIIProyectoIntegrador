@@ -19,17 +19,5 @@ router.get ("/createProduct", productsController.createProduct)
 router.get ("/carrito")
 
 
-// PARA PROBAR SI ANDA SESSION
-router.get ("/testSession", function (req, res) {
-
-    if (req.session.numeroVisita = 1) {
-        req.session.numeroVisita = 0;
- }
-        req.session.numeroVisita ++, 
-
-    
-
-    res.send ("Sesion tiene el numero:  " + req.session.numeroVisita) 
-})
 
 module.exports = router;
