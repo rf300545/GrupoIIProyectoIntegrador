@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require ("path");
 const productsController = require("../controllers/productsController")
 const searchController = require("../controllers/searchController")
+const apiController = require("../controllers/apiController")
 const multer = require("multer");
 const { body } = require ("express-validator");
 
@@ -43,6 +44,8 @@ router.get("/intraTraining", searchController.intraTraining);
 router.get("/aminoacidos", searchController.aminoacidos);
 router.get("/otros", searchController.otros);
 
+//API//
+router.get("/categoriaProductos",apiController.categoriaProductos)
 //CREAR PRODUCTO - falta que agregue el producto nuevo a la DB
 router.get("/createProduct", productsController.createProduct);
 router.post("/createProduct",uploadFile.array('productImg'),productsValidator, productsController.store);
