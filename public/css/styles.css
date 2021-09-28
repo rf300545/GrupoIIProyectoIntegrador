@@ -130,6 +130,10 @@ body{
   border:none;
   background-color: #ffffff;
 } 
+#img-header{
+  height: 41px;
+  width:auto;
+}
 /* header img{max-width: 60px;max-height: 40px;align-self: center;}*/
 
 
@@ -561,25 +565,64 @@ body {
 
 
 /*css de productos*/
+.mp-contenedor-producto{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dadaea;
+  margin: auto;
+  margin-top: 8px;
+  box-shadow: 17px 23px 13px -18px #bbbbbba8;
+  border-radius: 10px 10px 10px 10px;
+  height:max-content;
+  width: 48vh;
+  position: relative;
+}
+.container{
+  height: 50%;
+  margin-top: 51px;
+}
+.mp-grupos-productos{
+  height: 28%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+.mp-contenedor-producto.col {}
 
 
 .imagenProducto{
   margin:2%;
-  object-fit: contain;
-  margin: left ;
+  /* object-fit: contain; */
+  margin: left;
 }
 #productoYTexto{
   display:flex;
   flex-direction: row;
 
 }
-.conteiner{
+.mp-grid-productos{
+  display:flex;
+  flex-direction: row;
+  
+}
+.conteiner{ /* no tocar */
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
   width: 90%;
   background-color: white;
+}
+.conteiner-productos{
+  display: grid;
+  grid-auto-columns: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 35%;
+  background-color: white;
+  border: 1px solid yellow;
 }
 .carrusel{
   width:25%;
@@ -648,7 +691,8 @@ body {
 .contenedorMaxProd{
   display:flex;
   flex-direction: row;
-  /* border:2px solid blue; */
+  width:auto
+   border:2px solid blue;
 }
 
 .botonCarrito{
@@ -659,9 +703,9 @@ body {
   border: rgb(46 47 49);
   color:white;
   font-weight: bold;
-  padding: 4px;
+  padding: 6px;
   align-self: center;
-  margin-left: 1px;
+  margin-left: 0;
   margin-top: 12px;
   width: 100%;
 }
@@ -670,10 +714,11 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   text-align: justify;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
-  color:grey;
-
+  color: #695b5b;
+  border-top: 1px solid #d2bfbf;
+  margin-bottom: -4px;
 }
 .lineaSeparadora{
   border-bottom: 2px solid grey;
@@ -819,7 +864,7 @@ body {
 }
 
 .row {
-  margin: 0
+  margin: 0px;
 }
 .title b {
   font-size: 1.5rem
@@ -844,7 +889,7 @@ a {
 }
 
 img {
-  width: 3.5rem
+  width: 20.5rem;
 }
 
 .back-to-shop {
@@ -918,14 +963,14 @@ a:hover {
 
       .conteiner2{
           display:flex;
-          flex-direction: row;
+          flex-direction: column;
           justify-content:center;
           /* border: 2px dotted red; */
-          margin-top:5%;
-          margin-left:0px;
-          margin-right:0px;
-          margin-bottom: 0px;
-          width:80%;
+          margin: auto;
+          /* margin-left: 9px; */
+          /* margin-right:0px; */
+          /* margin-bottom: 0px; */
+          width: 10;
           block-size:50% content-box;
           box-sizing: border-box;
       }
@@ -934,19 +979,19 @@ a:hover {
            display:flex;
            flex-direction: column;
            /* border: 2px dotted yellow; */
-           text-align: justify;
+           text-align: left;
            justify-content: center;
-           margin: 5%;
+           margin: 3%;
            color:grey;
-           width:30%;
+           width: 100;
            flex-grow: 2;
+           font-size: 14px;
           }
       .imagenProducto{
-           margin:auto;
-           object-fit: contain;
-           height: auto;
-           width:200px;
-           box-sizing: border-box;
+           /* margin:auto; */
+           /* object-fit: contain; */
+           height: 32vh;
+           /* box-sizing: border-box; */
            }
       #contenedorPadreProd{
           display: flex;
@@ -957,7 +1002,7 @@ a:hover {
           }
 
        .contenedorMaxProd{
-           display:flex;
+           display: g;
            flex-direction: row;
            /* border:2px solid blue; */
            /* margin: 7%; */

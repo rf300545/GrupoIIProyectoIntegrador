@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require ("path");
 const multer = require("multer");
+const apiController = require("../controllers/apiController")
 
 
 const storage = multer.diskStorage({
@@ -54,5 +55,9 @@ router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario, 
 router.get("/login",userController.iniciarSesion);
 router.post("/login",userController.processlogin);
 router.get ("/info",userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
+//API
+router.get ("/usersData",apiController.userData)
+router.get ("/singleUser",apiController.singleUser)
+
 
 module.exports = router;
