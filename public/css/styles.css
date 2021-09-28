@@ -587,7 +587,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-.mp-contenedor-producto.col {}
+#toggle-text{
+  display:none
+}
 
 
 .imagenProducto{

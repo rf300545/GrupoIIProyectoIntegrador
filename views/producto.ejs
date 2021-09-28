@@ -14,17 +14,19 @@
                       <% for(let i=0; i<producto.length;i++){ %> 
                           <div class="mp-contenedor-producto col-4 w-33 " >
                               <a href="/products/<%=producto[i].id%>">
-                                  <div class="conteiner2" >                 
-                                    <img src ="/img/products/<%=producto[i].imagen%>" class= "imagenProducto"  > </img>
+                                  <div class="conteiner2" >      
+                                           
+                                    <img src ="/img/products/<%=producto[i].imagen%>" class= "imagenProducto"  > </img> </a>   
                                         <div id="conteinerTextoProducto" class="prod">
                                           <!--  <h3><%=producto[i].nombre%> </h3> -->
                                           <!-- <p><%=producto[i].descripcion %> </p> -->
                                           
-                                          <p id="toggle">+ Modo de uso</p>
-                                          <!-- <p id="togle-text"><%=producto[i].descripcion%></p> -->
+                                          <a href= "#"><p id="toggle" style="cursor:hand">+ Info</p> 
+                                          <p id="toggle-text"><%=producto[i].descripcion%></p> </a>
 
-                                          <p>+ Ingredientes</p>
+                                          
                                         </div>
+                          
                                     <div class="mp-grupos-productos">                 
                                           <div id="nomYPrecio">
                                             <span class="lineaSeparadora"></span>
@@ -35,7 +37,7 @@
                                             <button class="botonCarrito">AGREGAR AL CARRITO</button>
                                           </div>
                                   </div>
-                                </a>
+                                
                               </div>           
                           </div>
                       <% } %>
