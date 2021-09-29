@@ -8,55 +8,64 @@
       
     <main>     
       
-         <section>  
-          
-          <article >
-            <div class="contenedorMaxProd">
-              <div class="conteiner2" >
-                <img src ="/img/products/<%=productoUnico.imagen %>" class= "imagenProducto" id="imgCart"> </img>
-                <div id="conteinerTextoProducto">
-                  <h3><%=productoUnico.nombre%></h3>
-                  <p><%=productoUnico.descripcion %> </p>
-                </div>
-              </div>
-
-              <div id="precio"> <!--carro compras-->
-                <div id="nomYPrecio">
-                  <a id="nombreCarrito"><%=productoUnico.nombre %><a>
-                  <a id="precioCarrito">$ <%=productoUnico.precio %></a>
-                </div>
+         <section class="section-producto">            
+      
+            
+                  <div class="container" >
+                    <img src ="/img/products/<%=productoUnico.imagen %>" class= "imagenProducto" id="imgCart"> </img>
+                    <div id="conteinerTextoProducto">
+                      <h3><%=productoUnico.nombre%></h3>
+                      <p><%=productoUnico.descripcion %> </p>
+                    </div>
+                  </div>
                   
-                <span class="lineaSeparadora"></span>
-                <br>
-              <div>
-                <a>12 cuotas sin Interes</a>
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-amex"></i>
-              </div>
-              <br>
-              <br>
-              <div>
+              <div class="container">
+                <div class="contenedorMaxProd-single">
+                     
+                    <div id="precio"> <!--carro compras-->
+                      <div id="nomYPrecio-single">
+                        <a id="nombreCarrito"><%=productoUnico.nombre %><a>
+                        <a id="precioCarrito">$ <%=productoUnico.precio %></a>
+                      </div>                      
+                      <span class="lineaSeparadora"></span>
+                      <br>
+                    </div>
+                    <div>
+                      <a>12 cuotas sin Interes</a>
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                    </div>
+                  <br>
+                  <br>
                   <div>
-                    <p>+ Modo de uso</p> <!--falta agregar textarea para modo de uso--> 
+                      <div class="max-content">
+                        <a href= "#">
+                          <p id="toggle" style="cursor:hand" >+ Modo de uso</p> 
+                          <p id="toggle-text" class="mp-text"><%=productoUnico.modoDeUso%></p> 
+                        </a>
+                      </div>
+                      <span class="lineaSeparadora"></span>
+                      <di class="max-content"v>
+                        <a href= "#"><p id="toggle" style="cursor:hand">+ Ingredientes</p> 
+                          <p id="toggle-text"><%=productoUnico.ingrediente%></p> </a>
+                       
+                      </div>
+                      <span class="lineaSeparadora"></span>
                   </div>
-                  <span class="lineaSeparadora"></span>
-                  <div>
-                    <p>+ Ingredientes</p> <!--falta agregar textarea para ingredientesg--> 
-                  </div>
-                  <span class="lineaSeparadora"></span>
-              </div>
-                  <span class="lineaSeparadora"></span>
-                  <button class="botonCarrito cart">AGREGAR AL CARRITO</button>
-                  <button class="botonCarrito">
-                    <a href="/products/editProduct/<%=productoUnico.id%>" class="action-button edit">EDITAR PRODUCTO</a>
-                  </button>
-              </div>
+                      <div></div>
+                      <span class="lineaSeparadora"></span>
+                      <button class="botonCarrito cart">AGREGAR AL CARRITO</button>
+                      <button class="botonCarrito">
+                        <a href="/products/editProduct/<%=productoUnico.id%>" class="action-button edit">EDITAR PRODUCTO</a>
+                      </button>
+                    </div>
+                </div>                  
             </div>
-            <div class="sabores">           
-            </div>    
-          </article>    
+        
+        </section>
     </main>
+    <script src="/js/producto.js"></script>
     <%-include("partials/footer.ejs") %>
     <script src="/js/storageCart.js"></script>
   </body>

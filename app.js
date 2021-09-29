@@ -15,6 +15,11 @@ app.use(session({
  }));
 app.use(cookieParser())
 app.use(cookieUser)
+app.use(function(req, res, next){
+    res.locals.session =  req.session.usuarioLogueado
+    next()
+});
+
 
 const methodOverride = require('method-override');
 app.use(methodOverride("_method"))
@@ -31,6 +36,7 @@ let rutasMain = require ("./src/routes/main");
 app.use("/products", rutasProductos);  // Si hay /producto responder con rutas de productos "se ponen el nombre de la variable"
 app.use("/users", rutasUsuario);
 app.use("/", rutasMain);
+
 
 
 app.listen(process.env.PORT || 3000, () => {console.log("ok")})

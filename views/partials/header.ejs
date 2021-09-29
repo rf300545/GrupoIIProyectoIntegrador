@@ -23,7 +23,7 @@
 
  <div class="mp-contList-header-icons">    
          <p id="mp-listItems-header"><a href="/products/carro_compras"></li><i class="fas fa-shopping-cart"></i></p>
-        <% if (!locals.userDatas){ %>
+        <% if (!locals.session){ %>
             <p id="mp-listItems-header"><a href="/users/login" ><i class="far fa-user"></i></a></p>
         <% } else {%>
             <p id="mp-listItems-header"><a href="/users/info" ><i class="far fa-user"></i></a></p>     

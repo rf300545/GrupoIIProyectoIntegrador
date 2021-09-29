@@ -12,17 +12,23 @@ const { REPL_MODE_SLOPPY } = require('repl');
 const apiController = {
   
        categoriaProductos: (req, res) => {          //trae todos los productos                                                 
-        db.Product.findAll()  
+        db.Product.findAll({
+          include: [
+              {
+                model: db.Category,
+                as: "category",
+               
+              }]})
             .then(productos =>{
-             /*  res.send(productos) */
-            return res.status(200).json({
+            
+             /* res.send(productos) */
+             return res.status(200).json({
 
-               total: productos.length,
+              total: productos.length,
               data: productos,
-              status: 200
-             
+              status: 200            
 
-            })           
+            })         
       })},
         userData: (req,res) => {        //Trae todos los usuarios
           db.User.findAll()
