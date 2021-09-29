@@ -55,6 +55,8 @@ router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario, 
 router.get("/login",userController.iniciarSesion);
 router.post("/login",userController.processlogin);
 router.get ("/info",userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
+router.get("/logOut", userController.logOut)
+
 //API
 router.get ("/usersData",apiController.userData)
 router.get ("/singleUser",apiController.singleUser)

@@ -1,5 +1,5 @@
 <header >
- <divc class="mp-contGral-header">
+ <div class="mp-contGral-header">
 <div class="dropbox">
  <ul>
     <li> <img src="/img/logo provisorio.JPG"  id="img-header">  </img> </li>
@@ -20,22 +20,23 @@
     <li> <a href="/products/createProduct">CREAR</a></li>
  </ul> 
 </div>
+<div class="mp-contList-header-icons">    
+    <p id="mp-listItems-header"><a href="/products/carro_compras"><i class="fas fa-shopping-cart"></i></p> 
+   <% if (locals.session == undefined ){ %>
+       <p id="mp-listItems-header"><a href="/users/login" ><i class="far fa-user"></i></a></p>
+   <% } else {%>
+       <p id="mp-listItems-header"><a href="/users/info" ><i class="far fa-user"></i></a></p>     
+   <% } %>   
+   <p id="mp-listItems-header"><a href="/users/logOut"><i class="fas fa-sign-out-alt"></i></p> 
+   
+  
+   
 
- <div class="mp-contList-header-icons">    
-         <p id="mp-listItems-header"><a href="/products/carro_compras"></li><i class="fas fa-shopping-cart"></i></p>
-        <% if (!locals.session){ %>
-            <p id="mp-listItems-header"><a href="/users/login" ><i class="far fa-user"></i></a></p>
-        <% } else {%>
-            <p id="mp-listItems-header"><a href="/users/info" ><i class="far fa-user"></i></a></p>     
-        <% } %>   
-          
-        <button class="mp-searchbar-header-icon"><i id ="logOut" class="fas fa-sign-out-alt"></i></button>    
-
-        <form action="/busqueda" method="POST" class="mp-serchbar-header">
-            <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
-            <input placeholder="Buscar" class="mp-serchbar-header" ></input>
-        </form>
- </div> 
+   <form action="/busqueda" method="POST" class="mp-serchbar-header">
+       <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
+       <input placeholder="Buscar" class="mp-serchbar-header" ></input>
+   </form>
+</div>
 </div>
 <script src="/js/logOut.js"></script>
  </header>
