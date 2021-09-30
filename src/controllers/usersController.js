@@ -25,11 +25,10 @@ const usersController = {
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
                 if(pswrd == true){ 
                    req.session.usuarioLogueado = usuario 
-                   //console.log(req.session.usuarioLogueado)
                    if(req.body.saveUser != undefined){ //si el checkbox esta marcado, guarda en cookie al email del user
                     res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
                     }  
-                res.render("index", {userDatas : req.session.usuarioLogueado})  
+                res.render("index", {userDatas : req.session.usuarioLogueado}) 
                    
                 }else {
                     let errorPass=["Contraseña incorrecta"]
@@ -69,6 +68,12 @@ const usersController = {
     userInfo: (req,res)=>{
         const userProfile = req.session.usuarioLogueado
         res.render("userInfo",{userData: userProfile})
+    },
+    logOut: (req,res)=>{
+        req.session.destroy((err) => {
+            console.log(req.session)
+            res.redirect('/')
+          })
     }
     
 }

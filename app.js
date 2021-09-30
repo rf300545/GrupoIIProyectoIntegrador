@@ -16,7 +16,8 @@ app.use(session({
 app.use(cookieParser())
 app.use(cookieUser)
 app.use(function(req, res, next){
-    res.locals.session =  req.session.usuarioLogueado
+    res.locals.session =  req.session.usuarioLogueado //undefined si !
+    //console.log(res.locals.session)
     next()
 });
 
