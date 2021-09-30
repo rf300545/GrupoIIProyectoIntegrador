@@ -4,54 +4,56 @@
 <body>
     <body>
       <%-include("partials/header.ejs") %>
-
-
-
-   
-
-  <!-- LOGIN -->
+ <!-- LOGIN -->
 <main >
-  <div class=" contenedorLogin">
-  <img src="/img/login_caratula.jpg" id="img">
-    <form action="" class="formcenter contenedorForm " method="POST" id="form">
+  <section>
+    <div class="mp-cont-login" >
+      <div class=" contenedorLogin">
+        <img src="/img/login_caratula.jpg" id="img">
 
+        <div class="formreg " >
+        <form action="" class=" " method="POST" id="form">
 
-      <h3 id=margen1> Log in </h3>
-      <br>
-      
     
-      <div >
-      <p class="formreg ">
-        <label for="Usuario"> </label>
-        <input type="text" class= "sinborde" placeholder="*Email" value="" maxlength="30" name="email" id:="nombre">
-        <span class ="danger"><%=errorUser%></span>
-        <br/> <br/>
-    
-        <label for="password"> </label>
-        <input type="password" placeholder="Contraseña" class= "sinborde" name="contraseña">
-        <span class ="danger"><%=errorPass%></span>
-        <br>
-        <br>
-      
+         
 
-       
-        <input type="checkbox" name="saveUser" value="Primero">
-        <label for="text" class="Accept"> Recordar usuario </label>
-        <a class="accept">Olvido su contraseña? </a>
-        <br>
-        <br>
-        <br>
+          <h3 id=margen1> Log in </h3>
+          <br>
+          
         
+       
+            <label for="Usuario"> </label>
+            <input type="text" class= "sinborde" placeholder="*Email" value="" maxlength="30" name="email" id:="nombre">
+            <span class ="danger"><%=errorUser%></span>
+            <br/> <br/>
+        
+            <label for="password"> </label>
+            <input type="password" placeholder="Contraseña" class= "sinborde" name="contraseña">
+            <span class ="danger"><%=errorPass%></span>
+            <br>
+            <br>
+          
 
-        <input type="submit" class="Cuenta" value="INICIAR SESION" style="width:250px; height:40px">
-        <br>
-        <br>
-        <button class ="Cuenta" style="width:250px; height:40px">
-        <a href="/users/register">REGISTRARSE</a>
-      </button>
-      </div>     
-      </form>
-    </div>
+          
+            <input type="checkbox" name="saveUser" value="Primero">
+            <label for="text" class="Accept"> Recordar usuario </label>
+            <a class="accept">Olvido su contraseña? </a>
+            <br>
+            <br>
+            <br>
+            
+
+            <input type="submit" class="Cuenta" value="INICIAR SESION" style="width:250px; height:40px">
+            <br>
+            <br>
+            <button class ="Cuenta" style="width:250px; height:40px">
+            <a href="/users/register">REGISTRARSE</a>
+          </button>
+          </div>     
+          </form>
+        </desqiv>
+      </div>
+    </section>  
   </main>
 
   

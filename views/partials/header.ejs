@@ -1,41 +1,45 @@
 <header >
- <divc class="mp-contGral-header">
-<div class="dropbox">
- <ul>
-    <li> <img src="/img/logo provisorio.JPG"  id="img-header">  </img> </li>
-    <li><a href="/">INICIO</a></li>
-    <li><a href="/products">PRODUCTOS</a>
-        <ul>
-           <li><a href="/products/quemadores" id="li-text"> QUEMADORES</a></li>
-           <li><a href="/products/preTraining" id="li-text"> PRE-TRAINING</a></li>
-           <li><a href="/products/ganadoresDePeso" id="li-text"> GANADORES DE PESO</a></li>
-           <li><a href="/products/intraTraining" id="li-text"> ITRA-TRAINING</a></li>
-           <li><a href="/products/aminoacidos" id="li-text"> AMINOACIDOS</a></li>
-           <li><a href="/products/postTraining" id="li-text"> POST-TRAINING</a></li>
-           <li><a href="/products/otros" id="li-text"> OTROS</a></li>
-        </ul>
-    </li>
-    <li> <a href="/">GREEN TEAM</a></li>
-    <li> <a href="/">FAQ</a></li>
-    <li> <a href="/products/createProduct">CREAR</a></li>
- </ul> 
-</div>
-
- <div class="mp-contList-header-icons">    
-         <p id="mp-listItems-header"><a href="/products/carro_compras"></li><i class="fas fa-shopping-cart"></i></p>
-        <% if (!locals.session){ %>
-            <p id="mp-listItems-header"><a href="/users/login" ><i class="far fa-user"></i></a></p>
-        <% } else {%>
-            <p id="mp-listItems-header"><a href="/users/info" ><i class="far fa-user"></i></a></p>     
-        <% } %>   
-          
-        <button class="mp-searchbar-header-icon"><i id ="logOut" class="fas fa-sign-out-alt"></i></button>    
-
-        <form action="/busqueda" method="POST" class="mp-serchbar-header">
-            <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
-            <input placeholder="Buscar" class="mp-serchbar-header" ></input>
-        </form>
- </div> 
-</div>
-<script src="/js/logOut.js"></script>
- </header>
+    <div class="mp-contGral-header">
+           <div class="dropbox">
+               <ul>
+                   <li> <img src="/img/logo provisorio.JPG"  id="img-header">  </img> </li>
+                   <li><a href="/">INICIO</a></li>
+                   <li><a href="/products">PRODUCTOS</a>
+                       <ul>
+                           <li><a href="/products/quemadores" id="li-text"> QUEMADORES</a></li>
+                           <li><a href="/products/preTraining" id="li-text"> PRE-TRAINING</a></li>
+                           <li><a href="/products/ganadoresDePeso" id="li-text"> GANADORES DE PESO</a></li>
+                           <li><a href="/products/intraTraining" id="li-text"> ITRA-TRAINING</a></li>
+                           <li><a href="/products/aminoacidos" id="li-text"> AMINOACIDOS</a></li>
+                           <li><a href="/products/postTraining" id="li-text"> POST-TRAINING</a></li>
+                           <li><a href="/products/otros" id="li-text"> OTROS</a></li>
+                       </ul>
+                   </li>
+                   <li> <a href="/">GREEN TEAM</a></li>
+                   <li> <a href="/">FAQ</a></li>
+                   <li> <a href="/products/createProduct">CREAR</a></li>
+               </ul> 
+           </div>
+   
+           <div class="mp-contList-header">    
+             
+                    <a href="/products/carro_compras" id="mp-listItems-header"></li><i class="fas fa-shopping-cart"></i>
+                    <% if (!locals.session){ %>
+                        <a href="/users/login" id="mp-listItems-header" ><i class="far fa-user"></i></a>
+                    <% } else {%>
+                        <a href="/users/info"  id="mp-listItems-header" ><i class="far fa-user"></i></a>   
+                    <% } %>   
+                    
+                    <a class="mp-searchbar-header-icon"><i id ="logOut" class="fas fa-sign-out-alt"></i></a>    
+                 
+                       
+                    <form action="/busqueda" method="POST" class="mp-serchbar-header">
+                        <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
+                        <input placeholder="Buscar" class="mp-serchbar-header" ></input>
+                    </form>
+              
+                
+            </div> 
+   </div>
+   <script src="/js/logOut.js"></script>
+    </header>
