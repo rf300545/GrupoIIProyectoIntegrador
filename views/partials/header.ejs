@@ -22,15 +22,8 @@
 </div>
 <div class="mp-contList-header-icons">    
     <p id="mp-listItems-header"><a href="/products/carro_compras"><i class="fas fa-shopping-cart"></i></p> 
-   <% if (locals.session == undefined ){ %>
-       <p id="mp-listItems-header"><a href="/users/login" ><i class="far fa-user"></i></a></p>
-   <% } else {%>
-       <p id="mp-listItems-header"><a href="/users/info" ><i class="far fa-user"></i></a></p>     
-   <% } %>   
-   <p id="mp-listItems-header"><a href="/users/logOut"><i class="fas fa-sign-out-alt"></i></p> 
-   
-  
-   
+    <p id="mp-listItems-header"><a href="/users/logOut"><i class="fas fa-sign-out-alt"></i></p> 
+    <p id="mp-listItems-header"><a href="/users/login" ><i class="far fa-user"></i></a></p>     
 
    <form action="/busqueda" method="POST" class="mp-serchbar-header">
        <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
@@ -38,5 +31,5 @@
    </form>
 </div>
 </div>
-<script src="/js/logOut.js"></script>
+<!-- <script src="/js/logOut.js"></script> -->
  </header>
