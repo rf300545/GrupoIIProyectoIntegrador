@@ -119,9 +119,13 @@ const productsController = {
 		fs.unlinkSync(path.join(__dirname,'../../public/img/products/'+nombreImagen));
 		res.render('index',{productos: products});
        },
+<<<<<<< HEAD
        direccionEnvio: (req,res)=> {
            res.render("direccion_envio")
        }
+=======
+       
+>>>>>>> 188352546209c93d30197892c3eb5e381137206d
       
  }
 module.exports = productsController

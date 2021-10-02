@@ -21,24 +21,15 @@
                </ul> 
            </div>
    
-           <div class="mp-contList-header">    
-             
+           <div class="mp-contList-header">          
                     <a href="/products/carro_compras" id="mp-listItems-header"></li><i class="fas fa-shopping-cart"></i>
-                    <% if (!locals.session){ %>
-                        <a href="/users/login" id="mp-listItems-header" ><i class="far fa-user"></i></a>
-                    <% } else {%>
-                        <a href="/users/info"  id="mp-listItems-header" ><i class="far fa-user"></i></a>   
-                    <% } %>   
-                    
-                    <a class="mp-searchbar-header-icon"><i id ="logOut" class="fas fa-sign-out-alt"></i></a>    
-                 
-                       
+                    <a href="/users/login" id="mp-listItems-header" ><i class="far fa-user"></i></a>   
+                    <a href="/users/logOut" id="mp-listItems-header"><i class="fas fa-sign-out-alt"></i></a>         
+                        
                     <form action="/busqueda" method="POST" class="mp-serchbar-header">
                         <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
                         <input placeholder="Buscar" class="mp-serchbar-header" ></input>
-                    </form>
-              
-                
+                    </form>            
             </div> 
    </div>
    <script src="/js/logOut.js"></script>

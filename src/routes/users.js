@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require ("path");
 const multer = require("multer");
 const apiController = require("../controllers/apiController")
+const alreadyLoggedMw = require("../middlewares/alreadyLoggedMw")
 
 
 const storage = multer.diskStorage({
@@ -46,13 +47,13 @@ const validacionCreacionUsuario = [
 ];
 
 // Formulario de creacion de usuario
-router.get("/register",userController.registrarse);
+router.get("/register",alreadyLoggedMw,userController.registrarse);
 
 //Procesar formulario de creacion
 router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario,  userController.saveUser);
 
 // Procesar log usuario
-router.get("/login",userController.iniciarSesion);
+router.get("/login",alreadyLoggedMw,userController.iniciarSesion);
 router.post("/login",userController.processlogin);
 router.get ("/info",userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
 router.get("/logOut", userController.logOut)

@@ -19,5 +19,11 @@ router.get ("/createProduct", productsController.createProduct)
 router.get ("/carrito")
 
 
+// PARA PROBAR SI ANDA SESSION
+router.get ("/testSession", function (req, res) {
+    req.session.numeroVisita = req.session.numeroVisita ? req.session.numeroVisita +1 : 1
+    res.send ("Sesion tiene el numero:  " + req.session.numeroVisita) 
+})
+
 
 module.exports = router;

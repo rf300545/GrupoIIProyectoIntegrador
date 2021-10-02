@@ -10,7 +10,7 @@ next()
             req.session.usuarioLogueado = usuario
         })
         .catch((err)=> {
-            res.send("eeee")
+            res.send("error en cookieUser.js")
           });
 
     }
