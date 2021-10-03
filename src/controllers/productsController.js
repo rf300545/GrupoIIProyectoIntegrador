@@ -3,10 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const { debugPort } = require('process');
 const db = require ("../database/models")
-const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { validationResult } = require("express-validator");
 const { REPL_MODE_SLOPPY } = require('repl');
+//const { Association } = require('sequelize/types');
 
 
 const productsController = {
@@ -75,13 +74,18 @@ const productsController = {
     },
 
         editProduct: (req, res) => {
-            let idProducto = req.params.id;	
-            for(let i=0; i<products.length ; i++){
-                if (products[i].id == idProducto){
-                    var productoEncontrado = products[i];
-                }
-            }     
-            res.render('editProduct',{productoEdit: productoEncontrado});
+            let idProducto = req.params.id;
+            db.Product.findOne({
+                include: [
+                    {association : "category"},
+                    {association : "brand"},
+                    {association : "sabores"}],
+                    where: {id : idProducto}
+            })
+            .then((productoEncontrado)=>{
+                console.log("********************* " + productoEncontrado)
+                res.render('editProduct',{productoEdit: productoEncontrado});
+            })
     },
 
        actualizar: (req,res)=>{ // falta actualizarlo para que trabaje con la bd
@@ -108,6 +112,15 @@ const productsController = {
 //No esta listo !!
        borrar: (req,res)=>{
         let idProducto = req.params.id;	
+
+        /* db.Product.destroy( 
+            {where:{id : idProducto}}
+        )
+        .then((productoEncontrado)=>{
+            res.send("producto eliminado")
+            res.render('editProduct',{productoEdit: productoEncontrado});
+        }) */
+
 		for(let i=0;i<products.length;i++){
 			if (products[i].id==idProducto){
 				var nombreImagen=products[i].image;
@@ -115,10 +128,10 @@ const productsController = {
 				break;
 			}
 		}
-	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+	    
 		fs.unlinkSync(path.join(__dirname,'../../public/img/products/'+nombreImagen));
-		res.render('index',{productos: products});
        },
+
        direccionEnvio: (req,res)=> {
            res.render("direccion_envio")
        }

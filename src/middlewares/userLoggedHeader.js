@@ -20,7 +20,7 @@ function userLoggedHeader(req,res,next){
         res.locals.isLogged = true
         res.locals.usuarioLogueado = req.session.usuarioLogueado
     } //isLogged se usa para ocultar iconos de logueo en el header
-    console.log(cookieUser + " en usLogHead")
+    console.log("cookie  " + cookieUser + " en userLoggedHeader")
     next()
 }
 

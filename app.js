@@ -3,7 +3,7 @@ const app = express()
 const path =require ("path")
 const session = require ("express-session"); // incluyo session como middleware a nivel de aplicacion FDu
 const cookieParser = require('cookie-parser')
-const cookieUser = require("./src/middlewares/cookieUser")
+
 const userLoggedHeader = require("./src/middlewares/userLoggedHeader")
 
 //Captura la info del form de creacion

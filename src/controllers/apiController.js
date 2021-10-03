@@ -3,8 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const { debugPort } = require('process');
 const db = require ("../database/models")
-const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { validationResult } = require("express-validator");
 const { REPL_MODE_SLOPPY } = require('repl');
 

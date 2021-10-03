@@ -56,11 +56,9 @@ const Product = sequelize.define (alias, cols, config);
 
 Product.associate = function (models) {
 
-    Product.belongsTo(models.Category, {
-        
+    Product.belongsTo(models.Category, {     
         as: "category",
         foreignKey: "id_category"
-
     })
     
  
@@ -72,8 +70,8 @@ Product.associate = function (models) {
     Product.belongsToMany (models.Flavor,{
         as:"sabores",
         through: "product_flavor",
-        foreignKey: "id_product",
-        otherKey:"id_flavor",
+        foreignKey: "id_product", 
+        otherKey:"id_flavor", 
         timestamps: false,
     });
   
