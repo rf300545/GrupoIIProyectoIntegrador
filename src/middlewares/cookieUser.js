@@ -1,4 +1,5 @@
-const db= require ("../database/models")
+const db = require ("../database/models")
+
 
 function cookieUser (req, res,next){
 next()

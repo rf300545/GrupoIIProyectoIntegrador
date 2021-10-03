@@ -4,6 +4,8 @@ const path = require ("path");
 const multer = require("multer");
 const apiController = require("../controllers/apiController")
 const alreadyLoggedMw = require("../middlewares/alreadyLoggedMw")
+const notLogged = require("../middlewares/notLogged")
+
 
 
 const storage = multer.diskStorage({
@@ -55,7 +57,7 @@ router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario, 
 // Procesar log usuario
 router.get("/login",alreadyLoggedMw,userController.iniciarSesion);
 router.post("/login",userController.processlogin);
-router.get ("/info",userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
+router.get ("/info",notLogged ,userController.userInfo) /* deberia ser por post o podria ser por get el pedido? */
 router.get("/logOut", userController.logOut)
 
 //API
