@@ -25,8 +25,8 @@ const usersController = {
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
                 if(pswrd == true){ 
                    req.session.usuarioLogueado = usuario 
-                   if(req.body.saveUser != undefined){ //si el checkbox esta marcado, guarda en cookie al email del user
-                    res.cookie("savedUser",usuario.email,{maxAge: 120000}) //120k ms
+                   if(req.body.saveUser){ //si el checkbox esta marcado, guarda en cookie al email del user
+                    res.cookie("savedUser",usuario.email,{maxAge: (1000 * 60) * 10 }) //120k ms
                     }  
                 res.render("index", {userDatas : req.session.usuarioLogueado}) 
                    
@@ -70,9 +70,9 @@ const usersController = {
         res.render("userInfo",{userData: userProfile})
     },
     logOut: (req,res)=>{
+        res.clearCookie("savedUser")
         req.session.destroy((err) => {
-            console.log(req.session)
-            res.redirect('/')
+        return res.redirect('/')
           })
     }
     

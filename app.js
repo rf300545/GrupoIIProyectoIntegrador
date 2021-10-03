@@ -4,6 +4,7 @@ const path =require ("path")
 const session = require ("express-session"); // incluyo session como middleware a nivel de aplicacion FDu
 const cookieParser = require('cookie-parser')
 const cookieUser = require("./src/middlewares/cookieUser")
+const userLoggedHeader = require("./src/middlewares/userLoggedHeader")
 
 //Captura la info del form de creacion
 app.use(express.urlencoded({ extended: false }));
@@ -14,15 +15,15 @@ app.use(session({
     saveUninitialized: true
  }));
 app.use(cookieParser())
-app.use(cookieUser)
-app.use(function(req, res, next){
+app.use(userLoggedHeader)
+
+/* app.use(function(req, res, next){
     if (req.session.usuarioLogueado != undefined ){
         res.locals.session =  req.session.usuarioLogueado
         const sessionUser = res.locals.session
-        //console.log(sessionUser)
     }
     next()
-});
+}); */
 
 
 const methodOverride = require('method-override');
