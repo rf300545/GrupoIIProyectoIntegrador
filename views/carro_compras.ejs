@@ -50,7 +50,11 @@
                 <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                     <div class="col">TOTAL</div> 
                     <div class="col text-right " id="total-envio">&euro; 137.00</div> <!-- agregarle a la suma anterior el costo de envio -->
-                </div> <button class="btn">CHECKOUT</button>
+                </div> 
+         
+                    <a href="/products/direccionEnvio"id ="btnCheckOut"> <button class="btn">CHECKOUT</button></a>
+            
+               
             </div>
         </div>
     </div>
@@ -63,6 +67,7 @@
      <!--insertar footer de elio-->
       <%-include("partials/footer.ejs") %>
 <script src = "/js/cart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
       
     
    

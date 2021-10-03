@@ -871,7 +871,16 @@ body {
   border: none;
   
 }
-/* css carrito importado */
+/* fin css carrito importado */
+/* direccion Envio */
+.form-control{
+  height: 4vh;
+  /* border: 1px solid red */
+}
+.max-height-form{
+  height: max-content;
+}
+/* FIN  Direccion de Envio */
 .title {
   margin-bottom: 5vh
 }

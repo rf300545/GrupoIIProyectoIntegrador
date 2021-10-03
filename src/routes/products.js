@@ -31,7 +31,7 @@ const uploadFile = multer({ storage });
 //CARRO DE COMPRAS -ok
 router.get("/carro_compras", productsController.carro);
 router.get("/carro_compra2", productsController.carro2);
-router.get("/direccion_envio",productsController.direccionEnvio)
+router.get("/direccionEnvio",productsController.direccionEnvio)
 
 //TODOS LOS PRODUCTOS - ok
 router.get("/", productsController.producto);

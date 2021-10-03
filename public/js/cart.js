@@ -147,7 +147,12 @@ suma()
     let totalCount= document.getElementById("total").innerHTML= "$ " + totalCalc.toString()
   
     
-
+let botonComprar= document.getElementById("btnCheckOut")
+botonComprar.addEventListener("click", (e)=>{
+  e.preventDefault()
+  swal("Hello world!");
+    
+})
 
 
 

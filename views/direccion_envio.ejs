@@ -26,7 +26,7 @@
         <div class="card wish-list pb-1">
           <div class="card-body">
   
-            <h5 class="mb-2">Billing details</h5>
+            <h5 class="mb-2">Detalle de Envío</h5>
   
             <!-- Grid row -->
             <div class="row">
@@ -36,8 +36,8 @@
   
                 <!-- First name -->
                 <div class="md-form md-outline mb-0 mb-lg-4">
-                  <input type="text" id="firstName" class="form-control mb-0 mb-lg-2">
-                  <label for="firstName">First name</label>
+                  <input type="text" id="firstName" class="form-control mb-0 mb-lg-2" placeholder="Nombre">
+<!--                   <label for="firstName">Nombre</label> -->
                 </div>
   
               </div>
@@ -49,7 +49,7 @@
                 <!-- Last name -->
                 <div class="md-form md-outline">
                   <input type="text" id="lastName" class="form-control">
-                  <label for="lastName">Last name</label>
+                  <label for="lastName">Apellido</label>
                 </div>
   
               </div>
@@ -59,65 +59,67 @@
             <!-- Grid row -->
   
             <!-- Company name -->
-            <div class="md-form md-outline my-0">
-              <input type="text" id="companyName" class="form-control mb-0">
-              <label for="companyName">Company name (optional)</label>
-            </div>
+        
   
             <!-- Country -->
             <div class="d-flex flex-wrap">
               <div class="select-outline position-relative w-100">
+             <!--    <label>Provincia</label> -->
                 <select class="mdb-select md-form md-outline">
-                  <option value="" disabled selected>Choose your option</option>
+                  <option value="" disabled selected>Elegí tu Provincia</option>
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
                   <option value="3">Option 3</option>
                 </select>
-                <label>Country</label>
+               
               </div>
             </div>
+            <div class="d-flex flex-wrap">
+                <div class="select-outline position-relative w-100">
+                 <!--  <label>Localidad</label> -->
+                  <select class="mdb-select md-form md-outline">
+                    <option value="" disabled selected>Elegí tu Localidad</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                 
+                </div>
+              </div>
   
             <!-- Address Part 1 -->
+            
             <div class="md-form md-outline mt-0">
-              <input type="text" id="form14" placeholder="House number and street name" class="form-control">
-              <label for="form14">Address</label>
+                <label for="form14">Dirección de Envío</label>
+              <input type="text" id="form14" placeholder="Calle, número y departamento" class="form-control">
+              
             </div>
   
             <!-- Address Part 2 -->
-            <div class="md-form md-outline">
-              <input type="text" id="form15" placeholder="Apartment, suite, unit etc. (optional)"
-                class="form-control">
-              <label for="form15">Address</label>
-            </div>
   
             <!-- Postcode / ZIP -->
             <div class="md-form md-outline">
+                <label for="form16">Código Postal</label>
               <input type="text" id="form16" class="form-control">
-              <label for="form16">Postcode / ZIP</label>
             </div>
   
-            <!-- Town / City -->
-            <div class="md-form md-outline">
-              <input type="text" id="form17" class="form-control">
-              <label for="form17">Town / City</label>
-            </div>
-  
+         
             <!-- Phone -->
             <div class="md-form md-outline">
+                <label for="form18">Teléfono</label>
               <input type="number" id="form18" class="form-control">
-              <label for="form18">Phone</label>
             </div>
   
             <!-- Email address -->
             <div class="md-form md-outline">
+                <label for="form19">Direccion de Email</label>
               <input type="email" id="form19" class="form-control">
-              <label for="form19">Email address</label>
             </div>
   
             <!-- Additional information -->
             <div class="md-form md-outline">
+                <label for="form76">Informacion adicional</label>
               <textarea id="form76" class="md-textarea form-control" rows="4"></textarea>
-              <label for="form76">Additional information</label>
             </div>
   
             <div class="form-check pl-0 mb-4 mb-lg-0">
