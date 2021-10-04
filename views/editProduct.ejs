@@ -13,24 +13,24 @@
     <br>
     <br>
     <br>
-      <h2>Estás editando el producto <%=productoEdit.nombre%></h2>
+      <h2>Estás editando el producto <%=productoEdit.nombre%>   (Art 000- <%=productoEdit.id%>)</h2>
       <div >
         <br>
         <form action="/products/editProduct/<%=productoEdit.id%>?_method=PUT" method="POST" class="mp-main-createProduct mp-cont-formulario-padre " >
           <div>
             <div class="mp-cont-formulario" >
               <label  for="Producto" class="mp-label-createProduct">Producto</label>
-              <input type="text" name="nombre" id="Producto" placeholder=" <%=productoEdit.nombre%> " class="mp-input-createProduct" >
+              <input type="text" name="nombre" id="Producto" value=" <%=productoEdit.nombre%> " class="mp-input-createProduct" >
             </div>
 
             <div class="mp-cont-formulario" >
               <label for="Marca" class="mp-label-createProduct">Marca</label>
-              <input type= "text" name="marca" id="Marca" placeholder="<%=productoEdit.brand.nombre%>" class="mp-input-createProduct" >
+              <input type= "text" name="marca" id="Marca" value="<%=productoEdit.brand.nombre%>" class="mp-input-createProduct" >
             </div>  
         
             <div class="mp-cont-formulario"> 
               <label for="Categoria" class="mp-label-createProduct" >Categoría</label>
-              <input list="Categorias" name="categoria" id="Categoria" placeholder="<%=productoEdit.category.nombre%>"  class="mp-input-createProduct" >
+              <input list="Categorias" name="categoria" id="Categoria" value="<%=productoEdit.category.nombre%>"  class="mp-input-createProduct" >
               <datalist id="Categorias">
                 <option value="Quemadores de grasa">
                 <option value= "Proteinas">
@@ -39,35 +39,34 @@
             </div>    
             <div class="mp-cont-formulario">
               <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
-              <input type="text" name="pesoNeto" id="pesoNeto" placeholder="<%=productoEdit.peso%>" class="mp-input-createProduct">
+              <input type="text" name="pesoNeto" id="pesoNeto" value="<%=productoEdit.peso%>" class="mp-input-createProduct">
             </div>
             <div class="mp-cont-formulario">
               <label for="Sabores" class="mp-label-createProduct">Sabores</label>
                 <div>
-                  <input type="text" name="sabores" id="sabores" placeholder="<%=productoEdit.sabores[1].nombre%>" class="mp-input-createProduct">
-                  <!-- <input type="button" value="Agregar Sabor" class="mp-button-createProduct"> -->
+                  <input type="text" name="sabores" id="sabores" value="<%=productoEdit.sabores[1].nombre%>" class="mp-input-createProduct">
                 </div>
             </div>
             
                           
             <div class="mp-cont-formulario">
                 <label for="precio" class="mp-label-createProduct">Precio</label>
-                <input type="text" name="precio" id="precios" placeholder="<%=productoEdit.precio%>" class="mp-input-createProduct">
+                <input type="text" name="precio" id="precios" value="<%=productoEdit.precio%>" class="mp-input-createProduct">
             </div>
           
             <div class="mp-cont-formulario">
-                <label for="tipoDeEnvase" class="mp-label-createProduct">Tipo de Envase</label>
-                <input type="text" name="tipoDeEnvase" id="tipoDeEnvase" placeholder="<%=productoEdit.tipoDeEnvase%>" class="mp-input-createProduct">
+                <label for="descripcion" class="mp-label-createProduct">Descripción</label>
+                <input type="text" name="descripcion" id="descripcion" value="<%=productoEdit.descripcion%>" class="mp-input-createProduct">
             </div>
             <div class="mp-cont-formulario">
               <label for="modoDeUso" class="mp-label-createProduct">Modo de uso</label>
-              <textarea name="modoDeUso" id="modoDeUso" rows="10" cols="10" placeholder="<%=productoEdit.modoDeUso%>" class="mp-textarea-createProduct"></textarea>
+              <textarea name="modoDeUso" id="modoDeUso" rows="10" cols="10" class="mp-textarea-createProduct"><%=productoEdit.modoDeUso%></textarea>
             </div>
           </div>
           <div>
               <div class="mp-cont-formulario">
                 <label for="ingredientes" class="mp-label-createProduct">Ingredientes</label>
-                <textarea name="ingredientes" id="ingredientes" rows="10" cols="10" placeholder="<%=productoEdit.ingrediente%>" class="mp-textarea-createProduct" ></textarea>
+                <textarea name="ingredientes" id="ingredientes" rows="10" cols="10" class="mp-textarea-createProduct" ><%=productoEdit.ingrediente%> </textarea>
             </div>
             <div class="mp-cont-formulario" >
               <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>

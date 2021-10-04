@@ -25,9 +25,9 @@ const productsController = {
             db.Brand.findAll () 
                 .then (function (marca){               
                 return res.render("./createProduct", {flavors : flavors, category : category, marca : marca });
-             })
-                })
-                     })
+            })
+            })
+            })
     },
 
     //GUARDAR UN PRODUCTO - OK
@@ -38,14 +38,17 @@ const productsController = {
             nombre: req.body.nombre,
             id_brand: req.body.marca,
             id_category: req.body.categoria,
+            peso: req.body.pesoNeto, // falta sabores
             precio: req.body.precio,
+            descripcion : req.body.descripcion,
+            modoDeUso :req.boy.modoDeUso,
             peso: req.body.pesoNeto,
             modoDeUso: req.body.modoDeUso,
             ingrediente: req.body.ingredientes,
             imagen: req.body.productImg,
         })
-            .then((resultados)=>{
-            res.redirect ("/");
+        .then((resultados)=>{
+        res.redirect ("/");
         });
         }else {res.render("productsController",{ 
             errors: errors.array(),
@@ -90,8 +93,25 @@ const productsController = {
 
        actualizar: (req,res)=>{ // falta actualizarlo para que trabaje con la bd
         let valoresNuevos = req.body;
-		let idProducto = req.params.id;	
-		for(let i=0;i<products.length;i++){
+		let idProducto = req.params.id;
+        
+        db.Product.update({
+            nombre: req.body.nombre,
+            id_brand: req.body.marca,
+            id_category: req.body.categoria,
+            precio: req.body.precio,
+            peso: req.body.pesoNeto,
+            modoDeUso: req.body.modoDeUso,
+            ingrediente: req.body.ingredientes,
+            imagen: req.body.productImg,
+        },
+        {where : {id: idProducto}})
+        .then((productoEncontrado)=>{
+            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+		    res.render("unProducto",{productoEdit: productoEncontrado})
+        })
+
+		/* for(let i=0;i<products.length;i++){
 			if (products[i].id==idProducto){
 				products[i].nombre = valoresNuevos.nombre;
 				products[i].marca = valoresNuevos.marca;
@@ -105,9 +125,8 @@ const productsController = {
 				var productoEncontrado = products[i];
 				break;
 			}
-		}
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		res.render("unProducto",{productoEdit: productoEncontrado})
+		} */
+		
        },
 //No esta listo !!
        borrar: (req,res)=>{
