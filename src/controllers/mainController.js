@@ -15,6 +15,9 @@ const mainController = {
         res.render("contacto")
 
 },
+    greenTeam: (req,res)=>{
+        res.render("greenTeam")
+    }
 }
 
 module.exports = mainController

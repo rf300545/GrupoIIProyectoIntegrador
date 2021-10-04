@@ -176,7 +176,7 @@ body{
 section{
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     margin-top: -5px;
 }
@@ -358,9 +358,9 @@ table td:nth-child(4) {
 
 .section {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   border: 1px solid rgb(129, 141, 141);
-  flex-direction: column;
+  flex-direction: row;
 }
 
 #img1 {
@@ -874,11 +874,27 @@ body {
 /* fin css carrito importado */
 /* direccion Envio */
 .form-control{
-  height: 4vh;
+  height: 5vh;
   /* border: 1px solid red */
+}
+.section-envio{
+  width: 100%;
+  position: relative;
 }
 .max-height-form{
   height: max-content;
+}
+.label-centerText{
+  text-align: left;
+
+}
+
+.form-max-width{
+  max-width: max-content;
+}
+/* pago */
+.card-background{
+  background-color: white;
 }
 /* FIN  Direccion de Envio */
 .title {
@@ -1114,11 +1130,10 @@ a:hover {
 @media (min-width: 1000px) {
   .section {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     border: 1px solid rgb(129, 141, 141);
     flex-direction: column;
     margin-left: 50%;
-
     }
     table {
       /* width: 50%; */

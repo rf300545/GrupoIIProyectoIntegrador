@@ -32,8 +32,9 @@ const uploadFile = multer({ storage });
 router.get("/carro_compras", productsController.carro);
 router.get("/carro_compra2", productsController.carro2);
 router.get("/direccionEnvio",productsController.direccionEnvio)
+router.get ("/pago",productsController.pago)
 
-//TODOS LOS PRODUCTOS - ok
+//TODOS LOS PRODUCTOS - ok 
 router.get("/", productsController.producto);
 
 //CATEGORIAS NAVBAR
@@ -44,7 +45,6 @@ router.get("/postTraining", searchController.postTraining);
 router.get("/intraTraining", searchController.intraTraining);
 router.get("/aminoacidos", searchController.aminoacidos);
 router.get("/otros", searchController.otros);
-
 //API//
 router.get("/categoriaProductos",apiController.categoriaProductos)
 router.get("/categorias",apiController.categorias)

@@ -120,14 +120,13 @@ const productsController = {
 		res.render('index',{productos: products});
        },
        direccionEnvio: (req,res)=> {
-           if(!req.session.usuarioLogueado){
-            let errorPass=[""]
-            let errorUser=[""]
-            res.render("login",{errorPass:errorPass, errorUser:errorUser})
-           }else(
+        
                res.render("direccion_envio")
-           )
            
+           
+       },
+       pago: (req,res)=>{
+           res.render("payment")
        }
       
  }
