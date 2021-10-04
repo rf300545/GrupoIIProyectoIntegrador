@@ -5,6 +5,25 @@ const emailField = form.email
 const passwordField = form.contraseña
 const confirmPassField= form.confirm_contraseña
 
+const inputPhoto = document.getElementById("avatar")
+const photoContainer = document.getElementById("AvatarContainer")
+const photo = photoContainer.querySelector(".AvatarPreview")
+
+inputPhoto.addEventListener("change", function(){
+    const file = this.files[0] //file es undefined si no hay img cargada
+    if (file){
+        const showPhoto = new FileReader()
+        showPhoto.addEventListener("load", function(){
+            photo.setAttribute("src", this.result)
+            console.log(this.result) //.result es un 1 prop de FileReader
+        })
+        showPhoto.readAsDataURL(file)
+    }
+})
+
+
+
+
 const isEmail = (field)=>{
     const regex= /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm;
     return regex.test (field.value.toLowerCase())// validacion para ver si es correcto el formato de email

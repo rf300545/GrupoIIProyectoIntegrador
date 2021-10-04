@@ -12,101 +12,100 @@
   <main>
     <br>
     <br>
+    <br>   
+    <div >
     <br>
-    
-      <div >
-        <br>
-        <form action="/products/createProduct" method="POST" enctype="multipart/form-data" class="mp-main-createProduct mp-cont-formulario-padre" id="form">
-          <div class="danger">
-            <% if (locals.errors) { errors.forEach (error => { %>
-              <p><%= error.msg %></p>
-            <% } ) } %>
-            <div class="mp-cont-formulario" >
-              <label  for="Producto" class="mp-label-createProduct">Producto</label>
-              <input type="text" name="nombre" id="Producto"  class="mp-input-createProduct" >
-            </div>
+      <form action="/products/createProduct" method="POST" enctype="multipart/form-data" class="mp-main-createProduct mp-cont-formulario-padre" id="form">
+        <div class="danger">
+          <% if (locals.errors) { errors.forEach (error => { %>
+            <p><%= error.msg %></p>
+          <% } ) } %>
+          <div class="mp-cont-formulario" >
+            <label  for="Producto" class="mp-label-createProduct">Producto</label>
+            <input type="text" name="nombre" id="Producto"  class="mp-input-createProduct" >
+          </div>
 
-            <div class="mp-cont-formulario" >
-              <label for="Marca" class="mp-label-createProduct">Marca</label>
-              <select name="marca"> <% for (let i =0; i <marca.length; i ++) { %> 
-                <option value="<%=marca[i].id%>">
-                <%=marca[i].nombre %> 
-              
-            </option>
-              <%  } %>
-            </select>      
-            </div>  
-        
-            <div class="mp-cont-formulario"> 
-              <label for="" class="mp-label-createProduct">Categoría</label>
-              <select name="categoria"> <% for (let i =0; i <category.length; i ++) { %> 
-                <option value="<%=category[i].id%>">
-                <%=category[i].nombre %> 
-              
-            </option>
-              <%  } %>
-            </select>      
-            </div>    
-
-            <div class="mp-cont-formulario">
-              <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
-              <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
-            </div>
-
+          <div class="mp-cont-formulario" >
+            <label for="Marca" class="mp-label-createProduct">Marca</label>
+            <select name="marca"> <% for (let i =0; i <marca.length; i ++) { %> 
+              <option value="<%=marca[i].id%>">
+              <%=marca[i].nombre %> 
             
-            <div class="mp-cont-formulario">
-              <label for="" class="mp-label-createProduct">Sabores</label>
-              <select name="sabores"> <% for (let i =0; i <flavors.length; i ++) { %> 
-                <option value="<%=flavors[i].id%>">
-                  <%=flavors[i].nombre %> 
-                
-              </option>
-                <%  } %>
-              </select>
-                
-            </div>
+          </option>
+            <%  } %>
+          </select>      
+          </div>  
       
-                          
-            <div class="mp-cont-formulario">
-                <label for="precio" class="mp-label-createProduct">Precio</label>
-                <input type="text" name="precio" id="precios" class="mp-input-createProduct">
-            </div>
-          
-            <div class="mp-cont-formulario">
-                <label for="tipoDeEnvase" class="mp-label-createProduct">Tipo de Envase</label>
-                <input type="text" name="tipoDeEnvase" id="tipoDeEnvase" class="mp-input-createProduct">
-            </div>
-            <div class="mp-cont-formulario">
-              <label for="modoDeUso" class="mp-label-createProduct">Modo de uso</label>
-              <textarea name="modoDeUso" id="modoDeUso" rows="10" cols="10" class="mp-textarea-createProduct"></textarea>
-            </div>
-          
+          <div class="mp-cont-formulario"> 
+            <label for="" class="mp-label-createProduct">Categoría</label>
+            <select name="categoria"> <% for (let i =0; i <category.length; i ++) { %> 
+              <option value="<%=category[i].id%>">
+              <%=category[i].nombre %> 
+            
+          </option>
+            <%  } %>
+          </select>      
+          </div>    
+
+          <div class="mp-cont-formulario">
+            <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
+            <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
           </div>
 
-          <div>
-              <div class="mp-cont-formulario">
-                <label for="ingredientes" class="mp-label-createProduct">Ingredientes</label>
-                <textarea name="ingredientes" id="ingredientes" rows="10" cols="10" class="mp-textarea-createProduct" ></textarea>
-            </div>
-            <div class="mp-cont-formulario" >
-              <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
-              <input type="file" name="productImg" id="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta" >  <!--Boton de carga-->
-            </div>
+          
+          <div class="mp-cont-formulario">
+            <label for="" class="mp-label-createProduct">Sabores</label>
+            <select name="sabores"> <% for (let i =0; i <flavors.length; i ++) { %> 
+              <option value="<%=flavors[i].id%>">
+                <%=flavors[i].nombre %> 
+              
+            </option>
+              <%  } %>
+            </select>
+              
+          </div>
+    
+                        
+          <div class="mp-cont-formulario">
+              <label for="precio" class="mp-label-createProduct">Precio</label>
+              <input type="text" name="precio" id="precios" class="mp-input-createProduct">
+          </div>
+        
+          <div class="mp-cont-formulario">
+              <label for="descripcion" class="mp-label-createProduct">Descripcion</label>
+              <input type="text" name="descripcion" id="descripcion" class="mp-input-createProduct">
+          </div>
+          <div class="mp-cont-formulario">
+            <label for="modoDeUso" class="mp-label-createProduct">Modo de uso</label>
+            <textarea name="modoDeUso" id="modoDeUso" rows="10" cols="10" class="mp-textarea-createProduct"></textarea>
+          </div>
+        
+        </div>
+
+        <div>
             <div class="mp-cont-formulario">
-              <p></p>
-              <div class="mp-img-formulario" id ="mp-img-createProductContainer">  
-              <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> <!--Box de img-->
-                
-              </div>
-            </div>
-            <div class="mp-cont-formulario-botton">
-              <button type="submit" class="Cuenta">Guardar</button>
-              <button type="reset" class="Cuenta">BORRAR</button>
+              <label for="ingredientes" class="mp-label-createProduct">Ingredientes</label>
+              <textarea name="ingredientes" id="ingredientes" rows="10" cols="10" class="mp-textarea-createProduct" ></textarea>
+          </div>
+          <div class="mp-cont-formulario" >
+            <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
+            <input type="file" name="productImg" id="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta" >  <!--Boton de carga-->
+          </div>
+          <div class="mp-cont-formulario">
+            <p></p>
+            <div class="mp-img-formulario" id ="mp-img-createProductContainer">  
+            <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> <!--Box de img-->
+              
             </div>
           </div>
-        </form>
-     </div>
-
+          <div class="mp-cont-formulario-botton">
+            <button type="submit" class="Cuenta">Guardar</button>
+            <button type="reset" class="Cuenta">BORRAR</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
      <%-include("partials/footer.ejs") %>
 <script src="/js/validationCreateProduct.js"></script>
 </body>

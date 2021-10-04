@@ -6,43 +6,38 @@
     <body>
       <%-include("partials/header.ejs") %>
       
-    <main>     
+    <main>
+      <section >              
+        <div class="container" >            
+          <div class= "d-flex flex-row flex-wrap justify-content-sm-start" style="margin-top: 10px;">
+              <% for(let i=0; i<producto.length;i++){ %> 
+            <div class="mp-contenedor-producto col-4 w-33 " >
+              <a href="/products/<%=producto[i].id%>">
+              <div class="conteiner2" >               
+                <img src ="/img/products/<%=producto[i].imagen%>" class= "imagenProducto"  > </img> </a>   
+                    <div id="conteinerTextoProducto" class="prod">
+                      <!--  <h3><%=producto[i].nombre%> </h3> -->
+                      <!-- <p><%=producto[i].descripcion %> </p> -->   
+                      <a href= "#"><p id="toggle" style="cursor:hand">+ Info</p> 
+                      <p id="toggle-text"><%=producto[i].descripcion%></p> </a> 
+                    </div>
       
-         <section >              
-              <div class="container" >            
-                  <div class= "d-flex flex-row flex-wrap justify-content-sm-start" style="margin-top: 10px;">
-                      <% for(let i=0; i<producto.length;i++){ %> 
-                          <div class="mp-contenedor-producto col-4 w-33 " >
-                              <a href="/products/<%=producto[i].id%>">
-                                  <div class="conteiner2" >      
-                                           
-                                    <img src ="/img/products/<%=producto[i].imagen%>" class= "imagenProducto"  > </img> </a>   
-                                        <div id="conteinerTextoProducto" class="prod">
-                                          <!--  <h3><%=producto[i].nombre%> </h3> -->
-                                          <!-- <p><%=producto[i].descripcion %> </p> -->
-                                          
-                                          <a href= "#"><p id="toggle" style="cursor:hand">+ Info</p> 
-                                          <p id="toggle-text"><%=producto[i].descripcion%></p> </a>
-
-                                          
-                                        </div>
-                          
-                                    <div class="mp-grupos-productos">                 
-                                          <div id="nomYPrecio">
-                                            <span class="lineaSeparadora"></span>
-                                            <a ><%=producto[i].nombre %></a>
-                                            <a >$ <%=producto[i].precio %></a>
-                                          </div>
-                                          <div>
-                                            <button class="botonCarrito">AGREGAR AL CARRITO</button>
-                                          </div>
-                                  </div>
-                                
-                              </div>           
-                          </div>
-                      <% } %>
-                </div>              
-          </section> 
+                <div class="mp-grupos-productos">                 
+                  <div id="nomYPrecio">
+                    <span class="lineaSeparadora"></span>
+                    <a ><%=producto[i].nombre %></a>
+                    <a >$ <%=producto[i].precio %></a>
+                  </div>
+                  <div>
+                    <button class="botonCarrito">AGREGAR AL CARRITO</button>
+                  </div>
+              </div>
+                  
+            </div>           
+          </div>
+                    <% } %>
+        </div>              
+      </section> 
     </main>
     <script src="/js/producto.js"></script>
     <%-include("partials/footer.ejs") %>

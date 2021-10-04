@@ -3,10 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const { debugPort } = require('process');
 const db = require ("../database/models")
-const productsFilePath = path.join(__dirname, '../database/productDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { validationResult } = require("express-validator");
 const { REPL_MODE_SLOPPY } = require('repl');
+//const { Association } = require('sequelize/types');
 
 
 const productsController = {
@@ -26,9 +25,9 @@ const productsController = {
             db.Brand.findAll () 
                 .then (function (marca){               
                 return res.render("./createProduct", {flavors : flavors, category : category, marca : marca });
-             })
-                })
-                     })
+            })
+            })
+            })
     },
 
     //GUARDAR UN PRODUCTO - OK
@@ -39,14 +38,17 @@ const productsController = {
             nombre: req.body.nombre,
             id_brand: req.body.marca,
             id_category: req.body.categoria,
+            peso: req.body.pesoNeto, // falta sabores
             precio: req.body.precio,
+            descripcion : req.body.descripcion,
+            modoDeUso :req.boy.modoDeUso,
             peso: req.body.pesoNeto,
             modoDeUso: req.body.modoDeUso,
             ingrediente: req.body.ingredientes,
             imagen: req.body.productImg,
         })
-            .then((resultados)=>{
-            res.redirect ("/");
+        .then((resultados)=>{
+        res.redirect ("/");
         });
         }else {res.render("productsController",{ 
             errors: errors.array(),
@@ -75,19 +77,41 @@ const productsController = {
     },
 
         editProduct: (req, res) => {
-            let idProducto = req.params.id;	
-            for(let i=0; i<products.length ; i++){
-                if (products[i].id == idProducto){
-                    var productoEncontrado = products[i];
-                }
-            }     
-            res.render('editProduct',{productoEdit: productoEncontrado});
+            let idProducto = req.params.id;
+            db.Product.findOne({
+                include: [
+                    {association : "category"},
+                    {association : "brand"},
+                    {association : "sabores"}],
+                    where: {id : idProducto}
+            })
+            .then((productoEncontrado)=>{
+                console.log("********************* " + productoEncontrado)
+                res.render('editProduct',{productoEdit: productoEncontrado});
+            })
     },
 
        actualizar: (req,res)=>{ // falta actualizarlo para que trabaje con la bd
         let valoresNuevos = req.body;
-		let idProducto = req.params.id;	
-		for(let i=0;i<products.length;i++){
+		let idProducto = req.params.id;
+        
+        db.Product.update({
+            nombre: req.body.nombre,
+            id_brand: req.body.marca,
+            id_category: req.body.categoria,
+            precio: req.body.precio,
+            peso: req.body.pesoNeto,
+            modoDeUso: req.body.modoDeUso,
+            ingrediente: req.body.ingredientes,
+            imagen: req.body.productImg,
+        },
+        {where : {id: idProducto}})
+        .then((productoEncontrado)=>{
+            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+		    res.render("unProducto",{productoEdit: productoEncontrado})
+        })
+
+		/* for(let i=0;i<products.length;i++){
 			if (products[i].id==idProducto){
 				products[i].nombre = valoresNuevos.nombre;
 				products[i].marca = valoresNuevos.marca;
@@ -101,13 +125,21 @@ const productsController = {
 				var productoEncontrado = products[i];
 				break;
 			}
-		}
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		res.render("unProducto",{productoEdit: productoEncontrado})
+		} */
+		
        },
 //No esta listo !!
        borrar: (req,res)=>{
         let idProducto = req.params.id;	
+
+        /* db.Product.destroy( 
+            {where:{id : idProducto}}
+        )
+        .then((productoEncontrado)=>{
+            res.send("producto eliminado")
+            res.render('editProduct',{productoEdit: productoEncontrado});
+        }) */
+
 		for(let i=0;i<products.length;i++){
 			if (products[i].id==idProducto){
 				var nombreImagen=products[i].image;
@@ -115,10 +147,10 @@ const productsController = {
 				break;
 			}
 		}
-	    fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+	    
 		fs.unlinkSync(path.join(__dirname,'../../public/img/products/'+nombreImagen));
-		res.render('index',{productos: products});
        },
+
        direccionEnvio: (req,res)=> {
         
                res.render("direccion_envio")
