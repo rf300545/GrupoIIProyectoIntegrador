@@ -34,7 +34,8 @@ const apiController = {
             return res.status(200).json ({
               total:usuarios.length,
               data: usuarios,
-              status:200
+              status:200,
+             
             })
           })
         },

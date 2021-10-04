@@ -152,7 +152,13 @@ const productsController = {
        },
 
        direccionEnvio: (req,res)=> {
-           res.render("direccion_envio")
+        
+               res.render("direccion_envio")
+           
+           
+       },
+       pago: (req,res)=>{
+           res.render("payment")
        }
       
  }

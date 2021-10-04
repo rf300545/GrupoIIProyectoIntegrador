@@ -16,7 +16,8 @@ router.get("/contacto", mainController.contacto);
 router.get ("/createProduct", productsController.createProduct)
 //CARRITO
 router.get ("/carrito")
-
+//GREEN TEAM
+router.get("/greenTeam", mainController.greenTeam);
 
 // PARA PROBAR SI ANDA SESSION
 router.get ("/testSession", function (req, res) {

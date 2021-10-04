@@ -5,10 +5,11 @@ const session = require ("express-session"); // incluyo session como middleware 
 const cookieParser = require('cookie-parser')
 
 const userLoggedHeader = require("./src/middlewares/userLoggedHeader")
-
+const cors =require ("cors")
 //Captura la info del form de creacion
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors())
 app.use(session({
     secret: "cookie_secret",
     resave: true,
@@ -44,4 +45,4 @@ app.use("/", rutasMain);
 
 
 
-app.listen(process.env.PORT || 3000, () => {console.log("ok")})
+app.listen(process.env.PORT || 3030, () => {console.log("ok")})
