@@ -7,6 +7,19 @@ const { validationResult } = require("express-validator");
 const { REPL_MODE_SLOPPY } = require('repl');
 //const { Association } = require('sequelize/types');
 
+const consulta = function(){
+    db.Flavor.findAll () 
+                 .then (function (flavors){        
+            db.Category.findAll () 
+                .then (function (category){            
+            db.Brand.findAll () 
+                .then (function (marca){               
+                return {flavors : flavors, category : category, marca : marca };
+            })
+            })
+            })
+
+}
 
 const productsController = {
     //se muestra, pero falta que sea dinamico
@@ -17,7 +30,8 @@ const productsController = {
             res.render("carro_compra2");
     },
     // CREAR PRODUCTO - en desarrollo
-        createProduct: (req, res) => {            
+        createProduct: (req, res) => {   
+            console.log(consulta)         
             db.Flavor.findAll () 
                  .then (function (flavors){        
             db.Category.findAll () 
@@ -41,7 +55,7 @@ const productsController = {
             peso: req.body.pesoNeto, // falta sabores
             precio: req.body.precio,
             descripcion : req.body.descripcion,
-            modoDeUso :req.boy.modoDeUso,
+            modoDeUso :req.body.modoDeUso,
             peso: req.body.pesoNeto,
             modoDeUso: req.body.modoDeUso,
             ingrediente: req.body.ingredientes,
@@ -50,9 +64,21 @@ const productsController = {
         .then((resultados)=>{
         res.redirect ("/");
         });
-        }else {res.render("productsController",{ 
-            errors: errors.array(),
-            old: req.body});
+        }else { db.Flavor.findAll () 
+            .then (function (flavors){        
+        db.Category.findAll () 
+            .then (function (category){            
+        db.Brand.findAll () 
+            .then (function (marca){               
+        return res.render("./createProduct",
+        {errors: errors.array(),
+        old: req.body,
+        flavors : flavors, 
+        category : category, 
+        marca : marca });  })})})                
+            
+            
+
         }           
                 
 },
@@ -109,25 +135,8 @@ const productsController = {
         .then((productoEncontrado)=>{
             fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
 		    res.render("unProducto",{productoEdit: productoEncontrado})
-        })
-
-		/* for(let i=0;i<products.length;i++){
-			if (products[i].id==idProducto){
-				products[i].nombre = valoresNuevos.nombre;
-				products[i].marca = valoresNuevos.marca;
-				products[i].categoria = valoresNuevos.categoria;
-				products[i].pesoNeto = valoresNuevos.pesoNeto;
-				products[i].sabores = valoresNuevos.sabores;
-                products[i].tipoDeEnvase = valoresNuevos.tipoDeEnvase;
-                products[i].modoDeUso = valoresNuevos.modoDeUso;
-                products[i].ingredientes = valoresNuevos.ingredientes;
-                products[i].precio = valoresNuevos.precio;
-				var productoEncontrado = products[i];
-				break;
-			}
-		} */
-		
-       },
+        })		
+    },
 //No esta listo !!
        borrar: (req,res)=>{
         let idProducto = req.params.id;	

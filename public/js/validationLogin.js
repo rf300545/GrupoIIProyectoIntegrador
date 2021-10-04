@@ -41,7 +41,8 @@ form.addEventListener ( "submit", function (e) {
     
         if (contador.length>0){
            e.preventDefault ();
-        }}
+        }
+    }
 
     
     )

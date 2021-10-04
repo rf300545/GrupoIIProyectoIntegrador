@@ -9,10 +9,10 @@ const { body } = require ("express-validator");
 
 // Validaciones
 const productsValidator = [
-    body ("nombre").notEmpty().withMessage("Ingrese el nombre").bail(),
+    body ("nombre").notEmpty().withMessage("Ingrese el nombre"),// .bail(), 
     body ("pesoNeto").notEmpty().withMessage("Ingrese el peso"),
     body ("precio").notEmpty().withMessage("Ingrese el precio"),
-    body ("tipoDeEnvase").notEmpty().withMessage("Ingrese el tipo de envase"),
+    body ("descripcion").notEmpty().withMessage("Ingrese descripcion"),
     body ("modoDeUso").notEmpty().withMessage("Ingrese el modo de uso"),
     body ("ingredientes").notEmpty().withMessage("Ingrese los ingredientes"),
 ];

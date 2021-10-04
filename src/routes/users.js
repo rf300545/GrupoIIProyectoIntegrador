@@ -26,10 +26,10 @@ const userController = require ("../controllers/usersController");
 
 // Validaciones
 const validacionCreacionUsuario = [
-    body ("first_name").notEmpty().withMessage("Pone un nombre").bail(),
-    body ("last_name").notEmpty().withMessage("Pone un apellido"),
-    body ("email").isEmail().withMessage("Ingresa un email valido"),
-    body ("email").notEmpty(),
+    body ("first_name").notEmpty().withMessage("Ingrese su nombre"),
+    body ("last_name").notEmpty().withMessage("Ingrese su apellido"),
+    body ("email").isEmail().withMessage("Ingrese un email valido"),
+    body ("contraseña").notEmpty().withMessage("Ingrese una contraseña"),
     body('avatar').custom((value, {req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif','.jpeg'];
@@ -52,7 +52,7 @@ const validacionCreacionUsuario = [
 router.get("/register",alreadyLoggedMw,userController.registrarse);
 
 //Procesar formulario de creacion
-router.post("/register", uploadFile.single('avatar'),validacionCreacionUsuario,  userController.saveUser);
+router.post("/register",uploadFile.single('avatar'),validacionCreacionUsuario,  userController.saveUser);
 
 // Procesar log usuario
 router.get("/login",alreadyLoggedMw,userController.iniciarSesion);

@@ -46,8 +46,6 @@ const confirmacion= function(){
 form.addEventListener ( "submit", function (e) {
     e.preventDefault();
     let contador=[]
-    
-   
         if (isEmpty(firstNameField)==true){
             generateError(firstNameField, "El campo nombre no puede estar vacío")
             contador.push("nombre vacio ")

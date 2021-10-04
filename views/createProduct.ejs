@@ -22,7 +22,7 @@
           <% } ) } %>
           <div class="mp-cont-formulario" >
             <label  for="Producto" class="mp-label-createProduct">Producto</label>
-            <input type="text" name="nombre" id="Producto"  class="mp-input-createProduct" >
+            <input type="text" name="nombre" id="Producto"  class="mp-input-createProduct" value="<%= locals.old && old.nombre ? old.nombre : ''%>" >
           </div>
 
           <div class="mp-cont-formulario" >
@@ -30,7 +30,7 @@
             <select name="marca"> <% for (let i =0; i <marca.length; i ++) { %> 
               <option value="<%=marca[i].id%>">
               <%=marca[i].nombre %> 
-            
+            <!-- value="<%= locals.old && old.marca ? old.Producto : ''%>" -->
           </option>
             <%  } %>
           </select>      
@@ -49,35 +49,28 @@
 
           <div class="mp-cont-formulario">
             <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
-            <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct">
+            <input type="text" name="pesoNeto" id="pesoNeto" class="mp-input-createProduct" value="<%= locals.old && old.pesoNeto ? old.pesoNeto : ''%>">
           </div>
 
           
-          <div class="mp-cont-formulario">
+         <div class="mp-cont-formulario">
             <label for="" class="mp-label-createProduct">Sabores</label>
-            <select name="sabores"> <% for (let i =0; i <flavors.length; i ++) { %> 
-              <option value="<%=flavors[i].id%>">
-                <%=flavors[i].nombre %> 
-              
-            </option>
-              <%  } %>
-            </select>
-              
-          </div>
+            <input type="text" name="sabores" id="sabores" class="mp-input-createProduct" value="<%= locals.old && old.sabores ? old.sabores : ''%>">  
+         </div>
     
                         
           <div class="mp-cont-formulario">
               <label for="precio" class="mp-label-createProduct">Precio</label>
-              <input type="text" name="precio" id="precios" class="mp-input-createProduct">
+              <input type="text" name="precio" id="precios" class="mp-input-createProduct" value="<%= locals.old && old.precio ? old.precio : ''%>">
           </div>
         
           <div class="mp-cont-formulario">
               <label for="descripcion" class="mp-label-createProduct">Descripcion</label>
-              <input type="text" name="descripcion" id="descripcion" class="mp-input-createProduct">
+              <input type="text" name="descripcion" id="descripcion" class="mp-input-createProduct" value="<%= locals.old && old.descripcion ? old.descripcion : ''%>">
           </div>
           <div class="mp-cont-formulario">
             <label for="modoDeUso" class="mp-label-createProduct">Modo de uso</label>
-            <textarea name="modoDeUso" id="modoDeUso" rows="10" cols="10" class="mp-textarea-createProduct"></textarea>
+            <textarea name="modoDeUso" id="modoDeUso" rows="10" cols="10" class="mp-textarea-createProduct"><%= locals.old && old.modoDeUso ? old.modoDeUso : ''%></textarea>
           </div>
         
         </div>
@@ -85,7 +78,7 @@
         <div>
             <div class="mp-cont-formulario">
               <label for="ingredientes" class="mp-label-createProduct">Ingredientes</label>
-              <textarea name="ingredientes" id="ingredientes" rows="10" cols="10" class="mp-textarea-createProduct" ></textarea>
+              <textarea name="ingredientes" id="ingredientes" rows="10" cols="10" class="mp-textarea-createProduct" ><%= locals.old && old.ingredientes ? old.ingredientes : ''%> </textarea>
           </div>
           <div class="mp-cont-formulario" >
             <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
@@ -107,6 +100,6 @@
     </div>
   </main>
      <%-include("partials/footer.ejs") %>
-<!-- <script src="/js/validationCreateProduct.js"></script> -->
+<script src="/js/validationCreateProduct.js"></script>
 </body>
 </html>

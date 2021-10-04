@@ -24,17 +24,14 @@
       
   <form action="/users/register" class="formcenter" method="POST" enctype="multipart/form-data" id="form">
     <div class="danger">
-      <% if (locals.errors) {
-        errors.forEach(error => { %>
-           <p><%= error.msg %></p>
-          <% })
-          }
-          %>
+      <% if (locals.errors) {errors.forEach(error => { %>
+        <p><%= error.msg %></p>
+      <% })} %>
     </div>
       <div>
         <label for="first_name">Nombre</label>
         <input type="text" class= "sinborde"  placeholder="Juan"  name="first_name" id="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" >
-        <span>aca deberia salir el error</span>
+        <span></span>
         </div>
 
       <br/> <br/>
