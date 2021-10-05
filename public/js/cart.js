@@ -147,11 +147,11 @@ suma()
     let totalCount= document.getElementById("total").innerHTML= "$ " + totalCalc.toString()
   
     
-/* let botonComprar= document.getElementById("btnCheckOut")
+let botonComprar= document.getElementById("btnCheckOut")
+
 botonComprar.addEventListener("click", (e)=>{
-/*   e.preventDefault() */ 
- 
-/*   Swal.fire('Inicia Sesión para continuar tu compra') */ /* alert para que el usuario inicie sesion antes de continuar con su compra */
+  e.preventDefault() 
+  alert('Inicia Sesión para continuar tu compra') }) /* alert para que el usuario inicie sesion antes de continuar con su compra */
     
 
 
@@ -159,5 +159,4 @@ botonComprar.addEventListener("click", (e)=>{
 
 /* let totalPrice=JSON.parse (localStorage.getItem("total_compra"))
 let totalCount= document.getElementById("total").innerHTML= "$ " + totalPrice.toString() */
-/*   function suma (){ */
-   
+/*   function suma () */

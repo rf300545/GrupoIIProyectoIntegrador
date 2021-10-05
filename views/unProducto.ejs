@@ -56,9 +56,11 @@
                       <div></div>
                       <span class="lineaSeparadora"></span>
                       <button class="botonCarrito cart">AGREGAR AL CARRITO</button>
+                      <% if(locals.isAdmin == true){ %>
                       <button class="botonCarrito">
                         <a href="/products/editProduct/<%=productoUnico.id%>" class="action-button edit">EDITAR PRODUCTO</a>
                       </button>
+                      <% } %>
                     </div>
                 </div>                  
             </div>
