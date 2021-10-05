@@ -55,7 +55,12 @@
           
          <div class="mp-cont-formulario">
             <label for="" class="mp-label-createProduct">Sabores</label>
-            <input type="text" name="sabores" id="sabores" class="mp-input-createProduct" value="<%= locals.old && old.sabores ? old.sabores : ''%>">  
+            <select name="sabores"> <% for (let i =0; i <flavors.length; i ++) { %> 
+              <option value="<%=flavors[i].id%>">
+                <%=flavors[i].nombre %>    
+              </option>
+              <%  } %>
+            </select>
          </div>
     
                         
@@ -88,7 +93,6 @@
             <p></p>
             <div class="mp-img-formulario" id ="mp-img-createProductContainer">  
             <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> <!--Box de img-->
-              
             </div>
           </div>
           <div class="mp-cont-formulario-botton">
@@ -100,6 +104,6 @@
     </div>
   </main>
      <%-include("partials/footer.ejs") %>
-<script src="/js/validationCreateProduct.js"></script>
+   <script src="/js/validationCreateProduct.js"></script>
 </body>
 </html>

@@ -8,15 +8,6 @@ const multer = require("multer");
 const { body } = require ("express-validator");
 
 // Validaciones
-const productsValidator = [
-    body ("nombre").notEmpty().withMessage("Ingrese el nombre"),// .bail(), 
-    body ("pesoNeto").notEmpty().withMessage("Ingrese el peso"),
-    body ("precio").notEmpty().withMessage("Ingrese el precio"),
-    body ("descripcion").notEmpty().withMessage("Ingrese descripcion"),
-    body ("modoDeUso").notEmpty().withMessage("Ingrese el modo de uso"),
-    body ("ingredientes").notEmpty().withMessage("Ingrese los ingredientes"),
-];
-
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		cb(null, './public/img/products');
@@ -27,6 +18,15 @@ const storage = multer.diskStorage({
 	}
 })
 const uploadFile = multer({ storage });
+
+const productsValidator = [
+    body ("nombre").notEmpty().withMessage("Ingrese el nombre"),// .bail(), 
+    body ("pesoNeto").notEmpty().withMessage("Ingrese el peso"),
+    body ("precio").notEmpty().withMessage("Ingrese el precio"),
+    body ("descripcion").notEmpty().withMessage("Ingrese descripcion"),
+    body ("modoDeUso").notEmpty().withMessage("Ingrese el modo de uso"),
+    body ("ingredientes").notEmpty().withMessage("Ingrese los ingredientes"),
+];
 
 //CARRO DE COMPRAS -ok
 router.get("/carro_compras", productsController.carro);
@@ -51,14 +51,14 @@ router.get("/categorias",apiController.categorias)
 
 //CREAR PRODUCTO - falta que agregue el producto nuevo a la DB
 router.get("/createProduct", productsController.createProduct);
-router.post("/createProduct",uploadFile.array('productImg'),productsValidator, productsController.store);
+router.post("/createProduct",uploadFile.single('productImg'),productsValidator, productsController.store);
 
 //VER DETALLE DE UN PRODUCTO - ok
 router.get("/:id", productsController.unProducto); 
 
 //Editar Producto .
 router.get("/editProduct/:id", productsController.editProduct);
-router.put("/editProduct/:id", productsController.actualizar); 
+router.put("/editProduct/:id",uploadFile.single('productImg'),productsValidator ,productsController.actualizar); 
 
 //Borrar 
 router.delete('/:id', productsController.borrar); 

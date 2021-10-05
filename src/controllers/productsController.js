@@ -30,8 +30,7 @@ const productsController = {
             res.render("carro_compra2");
     },
     // CREAR PRODUCTO - en desarrollo
-        createProduct: (req, res) => {   
-            console.log(consulta)         
+        createProduct: (req, res) => {            
             db.Flavor.findAll () 
                  .then (function (flavors){        
             db.Category.findAll () 
@@ -46,7 +45,8 @@ const productsController = {
 
     //GUARDAR UN PRODUCTO - OK
         store: (req,res) =>{
-        let errors = validationResult(req);  
+        let errors = validationResult(req);
+        console.log(req.body.sabores.value)  
         if (errors.isEmpty()){
             db.Product.create ({
             nombre: req.body.nombre,
@@ -57,10 +57,11 @@ const productsController = {
             descripcion : req.body.descripcion,
             modoDeUso :req.body.modoDeUso,
             peso: req.body.pesoNeto,
-            modoDeUso: req.body.modoDeUso,
             ingrediente: req.body.ingredientes,
-            imagen: req.body.productImg,
-        })
+            imagen: req.file.filename,})
+        /* .then(db.product_flavor.create({
+            id_product : req.body.nombre,
+            id_flavor : req.body.sabores})) */
         .then((resultados)=>{
         res.redirect ("/");
         });
@@ -75,10 +76,7 @@ const productsController = {
         old: req.body,
         flavors : flavors, 
         category : category, 
-        marca : marca });  })})})                
-            
-            
-
+        marca : marca });  })})})                     
         }           
                 
 },
@@ -112,28 +110,30 @@ const productsController = {
                     where: {id : idProducto}
             })
             .then((productoEncontrado)=>{
-                console.log("********************* " + productoEncontrado)
                 res.render('editProduct',{productoEdit: productoEncontrado});
             })
     },
 
-       actualizar: (req,res)=>{ // falta actualizarlo para que trabaje con la bd
+       actualizar: (req,res)=>{ 
         let valoresNuevos = req.body;
 		let idProducto = req.params.id;
+        console.log(req.file)
         
         db.Product.update({
             nombre: req.body.nombre,
             id_brand: req.body.marca,
             id_category: req.body.categoria,
+            peso: req.body.pesoNeto, // falta sabores
             precio: req.body.precio,
+            descripcion : req.body.descripcion,
+            modoDeUso :req.body.modoDeUso,
             peso: req.body.pesoNeto,
-            modoDeUso: req.body.modoDeUso,
             ingrediente: req.body.ingredientes,
-            imagen: req.body.productImg,
+            imagen: req.file.filename
         },
         {where : {id: idProducto}})
         .then((productoEncontrado)=>{
-            fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
+            //fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
 		    res.render("unProducto",{productoEdit: productoEncontrado})
         })		
     },

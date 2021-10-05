@@ -22,8 +22,6 @@ inputPhoto.addEventListener("change", function(){
 })
 
 
-
-
 const isEmail = (field)=>{
     const regex= /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm;
     return regex.test (field.value.toLowerCase())// validacion para ver si es correcto el formato de email
@@ -45,7 +43,13 @@ const confirmacion= function(){
 
 form.addEventListener ( "submit", function (e) {
     e.preventDefault();
-    let contador=[]
+    generateError(firstNameField, " ")
+    generateError(lastNameField, " ")
+    generateError(emailField, " ")
+    generateError(passwordField, " ")
+    generateError(confirmPassField, " ")
+    
+    let contador=[];
         if (isEmpty(firstNameField)==true){
             generateError(firstNameField, "El campo nombre no puede estar vacío")
             contador.push("nombre vacio ")
@@ -77,7 +81,7 @@ form.addEventListener ( "submit", function (e) {
             generateError (emailField,"Formato de email invalido")
             contador.push("email invalido")
         }
-        console.log (contador.length)
+        console.log (generateError)
         if (contador.length==0){
             console.log ("llegue")
             form.submit();

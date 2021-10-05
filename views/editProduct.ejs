@@ -41,12 +41,12 @@
               <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
               <input type="text" name="pesoNeto" id="pesoNeto" value="<%=productoEdit.peso%>" class="mp-input-createProduct">
             </div>
-            <div class="mp-cont-formulario">
+            <!-- <div class="mp-cont-formulario">
               <label for="Sabores" class="mp-label-createProduct">Sabores</label>
                 <div>
-                  <input type="text" name="sabores" id="sabores" value="<%=productoEdit.sabores[1].nombre%>" class="mp-input-createProduct">
+                  <input type="text" name="sabores" id="sabores" value="<%=//productoEdit.sabores[1].nombre%>" class="mp-input-createProduct">
                 </div>
-            </div>
+            </div> -->
             
                           
             <div class="mp-cont-formulario">
@@ -70,14 +70,12 @@
             </div>
             <div class="mp-cont-formulario" >
               <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
-              <input type="file" name="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta">
+              <input type="file" name="productImg" id="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta" >  <!--Boton de carga-->
             </div>
             <div class="mp-cont-formulario">
               <p></p>
-              <div class="mp-img-formulario">
-                <img src="/img/Multifruta.JPG" id="mp-img-createProduct"></img>
-                <img src="/img/products/nitro_whey.jpg" id="mp-img-createProduct">
-                <img src="/img/products/pump.jpg" id="mp-img-createProduct">
+              <div class="mp-img-formulario" id ="mp-img-createProductContainer">  
+                <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> <!--Box de img Deberia ir el req.file.filename del archivo ya cargado-->
               </div>
             </div>
             <div class="mp-cont-formulario-botton">
