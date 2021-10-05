@@ -183,14 +183,18 @@ body{
   /* border: 1px solid red; */
   height: max-content;
   margin: auto;
-  padding: 5%;
+  padding: 5% 10%;
 }
 .mas-vendidos{
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
+.width-product{
+  max-width;:40 %;
+  display:flex
 
+}
 section{
     display:flex;
     flex-direction: row;
