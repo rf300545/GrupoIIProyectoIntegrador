@@ -14,6 +14,8 @@ const usersController = {
     },
         
     processlogin:(req,res)=>{
+
+
         let errorPass=[""]
         let errorUser=[""]
         db.User.findOne({
@@ -22,11 +24,12 @@ const usersController = {
             .then((usuario)=>{
                 let pswrd=bcrypt.compareSync (req.body.contraseña, usuario.contrasenia) 
                 if(pswrd == true){ 
+                   const emailDeUser = usuario.email
                    req.session.usuarioLogueado = usuario 
                    if(req.body.saveUser){ //si el checkbox esta marcado, guarda en cookie al email del user
-                    res.cookie("savedUser",usuario.email,{maxAge: (1000 * 60) * 10 }) //120k ms
+                    res.cookie("savedUser",usuario.email,{maxAge: (1000 * 60) * 10 }, ) //120k ms -10min duracion
                     }  
-                res.render("index", {userDatas : req.session.usuarioLogueado}) 
+                res.render("greenTeam", {userDatas : req.session.usuarioLogueado, emailDeUser : emailDeUser}) 
                    
                 }else {
                     let errorPass=["Contraseña incorrecta"]

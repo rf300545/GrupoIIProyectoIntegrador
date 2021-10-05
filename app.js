@@ -5,6 +5,7 @@ const session = require ("express-session"); // incluyo session como middleware 
 const cookieParser = require('cookie-parser')
 
 const userLoggedHeader = require("./src/middlewares/userLoggedHeader")
+const isAdmin = require("./src/middlewares/isAdmin")
 const cors =require ("cors")
 //Captura la info del form de creacion
 app.use(express.urlencoded({ extended: false }));
@@ -18,6 +19,8 @@ app.use(session({
  }));
 app.use(cookieParser())
 app.use(userLoggedHeader)
+app.use(isAdmin)
+
 
 const methodOverride = require('method-override');
 app.use(methodOverride("_method"))
