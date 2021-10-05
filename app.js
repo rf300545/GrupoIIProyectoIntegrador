@@ -10,6 +10,7 @@ const cors =require ("cors")
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors())
+
 app.use(session({
     secret: "cookie_secret",
     resave: true,
@@ -17,15 +18,6 @@ app.use(session({
  }));
 app.use(cookieParser())
 app.use(userLoggedHeader)
-
-/* app.use(function(req, res, next){
-    if (req.session.usuarioLogueado != undefined ){
-        res.locals.session =  req.session.usuarioLogueado
-        const sessionUser = res.locals.session
-    }
-    next()
-}); */
-
 
 const methodOverride = require('method-override');
 app.use(methodOverride("_method"))

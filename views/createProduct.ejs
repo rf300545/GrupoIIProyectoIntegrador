@@ -53,15 +53,16 @@
           </div>
 
           
-         <div class="mp-cont-formulario">
+         <!-- <div class="mp-cont-formulario">
             <label for="" class="mp-label-createProduct">Sabores</label>
-            <select name="sabores"> <% for (let i =0; i <flavors.length; i ++) { %> 
-              <option value="<%=flavors[i].id%>">
-                <%=flavors[i].nombre %>    
+            <input type="text" name="precio" id="precios" class="mp-input-createProduct" value="<%= locals.old && old.precio ? old.precio : ''%>">
+            <select name="sabores"> <% //for (let i =0; i <flavors.length; i ++) { %> 
+              <option value="<%=//flavors[i].id%>">
+                <%=//flavors[i].nombre %>    
               </option>
-              <%  } %>
+              <% // } %>
             </select>
-         </div>
+         </div> -->
     
                         
           <div class="mp-cont-formulario">
@@ -89,12 +90,12 @@
             <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
             <input type="file" name="productImg" id="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta" >  <!--Boton de carga-->
           </div>
-          <div class="mp-cont-formulario">
+          <!-- <div class="mp-cont-formulario">
             <p></p>
             <div class="mp-img-formulario" id ="mp-img-createProductContainer">  
-            <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> <!--Box de img-->
+            <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> Box de img
             </div>
-          </div>
+          </div> -->
           <div class="mp-cont-formulario-botton">
             <button type="submit" class="Cuenta">Guardar</button>
             <button type="reset" class="Cuenta">BORRAR</button>

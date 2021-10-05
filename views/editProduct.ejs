@@ -13,6 +13,7 @@
     <br>
     <br>
     <br>
+    
       <h2>Estás editando el producto <%=productoEdit.nombre%>   (Art 000- <%=productoEdit.id%>)</h2>
       <div >
         <br>
@@ -25,18 +26,25 @@
 
             <div class="mp-cont-formulario" >
               <label for="Marca" class="mp-label-createProduct">Marca</label>
-              <input type= "text" name="marca" id="Marca" value="<%=productoEdit.brand.nombre%>" class="mp-input-createProduct" >
-            </div>  
+              <select name="marca"> <% for (let i =0; i <marca.length; i ++) { %> 
+                <option value="<%=marca[i].id%>">
+                <%=marca[i].nombre %> 
+              <!-- value="<%= locals.old && old.marca ? old.Producto : ''%>" -->
+            </option>
+              <%  } %>
+            </select>      
+            </div> 
         
             <div class="mp-cont-formulario"> 
-              <label for="Categoria" class="mp-label-createProduct" >Categoría</label>
-              <input list="Categorias" name="categoria" id="Categoria" value="<%=productoEdit.category.nombre%>"  class="mp-input-createProduct" >
-              <datalist id="Categorias">
-                <option value="Quemadores de grasa">
-                <option value= "Proteinas">
-                <option value="Post entrenamiento">
-              </datalist>
-            </div>    
+              <label for="" class="mp-label-createProduct">Categoría</label>
+              <select name="categoria"> <% for (let i =0; i <category.length; i ++) { %> 
+                <option value="<%=category[i].id%>">
+                <%=category[i].nombre %> 
+              
+            </option>
+              <%  } %>
+            </select>      
+            </div> 
             <div class="mp-cont-formulario">
               <label for="pesoNeto" class="mp-label-createProduct">Peso Neto</label>
               <input type="text" name="pesoNeto" id="pesoNeto" value="<%=productoEdit.peso%>" class="mp-input-createProduct">
@@ -72,12 +80,12 @@
               <label id="formulario-texto" class="mp-label-createProduct">Imagenes</label>
               <input type="file" name="productImg" id="productImg" value="Cargar imagenes" accept=".jpg" class="Cuenta" >  <!--Boton de carga-->
             </div>
-            <div class="mp-cont-formulario">
+            <!-- <div class="mp-cont-formulario">
               <p></p>
               <div class="mp-img-formulario" id ="mp-img-createProductContainer">  
-                <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> <!--Box de img Deberia ir el req.file.filename del archivo ya cargado-->
+                <img src="" alt="Vista Previa" class="mp-img-createProduct" ></img> -Box de img Deberia ir el req.file.filename del archivo ya cargado-
               </div>
-            </div>
+            </div> -->
             <div class="mp-cont-formulario-botton">
               <button type="submit" class="Cuenta">GUARDAR CAMBIOS</button>
               <button type="reset"  class="Cuenta">BORRAR</button>

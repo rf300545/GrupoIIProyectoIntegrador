@@ -45,8 +45,7 @@ const productsController = {
 
     //GUARDAR UN PRODUCTO - OK
         store: (req,res) =>{
-        let errors = validationResult(req);
-        console.log(req.body.sabores.value)  
+        let errors = validationResult(req); 
         if (errors.isEmpty()){
             db.Product.create ({
             nombre: req.body.nombre,
@@ -102,23 +101,33 @@ const productsController = {
 
         editProduct: (req, res) => {
             let idProducto = req.params.id;
+            db.Flavor.findAll () 
+                 .then (function (flavors){        
+            db.Category.findAll () 
+                .then (function (category){            
+            db.Brand.findAll () 
+                .then (function (marca){               
             db.Product.findOne({
                 include: [
                     {association : "category"},
                     {association : "brand"},
                     {association : "sabores"}],
                     where: {id : idProducto}
+                })
+                .then((productoEncontrado)=>{
+                res.render('editProduct',{productoEdit: productoEncontrado,flavors : flavors, category : category, marca : marca});
+                })
             })
-            .then((productoEncontrado)=>{
-                res.render('editProduct',{productoEdit: productoEncontrado});
-            })
+        })
+    })
     },
 
        actualizar: (req,res)=>{ 
-        let valoresNuevos = req.body;
 		let idProducto = req.params.id;
-        console.log(req.file)
+        let errors = validationResult(req)
+        console.log("el re files es" + req.file)
         
+        if (errors.isEmpty()){
         db.Product.update({
             nombre: req.body.nombre,
             id_brand: req.body.marca,
@@ -129,13 +138,24 @@ const productsController = {
             modoDeUso :req.body.modoDeUso,
             peso: req.body.pesoNeto,
             ingrediente: req.body.ingredientes,
-            imagen: req.file.filename
-        },
+            },
         {where : {id: idProducto}})
         .then((productoEncontrado)=>{
-            //fs.writeFileSync(productsFilePath, JSON.stringify(products,null, ' '));
-		    res.render("unProducto",{productoEdit: productoEncontrado})
-        })		
+		    res.redirect("/")
+        })}	else
+                { db.Flavor.findAll () 
+                    .then (function (flavors){        
+                db.Category.findAll () 
+                    .then (function (category){            
+                db.Brand.findAll () 
+                    .then (function (marca){               
+                return res.render("unProducto",
+                {errors: errors.array(),
+                old: req.body,
+                flavors : flavors, 
+                category : category, 
+                marca : marca });  })})})                     
+                }	
     },
 //No esta listo !!
        borrar: (req,res)=>{
