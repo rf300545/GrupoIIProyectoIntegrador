@@ -1,43 +1,6 @@
-let boton= document.getElementsByClassName("cart")
-let nombre= document.getElementById("nombreCarrito").innerText
-let precioCarrito = document.getElementById("precioCarrito").innerText
-let precio=precioCarrito.replace(/\D/g,'');
-let img =document.getElementById("imgCart").src
-   
-/* script para guardar los datos en localstorage cuando haces click en el boton de agregar carrito en la pagina de unProducto */
 
-if (localStorage.getItem("carrito")== undefined){
-    arrayProducts =[]
-    console.log ("estoy vacio")
-} else{
-    arrayProducts =JSON.parse(localStorage.getItem("carrito"))
-}
- 
-boton[0].addEventListener("click",()=>{
-    
-  let producto= {
-        "nombre": nombre, 
-        "precio": precio,
-        "img": img,  
-        "cantidad": 1
-        }
-   
-    if (arrayProducts.length<1){
-        arrayProducts.push(producto);
-        localStorage.setItem("carrito",JSON.stringify(arrayProducts) )
-        console.log ("cargue el primero")
-      
-    }else{ 
-        arrayProducts.push(producto)
-        localStorage.setItem("carrito",JSON.stringify (arrayProducts))
-        console.log ("ya cargue otro producto")
-   }; 
-
-  
-   
-
-            
-})
-    
-
-// let arregloProdutos = localStorage.getItem("carrito");
+let carrito= document.getElementById("mp-listItems-header2")
+let contenidoCarro=JSON.parse(localStorage.getItem("carrito")).length
+carrito.innerHTML+=contenidoCarro
+console.log(contenidoCarro)
+let botonAgregar=document.getElementById("cart")

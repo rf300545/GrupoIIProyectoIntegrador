@@ -1,8 +1,12 @@
 <header >
     <div class="mp-contGral-header">
-           <div class="dropbox">
+        
+        <img src="/img/logo provisorio.JPG"  id="img-header">  </img>
+      
+        <div class="dropbox">
+            
+            <div class="hide">
                <ul>
-                   <li> <img src="/img/logo provisorio.JPG"  id="img-header">  </img> </li>
                    <li><a href="/">INICIO</a></li>
                    <li><a href="/products">PRODUCTOS</a>
                        <ul>
@@ -18,10 +22,11 @@
                    <li> <a href="/">FAQ</a></li>
                    <li> <a href="/products/createProduct">CREAR</a></li>
                </ul> 
+            </div>
            </div>
    
            <div class="mp-contList-header">          
-                    <a href="/products/carro_compras" id="mp-listItems-header"></li><i class="fas fa-shopping-cart"></i>
+                    <a href="/products/carro_compras" id="mp-listItems-header2"></li><i class="fas fa-shopping-cart"></i>
                     <a href="/users/login" id="mp-listItems-header" ><i class="far fa-user"></i></a>
                     <% if (locals.isLogged){ %>
                     <a href="/users/logOut" id="mp-listItems-header"><i class="fas fa-sign-out-alt"></i></a>         
@@ -29,8 +34,10 @@
                     <form action="/busqueda" method="POST" class="mp-serchbar-header">
                         <button class="mp-searchbar-header-icon"><i class="fas fa-search"></i></button>
                         <input placeholder="Buscar" class="mp-serchbar-header" ></input>
-                    </form>            
+                    </form> 
+                    <a class="hidden-menu"><i class="fas fa-bars "  id="mp-listItems-header"></i></a>           
             </div> 
    </div>
    <script src="/js/logOut.js"></script>
+  <script src="/js/header.js"></script>
     </header>

@@ -23,7 +23,8 @@
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5",
     "sequelize-cli": "^6.2.0",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.1.7"
   },
   "repository": {
     "type": "git",
