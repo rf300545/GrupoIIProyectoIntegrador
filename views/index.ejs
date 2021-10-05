@@ -9,34 +9,45 @@
         <br />
         <br />
         <h2 id = Titulo>SUPLEMENTOS MAS VENDIDOS</h2>
-        <br />
-        <br />
-        <br />
-        <br />
-        <section>
-
-            <a href="/products/1">
-            <img id= img-destacado src="/img/products/pump.jpg"> 
-              <p>$1599</p>
-              <button>Comprar</button>
-              <p>PUMP V8</p>
-            </a>
-            <a href="/products/2">
-            <img id= img-destacado src="/img/products/creatine_monohydrate.jpg" > 
-              <p>$895</p>
-              <button>Comprar</button>
-              <p>CREATINE MONOHYDRATE</p>
-            </a>
-            <a href="/products/5">
-            <img id= img-destacado src="/img/products/musclestar.jpg"> 
-              <p>$4300</p>
-              <button>Comprar</button>
-              <p>MUSCLESTAR</p>
-            </a>
-    </section>
+      
+  
+                
+        <section style="margin-bottom:8%" >              
+          <div class="container" >            
+            <div class= "d-flex flex-row flex-wrap justify-content-sm-start align-items-start" style="margin-top: 10px;">
+                <% for(let i=0; i<3;i++){ %> 
+              <div class="mp-contenedor-producto  " >
+                <a href="/products/<%=producto[i].id%>">
+                <div class="conteiner2" >               
+                  <img src ="/img/products/<%=producto[i].imagen%>" class= "imagenProducto"  > </img> </a>   
+                      <div id="conteinerTextoProducto" class="prod">
+                        <!--  <h3><%=producto[i].nombre%> </h3> -->
+                        <!-- <p><%=producto[i].descripcion %> </p> -->   
+                        <a href= "#"><p id="toggle" style="cursor:hand">+ Info</p> 
+                        <p id="toggle-text"><%=producto[i].descripcion%></p> </a> 
+                      </div>
+        
+                  <div class="mp-grupos-productos">                 
+                    <div id="nomYPrecio">
+                      <span class="lineaSeparadora"></span>
+                      <a ><%=producto[i].nombre %></a>
+                      <a >$ <%=producto[i].precio %></a>
+                    </div>
+                    <div>
+                      <button class="botonCarrito">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+                    
+              </div>           
+            </div>
+                      <% } %>
+          </div>              
+        </section>   
+    
     </main>
 
     <%-include("partials/footer.ejs") %>
+    <script src="/js/producto.js"></script>
 
 </body>
 </html>
